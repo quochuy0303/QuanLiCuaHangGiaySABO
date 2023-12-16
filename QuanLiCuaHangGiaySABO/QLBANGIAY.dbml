@@ -9,7 +9,7 @@
       <Column Name="Price" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
       <Column Name="Total" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
       <Association Name="Giay_Chitietdondathang" Member="Giay" ThisKey="OrderID" OtherKey="OrderID" Type="Giay" IsForeignKey="true" />
-      <Association Name="Product_Chitietdondathang" Member="Product" ThisKey="ProductID" OtherKey="ProductID" Type="Product" IsForeignKey="true" />
+      <Association Name="SanPham_Chitietdondathang" Member="SanPham" ThisKey="ProductID" OtherKey="MaSanPham" Type="SanPham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DangKy" Member="DangKies">
@@ -113,23 +113,23 @@
       <Association Name="nhanvien_LienKetQuyenHanNhanVien" Member="LienKetQuyenHanNhanViens" ThisKey="EmployeeID" OtherKey="EmployeeID" Type="LienKetQuyenHanNhanVien" />
     </Type>
   </Table>
-  <Table Name="dbo.Products" Member="Products">
-    <Type Name="Product">
-      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ProductName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="ProductCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Price" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="StockQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="ImageURL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Association Name="Product_Chitietdondathang" Member="Chitietdondathangs" ThisKey="ProductID" OtherKey="ProductID" Type="Chitietdondathang" />
-    </Type>
-  </Table>
   <Table Name="dbo.QuyenHanNhanVien" Member="QuyenHanNhanViens">
     <Type Name="QuyenHanNhanVien">
       <Column Name="RoleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="RoleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="QuyenHanNhanVien_LienKetQuyenHanNhanVien" Member="LienKetQuyenHanNhanViens" ThisKey="RoleID" OtherKey="RoleID" Type="LienKetQuyenHanNhanVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SanPham" Member="SanPhams">
+    <Type Name="SanPham">
+      <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenSanPham" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="MaSanPhamCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Gia" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DuongDanAnh" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="SanPham_Chitietdondathang" Member="Chitietdondathangs" ThisKey="MaSanPham" OtherKey="ProductID" Type="Chitietdondathang" />
     </Type>
   </Table>
   <Table Name="dbo.SanPhamTrongKho" Member="SanPhamTrongKhos">
