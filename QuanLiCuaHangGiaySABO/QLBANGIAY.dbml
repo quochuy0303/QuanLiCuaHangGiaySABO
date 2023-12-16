@@ -48,11 +48,10 @@
   <Table Name="dbo.KhachHang" Member="KhachHangs">
     <Type Name="KhachHang">
       <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Hoten" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.LichSuDangNhap" Member="LichSuDangNhaps">

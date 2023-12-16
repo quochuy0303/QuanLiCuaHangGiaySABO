@@ -1189,9 +1189,7 @@ namespace QuanLiCuaHangGiaySABO
 		
 		private int _CustomerID;
 		
-		private string _FirstName;
-		
-		private string _LastName;
+		private string _Hoten;
 		
 		private string _Email;
 		
@@ -1205,10 +1203,8 @@ namespace QuanLiCuaHangGiaySABO
     partial void OnCreated();
     partial void OnCustomerIDChanging(int value);
     partial void OnCustomerIDChanged();
-    partial void OnFirstNameChanging(string value);
-    partial void OnFirstNameChanged();
-    partial void OnLastNameChanging(string value);
-    partial void OnLastNameChanged();
+    partial void OnHotenChanging(string value);
+    partial void OnHotenChanged();
     partial void OnEmailChanging(string value);
     partial void OnEmailChanged();
     partial void OnPhoneNumberChanging(string value);
@@ -1242,47 +1238,27 @@ namespace QuanLiCuaHangGiaySABO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="VarChar(50)")]
-		public string FirstName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hoten", DbType="NVarChar(30)")]
+		public string Hoten
 		{
 			get
 			{
-				return this._FirstName;
+				return this._Hoten;
 			}
 			set
 			{
-				if ((this._FirstName != value))
+				if ((this._Hoten != value))
 				{
-					this.OnFirstNameChanging(value);
+					this.OnHotenChanging(value);
 					this.SendPropertyChanging();
-					this._FirstName = value;
-					this.SendPropertyChanged("FirstName");
-					this.OnFirstNameChanged();
+					this._Hoten = value;
+					this.SendPropertyChanged("Hoten");
+					this.OnHotenChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastName", DbType="VarChar(50)")]
-		public string LastName
-		{
-			get
-			{
-				return this._LastName;
-			}
-			set
-			{
-				if ((this._LastName != value))
-				{
-					this.OnLastNameChanging(value);
-					this.SendPropertyChanging();
-					this._LastName = value;
-					this.SendPropertyChanged("LastName");
-					this.OnLastNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
 		public string Email
 		{
 			get
@@ -1302,7 +1278,7 @@ namespace QuanLiCuaHangGiaySABO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(15)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="VarChar(10)")]
 		public string PhoneNumber
 		{
 			get
@@ -1322,7 +1298,7 @@ namespace QuanLiCuaHangGiaySABO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(255)")]
 		public string Address
 		{
 			get
