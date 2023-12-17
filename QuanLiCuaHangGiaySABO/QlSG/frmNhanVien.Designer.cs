@@ -253,12 +253,12 @@
             this.dgvNhanVien.AllowUserToAddRows = false;
             this.dgvNhanVien.AllowUserToDeleteRows = false;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanVien.Location = new System.Drawing.Point(34, 353);
+            this.dgvNhanVien.Location = new System.Drawing.Point(58, 339);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.ReadOnly = true;
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
-            this.dgvNhanVien.Size = new System.Drawing.Size(1438, 188);
+            this.dgvNhanVien.Size = new System.Drawing.Size(1353, 223);
             this.dgvNhanVien.TabIndex = 1;
             // 
             // frmNhanVien
