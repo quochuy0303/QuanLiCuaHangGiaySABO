@@ -236,6 +236,7 @@
             this.sbsua.Size = new System.Drawing.Size(120, 33);
             this.sbsua.TabIndex = 0;
             this.sbsua.Text = "Sửa";
+            this.sbsua.Click += new System.EventHandler(this.sbsua_Click);
             // 
             // sbthem
             // 
@@ -261,6 +262,7 @@
             this.dgvNhanVien.RowTemplate.Height = 24;
             this.dgvNhanVien.Size = new System.Drawing.Size(1353, 223);
             this.dgvNhanVien.TabIndex = 1;
+            this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             // 
             // frmNhanVien
             // 
