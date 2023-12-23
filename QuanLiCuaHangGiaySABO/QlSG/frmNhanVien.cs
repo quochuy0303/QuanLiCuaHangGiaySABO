@@ -100,7 +100,8 @@ namespace QuanLiCuaHangGiaySABO
             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
             showdata();
             //reset lại các trường thuộc tính
-            
+            txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = txtchucvu.Text = txtngaylam.Text = null;
+            r = null;
         }
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -149,6 +150,103 @@ namespace QuanLiCuaHangGiaySABO
             //reset lại các trường thuộc tính
             txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = txtchucvu.Text = txtngaylam.Text =  null;
             r = null;
+        }
+
+        private void sbxoa_Click(object sender, EventArgs e)
+        {
+            if (r == null)
+            {
+                MessageBox.Show("Vui Lòng chọn nhân viên cần xóa", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+
+            }
+            if (
+                MessageBox.Show("bạn thực sự muốn xóa nhân viên này" + r.Cells["username"].Value.ToString() + "?", "Xác Nhận Xóa",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    var nv = db.nhanviens.SingleOrDefault(x => x.Hoten == r.Cells["Hoten"].Value.ToString());
+                    db.nhanviens.DeleteOnSubmit(nv);
+                    db.SubmitChanges();
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
+                    showdata();
+                    //reset lại các trường thuộc tính
+                    txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = txtchucvu.Text = txtngaylam.Text = null;
+                    r = null;
+                }
+                catch
+                {
+                    MessageBox.Show("Không Thể Xóa Nhân Viên Này", "Thông báo", MessageBoxButtons.OK);
+                }
+            }
+        }
+
+        private void sbtimkiem_Click(object sender, EventArgs e)
+        {
+            string tenNhanVienCanTim = txttimkiem.Text;
+
+            if (!string.IsNullOrEmpty(tenNhanVienCanTim))
+            {
+                // Gọi hàm thực hiện tìm kiếm
+                TimKiemTheoTenNhanVien(tenNhanVienCanTim);
+            }
+            else
+            {
+                // Hiển thị thông báo nếu không có tên nhân viên được nhập
+                MessageBox.Show("Vui lòng nhập tên nhân viên cần tìm kiếm.", "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        // Hàm thực hiện tìm kiếm theo tên nhân viên
+        private void TimKiemTheoTenNhanVien(string tenNhanVien)
+        {
+            var ketQuaTimKiem = from nv in db.nhanviens
+                                where nv.Hoten.Contains(tenNhanVien)
+                                select new
+                                {
+                                    nv.Hoten,
+                                    nv.Position,
+                                    nv.PhoneNumber,
+                                    nv.Email,
+                                    nv.StartDate,
+                                    nv.Address
+                                };
+
+            dgvNhanVien.DataSource = ketQuaTimKiem.ToList();
+        }
+
+        private void sbloc_Click(object sender, EventArgs e)
+        {
+            string tenNhanVienCanLoc = txtloc.Text;
+
+            if (!string.IsNullOrEmpty(tenNhanVienCanLoc))
+            {
+                // Gọi hàm thực hiện lọc
+                LocTheoTenNhanVien(tenNhanVienCanLoc);
+            }
+            else
+            {
+                // Hiển thị thông báo nếu không có tên nhân viên được nhập
+                MessageBox.Show("Vui lòng nhập tên nhân viên cần lọc.", "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void LocTheoTenNhanVien(string tenNhanVien)
+        {
+            var ketQuaLoc = from nv in db.nhanviens
+                            where nv.Hoten.Contains(tenNhanVien)
+                            select new
+                            {
+                                nv.Hoten,
+                                nv.Position,
+                                nv.PhoneNumber,
+                                nv.Email,
+                                nv.StartDate,
+                                nv.Address
+                            };
+
+            dgvNhanVien.DataSource = ketQuaLoc.ToList();
         }
     }
 }

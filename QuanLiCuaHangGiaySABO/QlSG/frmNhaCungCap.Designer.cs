@@ -45,6 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtTimKiemNCC = new System.Windows.Forms.TextBox();
+            this.txtLoc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -64,6 +66,7 @@
             this.dgvNCC.RowTemplate.Height = 24;
             this.dgvNCC.Size = new System.Drawing.Size(1112, 202);
             this.dgvNCC.TabIndex = 4;
+            this.dgvNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellClick);
             // 
             // sbtimkiem
             // 
@@ -75,6 +78,7 @@
             this.sbtimkiem.Size = new System.Drawing.Size(120, 33);
             this.sbtimkiem.TabIndex = 0;
             this.sbtimkiem.Text = "Tìm Kiếm";
+            this.sbtimkiem.Click += new System.EventHandler(this.sbtimkiem_Click);
             // 
             // sbloc
             // 
@@ -86,6 +90,7 @@
             this.sbloc.Size = new System.Drawing.Size(120, 33);
             this.sbloc.TabIndex = 0;
             this.sbloc.Text = "Lọc";
+            this.sbloc.Click += new System.EventHandler(this.sbloc_Click);
             // 
             // sbxoa
             // 
@@ -97,6 +102,7 @@
             this.sbxoa.Size = new System.Drawing.Size(120, 33);
             this.sbxoa.TabIndex = 0;
             this.sbxoa.Text = "Xóa";
+            this.sbxoa.Click += new System.EventHandler(this.sbxoa_Click);
             // 
             // sbsua
             // 
@@ -108,6 +114,7 @@
             this.sbsua.Size = new System.Drawing.Size(120, 33);
             this.sbsua.TabIndex = 0;
             this.sbsua.Text = "Sửa";
+            this.sbsua.Click += new System.EventHandler(this.sbsua_Click);
             // 
             // sbthem
             // 
@@ -119,12 +126,15 @@
             this.sbthem.Size = new System.Drawing.Size(120, 33);
             this.sbthem.TabIndex = 0;
             this.sbthem.Text = "Thêm";
+            this.sbthem.Click += new System.EventHandler(this.sbthem_Click);
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.sbtimkiem);
             this.groupControl2.Controls.Add(this.sbloc);
             this.groupControl2.Controls.Add(this.sbxoa);
+            this.groupControl2.Controls.Add(this.txtLoc);
+            this.groupControl2.Controls.Add(this.txtTimKiemNCC);
             this.groupControl2.Controls.Add(this.sbsua);
             this.groupControl2.Controls.Add(this.sbthem);
             this.groupControl2.Location = new System.Drawing.Point(571, 12);
@@ -218,6 +228,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Nhà Cung Cấp";
             // 
+            // txtTimKiemNCC
+            // 
+            this.txtTimKiemNCC.Location = new System.Drawing.Point(389, 88);
+            this.txtTimKiemNCC.Name = "txtTimKiemNCC";
+            this.txtTimKiemNCC.Size = new System.Drawing.Size(160, 23);
+            this.txtTimKiemNCC.TabIndex = 1;
+            // 
+            // txtLoc
+            // 
+            this.txtLoc.Location = new System.Drawing.Point(389, 149);
+            this.txtLoc.Name = "txtLoc";
+            this.txtLoc.Size = new System.Drawing.Size(160, 23);
+            this.txtLoc.TabIndex = 1;
+            this.txtLoc.TextChanged += new System.EventHandler(this.txtLoc_TextChanged);
+            // 
             // frmNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -232,6 +257,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -257,5 +283,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtLoc;
+        private System.Windows.Forms.TextBox txtTimKiemNCC;
     }
 }
