@@ -43,6 +43,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                          nv.EmailNhaCungCap
 
                      };
+
             dgvNCC.DataSource = rs;
         }
     }

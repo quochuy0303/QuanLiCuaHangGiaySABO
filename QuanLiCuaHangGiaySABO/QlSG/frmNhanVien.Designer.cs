@@ -247,6 +247,7 @@
             this.sbthem.Size = new System.Drawing.Size(120, 33);
             this.sbthem.TabIndex = 0;
             this.sbthem.Text = "Thêm";
+            this.sbthem.Click += new System.EventHandler(this.sbthem_Click);
             // 
             // dgvNhanVien
             // 

@@ -40,11 +40,49 @@ namespace QuanLiCuaHangGiaySABO
                          nv.Hoten,
                          nv.Position,
                          nv.PhoneNumber,
+                         nv.Email,
                          nv.StartDate,
                          nv.Address
 
                      };
             dgvNhanVien.DataSource = rs;
+        }
+
+        private void sbthem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txthoten.Text) ||
+           string.IsNullOrWhiteSpace(txtemail.Text) ||
+           string.IsNullOrWhiteSpace(txtsdt.Text) ||
+           string.IsNullOrWhiteSpace(txtdiachi.Text) ||
+           string.IsNullOrWhiteSpace(txtchucvu.Text) ||
+           string.IsNullOrWhiteSpace(txtngaylam.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            nhanvien nv = new nhanvien();
+            nv.Hoten = txthoten.Text;
+            nv.PhoneNumber = txtsdt.Text;
+            nv.Email = txtemail.Text;
+            nv.Address = txtdiachi.Text;
+            nv.Position = txtchucvu.Text;
+            if (DateTime.TryParse(txtngaylam.Text, out DateTime ngayLam))
+            {
+                // Chuyển đổi thành công, gán giá trị cho thuộc tính StartDate
+                nv.StartDate = ngayLam;
+            }
+            else
+            {
+                // Ngày nhập vào không hợp lệ, có thể hiển thị thông báo lỗi
+                MessageBox.Show("Ngày làm không hợp lệ. Vui lòng nhập theo định dạng đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            db.nhanviens.InsertOnSubmit(nv);//thêm vào dgv
+            db.SubmitChanges();//lưu vào csdl
+            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
+            showdata();
+            //reset lại các trường thuộc tính
+            
         }
     }
 }
