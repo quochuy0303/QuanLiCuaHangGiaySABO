@@ -174,7 +174,7 @@
             // 
             this.sbtimkiemkh.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbtimkiemkh.Appearance.Options.UseFont = true;
-            this.sbtimkiemkh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtimkiem.ImageOptions.Image")));
+            this.sbtimkiemkh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtimkiemkh.ImageOptions.Image")));
             this.sbtimkiemkh.Location = new System.Drawing.Point(263, 81);
             this.sbtimkiemkh.Name = "sbtimkiemkh";
             this.sbtimkiemkh.Size = new System.Drawing.Size(120, 33);
@@ -186,7 +186,7 @@
             // 
             this.sblockh.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sblockh.Appearance.Options.UseFont = true;
-            this.sblockh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbloc.ImageOptions.Image")));
+            this.sblockh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sblockh.ImageOptions.Image")));
             this.sblockh.Location = new System.Drawing.Point(263, 142);
             this.sblockh.Name = "sblockh";
             this.sblockh.Size = new System.Drawing.Size(120, 33);
@@ -235,12 +235,13 @@
             this.dgvKH.AllowUserToAddRows = false;
             this.dgvKH.AllowUserToDeleteRows = false;
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKH.Location = new System.Drawing.Point(51, 317);
+            this.dgvKH.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvKH.Location = new System.Drawing.Point(0, 320);
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.ReadOnly = true;
             this.dgvKH.RowHeadersWidth = 51;
             this.dgvKH.RowTemplate.Height = 24;
-            this.dgvKH.Size = new System.Drawing.Size(1220, 202);
+            this.dgvKH.Size = new System.Drawing.Size(1357, 202);
             this.dgvKH.TabIndex = 5;
             this.dgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKH_CellClick);
             // 

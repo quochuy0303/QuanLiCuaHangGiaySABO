@@ -123,12 +123,13 @@
   <Table Name="dbo.SanPham" Member="SanPhams">
     <Type Name="SanPham">
       <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenSanPham" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MaSanPhamCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="Gia" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
       <Column Name="SoLuongTon" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MoTa" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="DuongDanAnh" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Size" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="SanPham_Chitietdondathang" Member="Chitietdondathangs" ThisKey="MaSanPham" OtherKey="ProductID" Type="Chitietdondathang" />
     </Type>
   </Table>

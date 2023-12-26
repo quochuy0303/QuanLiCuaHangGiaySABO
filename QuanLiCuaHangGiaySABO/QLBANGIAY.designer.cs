@@ -2625,6 +2625,8 @@ namespace QuanLiCuaHangGiaySABO
 		
 		private string _DuongDanAnh;
 		
+		private string _Size;
+		
 		private EntitySet<Chitietdondathang> _Chitietdondathangs;
 		
     #region Extensibility Method Definitions
@@ -2645,6 +2647,8 @@ namespace QuanLiCuaHangGiaySABO
     partial void OnMoTaChanged();
     partial void OnDuongDanAnhChanging(string value);
     partial void OnDuongDanAnhChanged();
+    partial void OnSizeChanging(string value);
+    partial void OnSizeChanged();
     #endregion
 		
 		public SanPham()
@@ -2673,7 +2677,7 @@ namespace QuanLiCuaHangGiaySABO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100)")]
 		public string TenSanPham
 		{
 			get
@@ -2789,6 +2793,26 @@ namespace QuanLiCuaHangGiaySABO
 					this._DuongDanAnh = value;
 					this.SendPropertyChanged("DuongDanAnh");
 					this.OnDuongDanAnhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Size", DbType="VarChar(50)")]
+		public string Size
+		{
+			get
+			{
+				return this._Size;
+			}
+			set
+			{
+				if ((this._Size != value))
+				{
+					this.OnSizeChanging(value);
+					this.SendPropertyChanging();
+					this._Size = value;
+					this.SendPropertyChanged("Size");
+					this.OnSizeChanged();
 				}
 			}
 		}
