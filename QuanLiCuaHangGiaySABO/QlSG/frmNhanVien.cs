@@ -22,7 +22,13 @@ namespace QuanLiCuaHangGiaySABO
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             db = new bangiayDataContext();
-            showdata();          
+            showdata();
+            dgvNhanVien.Columns["TenNhanVien"].HeaderText = "Họ và Tên";
+            dgvNhanVien.Columns["SoDienThoai"].HeaderText = "SĐT";
+            dgvNhanVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            dgvNhanVien.Columns["VaiTro"].HeaderText = "Chức Vụ";
+            dgvNhanVien.Columns["DiaChi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvNhanVien.Columns["Email"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void showdata()
         {

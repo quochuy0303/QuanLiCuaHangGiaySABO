@@ -28,113 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChu));
-            this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.bi_nhanvien = new DevExpress.XtraBars.BarButtonItem();
-            this.bi_nhacungcap = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgNhanVien = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
+            this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
+            this.adc_menu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.adc_nhanvien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.adc_NCC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
+            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // ribbon
+            // fluentDesignFormContainer1
             // 
-            this.ribbon.ExpandCollapseItem.Id = 0;
-            this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbon.ExpandCollapseItem,
-            this.ribbon.SearchEditItem,
-            this.bi_nhanvien,
-            this.bi_nhacungcap,
-            this.barButtonItem1,
-            this.barButtonItem2});
-            this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 5;
-            this.ribbon.Name = "ribbon";
-            this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(1481, 193);
-            this.ribbon.StatusBar = this.ribbonStatusBar;
+            this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 39);
+            this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(1133, 492);
+            this.fluentDesignFormContainer1.TabIndex = 0;
             // 
-            // bi_nhanvien
+            // accordionControl1
             // 
-            this.bi_nhanvien.Caption = "Nhân Viên";
-            this.bi_nhanvien.Id = 1;
-            this.bi_nhanvien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bi_nhanvien.ImageOptions.Image")));
-            this.bi_nhanvien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bi_nhanvien.ImageOptions.LargeImage")));
-            this.bi_nhanvien.Name = "bi_nhanvien";
-            this.bi_nhanvien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bi_nhanvien_ItemClick);
+            this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.adc_menu});
+            this.accordionControl1.Location = new System.Drawing.Point(0, 39);
+            this.accordionControl1.Name = "accordionControl1";
+            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
+            this.accordionControl1.Size = new System.Drawing.Size(260, 492);
+            this.accordionControl1.TabIndex = 1;
+            this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
-            // bi_nhacungcap
+            // adc_menu
             // 
-            this.bi_nhacungcap.Caption = "Nhà Cung Cấp";
-            this.bi_nhacungcap.Id = 2;
-            this.bi_nhacungcap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bi_nhacungcap.ImageOptions.Image")));
-            this.bi_nhacungcap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bi_nhacungcap.ImageOptions.LargeImage")));
-            this.bi_nhacungcap.Name = "bi_nhacungcap";
-            this.bi_nhacungcap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bi_nhacungcap_ItemClick);
+            this.adc_menu.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.adc_nhanvien,
+            this.adc_NCC,
+            this.accordionControlElement4,
+            this.accordionControlElement5});
+            this.adc_menu.Expanded = true;
+            this.adc_menu.Name = "adc_menu";
+            this.adc_menu.Text = "MENU";
             // 
-            // barButtonItem1
+            // adc_nhanvien
             // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 3;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.adc_nhanvien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("adc_nhanvien.ImageOptions.Image")));
+            this.adc_nhanvien.Name = "adc_nhanvien";
+            this.adc_nhanvien.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.adc_nhanvien.Text = "Nhân Viên";
+            this.adc_nhanvien.Click += new System.EventHandler(this.adc_nhanvien_Click);
             // 
-            // barButtonItem2
+            // adc_NCC
             // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 4;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.adc_NCC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("adc_NCC.ImageOptions.Image")));
+            this.adc_NCC.Name = "adc_NCC";
+            this.adc_NCC.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.adc_NCC.Text = "Nhà Cung Cấp";
+            this.adc_NCC.Click += new System.EventHandler(this.adc_NCC_Click);
             // 
-            // ribbonPage1
+            // accordionControlElement4
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgNhanVien});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Danh Mục";
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4.Text = "Element4";
             // 
-            // rpgNhanVien
+            // accordionControlElement5
             // 
-            this.rpgNhanVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("rpgNhanVien.ImageOptions.Image")));
-            this.rpgNhanVien.ItemLinks.Add(this.bi_nhanvien);
-            this.rpgNhanVien.ItemLinks.Add(this.bi_nhacungcap);
-            this.rpgNhanVien.ItemLinks.Add(this.barButtonItem1);
-            this.rpgNhanVien.ItemLinks.Add(this.barButtonItem2);
-            this.rpgNhanVien.Name = "rpgNhanVien";
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Text = "Element5";
             // 
-            // ribbonStatusBar
+            // fluentDesignFormControl1
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 550);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1481, 30);
+            this.fluentDesignFormControl1.FluentDesignForm = this;
+            this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
+            this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1393, 39);
+            this.fluentDesignFormControl1.TabIndex = 2;
+            this.fluentDesignFormControl1.TabStop = false;
+            // 
+            // fluentFormDefaultManager1
+            // 
+            this.fluentFormDefaultManager1.Form = this;
             // 
             // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1481, 580);
-            this.Controls.Add(this.ribbonStatusBar);
-            this.Controls.Add(this.ribbon);
+            this.ClientSize = new System.Drawing.Size(1393, 531);
+            this.ControlContainer = this.fluentDesignFormContainer1;
+            this.Controls.Add(this.fluentDesignFormContainer1);
+            this.Controls.Add(this.accordionControl1);
+            this.Controls.Add(this.fluentDesignFormControl1);
+            this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.Name = "frmTrangChu";
+            this.NavigationControl = this.accordionControl1;
             this.Text = "frmTrangChu";
-            ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgNhanVien;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.XtraBars.BarButtonItem bi_nhanvien;
-        private DevExpress.XtraBars.BarButtonItem bi_nhacungcap;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer fluentDesignFormContainer1;
+        private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement adc_menu;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement adc_nhanvien;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement adc_NCC;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
     }
 }

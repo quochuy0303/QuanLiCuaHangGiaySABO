@@ -23,7 +23,10 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         {
             db = new bangiayDataContext();
             showdata();
-            
+            dgvNCC.Columns["TenNhaCungCap"].HeaderText = "Tên Nhà Cung Cấp";
+            dgvNCC.Columns["DiaChiNhaCungCap"].HeaderText = "Địa Chỉ";
+            dgvNCC.Columns["DiaChiNhaCungCap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvNCC.Columns["TenNhaCungCap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void showdata()
