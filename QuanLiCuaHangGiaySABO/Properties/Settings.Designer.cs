@@ -33,5 +33,16 @@ namespace QuanLiCuaHangGiaySABO.Properties {
                 return ((string)(this["QLCUAHANGGIAYConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-PH354HUY\\SQLSEVER;Initial Catalog=QLSHOPGIAY;Integrated Securi" +
+            "ty=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True")]
+        public string QLSHOPGIAYConnectionString {
+            get {
+                return ((string)(this["QLSHOPGIAYConnectionString"]));
+            }
+        }
     }
 }

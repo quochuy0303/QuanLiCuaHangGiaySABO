@@ -14,11 +14,15 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
-        private bangiayDataContext db = new bangiayDataContext();
+        private bangiayDataContext db;
         public frmLogin()
         {
-            //sb_login.Click += sb_login_Click;
+            
             InitializeComponent();
+            // Khởi tạo đối tượng của BANGIAYDataContext
+            db = new bangiayDataContext();
+            // Gắn sự kiện click cho nút đăng nhập
+            sb_login.Click += sb_login_Click;
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -34,31 +38,29 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
         private void sb_login_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem đã nhập đủ thông tin chưa
-            if (string.IsNullOrWhiteSpace(te_username.Text) || string.IsNullOrWhiteSpace(te_password.Text))
-            {
-                MessageBox.Show("Vui lòng nhập đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string username = te_username.Text;
+            string password = te_password.Text;
 
-            // Kiểm tra thông tin đăng nhập
-            var user = db.DangKies.FirstOrDefault(u => u.TenDangNhap == te_username.Text && u.MatKhau == te_password.Text);
+            // Kiểm tra đăng nhập bằng LINQ to SQL
+            var user = db.NhanViens.FirstOrDefault(u => u.TenDangNhap == username && u.MatKhau == password);
 
             if (user != null)
             {
-                MessageBox.Show("Đăng nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Chuyển sang form trang chủ sau khi đăng nhập thành công
+                MessageBox.Show("Đăng nhập thành công!");
+                // Mở form trang chủ hoặc thực hiện các hành động khác
+                // Tạo đối tượng form trang chủ
                 frmTrangChu homeForm = new frmTrangChu();
+
+                // Hiển thị form trang chủ
                 homeForm.Show();
 
-                // Đóng form đăng nhập
-                this.Close();
+                // Đóng form đăng nhập (nếu cần)
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại tài khoản và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại.");
             }
-        }
+        }      
     }
 }

@@ -28,20 +28,13 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             db = new bangiayDataContext();
-            showdata();
-             dgvKH.Columns["Hoten"].HeaderText = "Tên Khách Hàng";
-            dgvKH.Columns["Email"].HeaderText = "Email";
-            dgvKH.Columns["PhoneNumber"].HeaderText = "SĐT";
-            dgvKH.Columns["Address"].HeaderText = "Địa Chỉ";
-            dgvKH.Columns["Hoten"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvKH.Columns["Email"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvKH.Columns["Address"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            showdata();           
         }
         private bool KiemTraSDTTrungLap(string sdt)
         {
             foreach (DataGridViewRow row in dgvKH.Rows)
             {
-                if (row.Cells["PhoneNumber"].Value != null && row.Cells["PhoneNumber"].Value.ToString() == sdt)
+                if (row.Cells["SoDienThoai"].Value != null && row.Cells["SoDienThoai"].Value.ToString() == sdt)
                 {
                     return true; // SĐT đã tồn tại
                 }
@@ -54,10 +47,9 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             var rs = from kh in db.KhachHangs
                      select new
                      {
-                         kh.Hoten,
-                         kh.Email,
-                         kh.PhoneNumber,
-                         kh.Address
+                         kh.TenKhachHang,                        
+                         kh.SoDienThoai,
+                         kh.DiaChiKhachHang
 
                      };
 
@@ -83,31 +75,21 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             }
 
             KhachHang nv = new KhachHang();
-            nv.Hoten = txthotenkh.Text;
-            nv.PhoneNumber = txtsdt.Text;
-            nv.Email = txtemail.Text;
-            nv.Address = txtdiachi.Text;
-            
+            nv.TenKhachHang = txthotenkh.Text;
+            nv.SoDienThoai = txtsdt.Text;          
+            nv.DiaChiKhachHang = txtdiachi.Text;
+           
             db.KhachHangs.InsertOnSubmit(nv);//thêm vào dgv
             db.SubmitChanges();//lưu vào csdl
             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
             showdata();
             //reset lại các trường thuộc tính
-            txthotenkh.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text  = null;
+            txthotenkh.Text = txtsdt.Text  = txtdiachi.Text  = null;
             r = null;
         }
 
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                r = dgvKH.Rows[e.RowIndex];
-                txthotenkh.Text = r.Cells["Hoten"].Value.ToString();
-                txtsdt.Text = r.Cells["PhoneNumber"].Value.ToString();
-                txtemail.Text = r.Cells["Email"].Value.ToString();
-                txtdiachi.Text = r.Cells["Address"].Value.ToString();
-               
-            }
+        {          
         }
 
         private void sbsua_Click(object sender, EventArgs e)
@@ -118,17 +100,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
                 return;
             }
-            var nv = db.KhachHangs.SingleOrDefault(x => x.Hoten == r.Cells["Hoten"].Value.ToString());
+            var nv = db.KhachHangs.SingleOrDefault(x => x.TenKhachHang == r.Cells["TenKhachHang"].Value.ToString());
 
-            nv.Hoten = txthotenkh.Text;
-            nv.PhoneNumber = txtsdt.Text;
-            nv.Email = txtemail.Text;
-            nv.Address = txtdiachi.Text;          
+            nv.TenKhachHang = txthotenkh.Text;
+            nv.SoDienThoai = txtsdt.Text;          
+            nv.DiaChiKhachHang = txtdiachi.Text;          
             db.SubmitChanges();
             MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK);
             showdata();
             //reset lại các trường thuộc tính
-            txthotenkh.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text =  null;
+            txthotenkh.Text = txtsdt.Text = txtdiachi.Text = null;
             r = null;
         }
 
@@ -141,18 +122,18 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
             }
             if (
-                MessageBox.Show("bạn thực sự muốn xóa nhân viên này" + r.Cells["Hoten"].Value.ToString() + "?", "Xác Nhận Xóa",
+                MessageBox.Show("bạn thực sự muốn xóa nhân viên này" + r.Cells["TenKhachHang"].Value.ToString() + "?", "Xác Nhận Xóa",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
-                    var nv = db.KhachHangs.SingleOrDefault(x => x.Hoten == r.Cells["Hoten"].Value.ToString());
+                    var nv = db.KhachHangs.SingleOrDefault(x => x.TenKhachHang == r.Cells["TenKhachHang"].Value.ToString());
                     db.KhachHangs.DeleteOnSubmit(nv);
                     db.SubmitChanges();
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
                     showdata();
                     //reset lại các trường thuộc tính
-                    txthotenkh.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text =   null;
+                    txthotenkh.Text = txtsdt.Text = txtdiachi.Text = null;
                     r = null;
                 }
                 catch
@@ -185,13 +166,12 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private void TimKiemTheoTenKhachHang(string tenKhachHang)
         {
             var ketQuaTimKiem = from nv in db.KhachHangs
-                                where nv.Hoten.Contains(tenKhachHang)
+                                where nv.TenKhachHang.Contains(tenKhachHang)
                                 select new
                                 {
-                                    nv.Hoten,
-                                    nv.PhoneNumber,
-                                    nv.Email,
-                                    nv.Address
+                                    nv.TenKhachHang,
+                                    nv.SoDienThoai,                                  
+                                    nv.DiaChiKhachHang
 
                                 };
 
@@ -216,13 +196,12 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private void LocTheoTenKhachHang(string tenKhachHang)
         {
             var ketQuaLoc = from nv in db.KhachHangs
-                            where nv.Hoten.Contains(tenKhachHang)
+                            where nv.TenKhachHang.Contains(tenKhachHang)
                             select new
                             {
-                                nv.Hoten,
-                                nv.PhoneNumber,
-                                nv.Email,
-                                nv.Address
+                                nv.TenKhachHang,
+                                nv.SoDienThoai,                               
+                                nv.DiaChiKhachHang
 
 
                             };

@@ -23,13 +23,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         {
             db = new bangiayDataContext();
             showdata();
-            dgvNCC.Columns["TenNhaCungCap"].HeaderText = "Tên Nhà Cung Cấp";
-            dgvNCC.Columns["SoDienThoaiNhaCungCap"].HeaderText = "SDT";
-            dgvNCC.Columns["EmailNhaCungCap"].HeaderText = "Email";
-            dgvNCC.Columns["DiaChiNhaCungCap"].HeaderText = "Địa Chỉ";
-            dgvNCC.Columns["DiaChiNhaCungCap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvNCC.Columns["TenNhaCungCap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvNCC.Columns["EmailNhaCungCap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            
         }
 
         private void showdata()
@@ -37,11 +31,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             var rs = from nv in db.NhaCungCaps
                      select new
                      {
-                         nv.TenNhaCungCap,                        
-                         nv.SoDienThoaiNhaCungCap,
-                         nv.DiaChiNhaCungCap,
-                         nv.EmailNhaCungCap
-
+                         nv.TenNhaCungCap,                                                
+                         nv.DiaChiNhaCungCap                        
                      };
 
             dgvNCC.DataSource = rs;
@@ -49,26 +40,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
         private void sbthem_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txthoten.Text) ||
-          string.IsNullOrWhiteSpace(txtemail.Text) ||
-          string.IsNullOrWhiteSpace(txtsdt.Text) ||
+            if (string.IsNullOrWhiteSpace(txthoten.Text) ||                 
           string.IsNullOrWhiteSpace(txtdiachi.Text))
 
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
-            string sdt = txtsdt.Text;
-            if (KiemTraSDTTrungLap(sdt))
-            {
-                MessageBox.Show("Số điện thoại đã tồn tại trong danh sách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
+            }           
+           
             NhaCungCap nv = new NhaCungCap();
-            nv.TenNhaCungCap = txthoten.Text;
-            nv.SoDienThoaiNhaCungCap = txtsdt.Text;
-            nv.EmailNhaCungCap = txtemail.Text;
+            nv.TenNhaCungCap = txthoten.Text;           
             nv.DiaChiNhaCungCap = txtdiachi.Text;
 
             db.NhaCungCaps.InsertOnSubmit(nv);//thêm vào dgv
@@ -78,31 +59,10 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             //reset lại các trường thuộc tính
             txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = null;
             r = null;
-        }
-        private bool KiemTraSDTTrungLap(string sdt)
-        {
-            foreach (DataGridViewRow row in dgvNCC.Rows)
-            {
-                if (row.Cells["SoDienThoaiNhaCungCap"].Value != null && row.Cells["SoDienThoaiNhaCungCap"].Value.ToString() == sdt)
-                {
-                    return true; // SĐT đã tồn tại
-                }
-            }
-            return false; // SĐT không trùng lặp
-
-        }
+        }      
 
         private void dgvNCC_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                r = dgvNCC.Rows[e.RowIndex];
-                txthoten.Text = r.Cells["TenNhaCungCap"].Value.ToString();
-                txtsdt.Text = r.Cells["SoDienThoaiNhaCungCap"].Value.ToString();
-                txtemail.Text = r.Cells["EmailNhaCungCap"].Value.ToString();
-                txtdiachi.Text = r.Cells["DiaChiNhaCungCap"].Value.ToString();
-
-            }
+        {          
         }
 
         private void sbsua_Click(object sender, EventArgs e)
@@ -115,9 +75,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             }
             var nv = db.NhaCungCaps.SingleOrDefault(x => x.TenNhaCungCap == r.Cells["TenNhaCungCap"].Value.ToString());
 
-            nv.TenNhaCungCap = txthoten.Text;
-            nv.SoDienThoaiNhaCungCap = txtsdt.Text;
-            nv.EmailNhaCungCap = txtemail.Text;
+            nv.TenNhaCungCap = txthoten.Text;           
             nv.DiaChiNhaCungCap = txtdiachi.Text;
             db.SubmitChanges();
             MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK);
@@ -179,8 +137,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                                 select new
                                 {
                                     nv.TenNhaCungCap,
-                                    nv.SoDienThoaiNhaCungCap,
-                                    nv.EmailNhaCungCap,
+                                    
                                     nv.DiaChiNhaCungCap
 
                                 };
@@ -215,8 +172,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                             select new
                             {
                                 nv.TenNhaCungCap,
-                                nv.SoDienThoaiNhaCungCap,
-                                nv.EmailNhaCungCap,
+                                
                                 nv.DiaChiNhaCungCap
 
 

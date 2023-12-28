@@ -11,17 +11,13 @@ using System.Windows.Forms;
 
 namespace QuanLiCuaHangGiaySABO.QlSG
 {
-    public partial class frmNhapHang : DevExpress.XtraEditors.XtraForm
+    public partial class DonDatHang : DevExpress.XtraEditors.XtraForm
     {
-        private bangiayDataContext db;
-        //private DataGridViewRow r;
-      //  public event Action<SanPham> NhapHangThanhCong;
-        public frmNhapHang()
+        public DonDatHang()
         {
             InitializeComponent();
-            db = new bangiayDataContext();
         }
 
-
+       
     }
 }

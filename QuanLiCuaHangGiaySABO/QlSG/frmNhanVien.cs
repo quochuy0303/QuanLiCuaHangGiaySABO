@@ -22,27 +22,19 @@ namespace QuanLiCuaHangGiaySABO
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             db = new bangiayDataContext();
-            showdata();
-            dgvNhanVien.Columns["Hoten"].HeaderText = "Họ Và Tên";
-            dgvNhanVien.Columns["Position"].HeaderText = "Chức Vụ";
-            dgvNhanVien.Columns["PhoneNumber"].HeaderText = "SDT";
-            dgvNhanVien.Columns["StartDate"].HeaderText = "Ngày làm";
-            dgvNhanVien.Columns["Address"].HeaderText = "Địa Chỉ";
-            dgvNhanVien.Columns["Address"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvNhanVien.Columns["Hoten"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvNhanVien.Columns["StartDate"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            showdata();          
         }
         private void showdata()
         {
-            var rs = from nv in db.nhanviens
+            var rs = from nv in db.NhanViens
                      select new
                      {
-                         nv.Hoten,
-                         nv.Position,
-                         nv.PhoneNumber,
-                         nv.Email,
-                         nv.StartDate,
-                         nv.Address
+                        nv.TenNhanVien,
+                        nv.SoDienThoai,
+                        nv.Email,
+                        nv.DiaChi,
+                        nv.VaiTro
+                        
 
                      };
             dgvNhanVien.DataSource = rs;
@@ -63,11 +55,10 @@ namespace QuanLiCuaHangGiaySABO
         private void sbthem_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txthoten.Text) ||
-           string.IsNullOrWhiteSpace(txtemail.Text) ||
+            
            string.IsNullOrWhiteSpace(txtsdt.Text) ||
-           string.IsNullOrWhiteSpace(txtdiachi.Text) ||
-           string.IsNullOrWhiteSpace(txtchucvu.Text) ||
-           string.IsNullOrWhiteSpace(txtngaylam.Text))
+           string.IsNullOrWhiteSpace(txtdiachi.Text)) 
+                    
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -79,28 +70,18 @@ namespace QuanLiCuaHangGiaySABO
                 return;
             }
 
-            nhanvien nv = new nhanvien();
-            nv.Hoten = txthoten.Text;
-            nv.PhoneNumber = txtsdt.Text;
-            nv.Email = txtemail.Text;
-            nv.Address = txtdiachi.Text;
-            nv.Position = txtchucvu.Text;
-            if (DateTime.TryParse(txtngaylam.Text, out DateTime ngayLam))
-            {
-                // Chuyển đổi thành công, gán giá trị cho thuộc tính StartDate
-                nv.StartDate = ngayLam;
-            }
-            else
-            {
-                // Ngày nhập vào không hợp lệ, có thể hiển thị thông báo lỗi
-                MessageBox.Show("Ngày làm không hợp lệ. Vui lòng nhập theo định dạng đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            db.nhanviens.InsertOnSubmit(nv);//thêm vào dgv
+            NhanVien nv = new NhanVien();
+            nv.TenNhanVien = txthoten.Text;
+            nv.SoDienThoai = txtsdt.Text;           
+            nv.DiaChi = txtdiachi.Text;
+            
+            
+            db.NhanViens.InsertOnSubmit(nv);//thêm vào dgv
             db.SubmitChanges();//lưu vào csdl
             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
             showdata();
             //reset lại các trường thuộc tính
-            txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = txtchucvu.Text = txtngaylam.Text = null;
+            txthoten.Text = txtsdt.Text  = txtdiachi.Text  =  null;
             r = null;
         }
 
@@ -109,12 +90,11 @@ namespace QuanLiCuaHangGiaySABO
             if (e.RowIndex >= 0)
             {
                 r = dgvNhanVien.Rows[e.RowIndex];
-                txthoten.Text = r.Cells["Hoten"].Value.ToString();
-                txtsdt.Text = r.Cells["PhoneNumber"].Value.ToString();
+                txthoten.Text = r.Cells["TenNhanVien"].Value.ToString();
+                txtdiachi.Text = r.Cells["DiaChi"].Value.ToString();
+                txtsdt.Text = r.Cells["SoDienThoai"].Value.ToString();
+                txtchucvu.Text = r.Cells["VaiTro"].Value.ToString();
                 txtemail.Text = r.Cells["Email"].Value.ToString();
-                txtdiachi.Text = r.Cells["Address"].Value.ToString();
-                txtchucvu.Text = r.Cells["Position"].Value.ToString();
-                txtngaylam.Text = r.Cells["StartDate"].Value.ToString();
             }
         }
 
@@ -126,29 +106,16 @@ namespace QuanLiCuaHangGiaySABO
 
                 return;
             }
-            var nv = db.nhanviens.SingleOrDefault(x => x.Hoten == r.Cells["Hoten"].Value.ToString());
+            var nv = db.NhanViens.SingleOrDefault(x => x.TenNhanVien == r.Cells["TenNhanVien"].Value.ToString());
 
-            nv.Hoten = txthoten.Text;
-            nv.PhoneNumber = txtsdt.Text;
-            nv.Email = txtemail.Text;
-            nv.Address = txtdiachi.Text;
-            nv.Position = txtchucvu.Text;
-            if (DateTime.TryParse(txtngaylam.Text, out DateTime ngayLam))
-            {
-                // Chuyển đổi thành công, gán giá trị cho thuộc tính StartDate
-                nv.StartDate = ngayLam;
-            }
-            else
-            {
-                // Ngày nhập vào không hợp lệ, có thể hiển thị thông báo lỗi
-                MessageBox.Show("Ngày làm không hợp lệ. Vui lòng nhập theo định dạng đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+            nv.TenNhanVien = txthoten.Text;
+            nv.SoDienThoai = txtsdt.Text;          
+            nv.DiaChi = txtdiachi.Text;           
             db.SubmitChanges();
             MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK);
             showdata();
             //reset lại các trường thuộc tính
-            txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = txtchucvu.Text = txtngaylam.Text =  null;
+            txthoten.Text = txtsdt.Text = txtdiachi.Text = null;
             r = null;
         }
 
@@ -161,18 +128,18 @@ namespace QuanLiCuaHangGiaySABO
 
             }
             if (
-                MessageBox.Show("bạn thực sự muốn xóa nhân viên này" + r.Cells["username"].Value.ToString() + "?", "Xác Nhận Xóa",
+                MessageBox.Show("bạn thực sự muốn xóa nhân viên này" + r.Cells["TenNhanVien"].Value.ToString() + "?", "Xác Nhận Xóa",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
-                    var nv = db.nhanviens.SingleOrDefault(x => x.Hoten == r.Cells["Hoten"].Value.ToString());
-                    db.nhanviens.DeleteOnSubmit(nv);
+                    var nv = db.NhanViens.SingleOrDefault(x => x.TenNhanVien == r.Cells["TenNhanVien"].Value.ToString());
+                    db.NhanViens.DeleteOnSubmit(nv);
                     db.SubmitChanges();
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
                     showdata();
                     //reset lại các trường thuộc tính
-                    txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = txtchucvu.Text = txtngaylam.Text = null;
+                    txthoten.Text = txtsdt.Text = txtdiachi.Text = txtchucvu.Text = null;
                     r = null;
                 }
                 catch
@@ -201,16 +168,15 @@ namespace QuanLiCuaHangGiaySABO
         // Hàm thực hiện tìm kiếm theo tên nhân viên
         private void TimKiemTheoTenNhanVien(string tenNhanVien)
         {
-            var ketQuaTimKiem = from nv in db.nhanviens
-                                where nv.Hoten.Contains(tenNhanVien)
+            var ketQuaTimKiem = from nv in db.NhanViens
+                                where nv.TenNhanVien.Contains(tenNhanVien)
                                 select new
                                 {
-                                    nv.Hoten,
-                                    nv.Position,
-                                    nv.PhoneNumber,
-                                    nv.Email,
-                                    nv.StartDate,
-                                    nv.Address
+                                    nv.TenNhanVien,
+                                    nv.VaiTro,
+                                    nv.SoDienThoai,
+                                    nv.Email,                                    
+                                    nv.DiaChi
                                 };
 
             dgvNhanVien.DataSource = ketQuaTimKiem.ToList();
@@ -234,16 +200,15 @@ namespace QuanLiCuaHangGiaySABO
 
         private void LocTheoTenNhanVien(string tenNhanVien)
         {
-            var ketQuaLoc = from nv in db.nhanviens
-                            where nv.Hoten.Contains(tenNhanVien)
+            var ketQuaLoc = from nv in db.NhanViens
+                            where nv.TenNhanVien.Contains(tenNhanVien)
                             select new
                             {
-                                nv.Hoten,
-                                nv.Position,
-                                nv.PhoneNumber,
+                                nv.TenNhanVien,
+                                nv.VaiTro,
+                                nv.SoDienThoai,
                                 nv.Email,
-                                nv.StartDate,
-                                nv.Address
+                                nv.DiaChi
                             };
 
             dgvNhanVien.DataSource = ketQuaLoc.ToList();

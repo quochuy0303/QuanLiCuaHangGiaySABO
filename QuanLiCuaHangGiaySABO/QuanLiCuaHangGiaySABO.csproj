@@ -84,6 +84,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBANGIAY.dbml</DependentUpon>
     </Compile>
+    <Compile Include="QlSG\DonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSG\DonDatHang.Designer.cs">
+      <DependentUpon>DonDatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="QlSG\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,12 +134,6 @@
     <Compile Include="QlSG\frmQliGiay.Designer.cs">
       <DependentUpon>frmQliGiay.cs</DependentUpon>
     </Compile>
-    <Compile Include="QlSG\frmQuyenHan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QlSG\frmQuyenHan.Designer.cs">
-      <DependentUpon>frmQuyenHan.cs</DependentUpon>
-    </Compile>
     <Compile Include="QlSG\frmSign.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +147,9 @@
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="QlSG\DonDatHang.resx">
+      <DependentUpon>DonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QlSG\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,9 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QlSG\frmQliGiay.resx">
       <DependentUpon>frmQliGiay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QlSG\frmQuyenHan.resx">
-      <DependentUpon>frmQuyenHan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QlSG\frmSign.resx">
       <DependentUpon>frmSign.cs</DependentUpon>

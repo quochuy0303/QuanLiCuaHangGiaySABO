@@ -14,7 +14,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
     public partial class frmKho : DevExpress.XtraEditors.XtraForm
     {
         private bangiayDataContext db;
-       private DataGridViewRow r;
+      // private DataGridViewRow r;
         public frmKho()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             frmNhapHang formNhapHang = new frmNhapHang();
 
             // Đăng ký sự kiện để nhận thông tin sau khi nhập hàng
-            formNhapHang.NhapHangThanhCong += FormNhapHang_NhapHangThanhCong;
+           // formNhapHang.NhapHangThanhCong += FormNhapHang_NhapHangThanhCong;
 
             formNhapHang.ShowDialog();
         }
