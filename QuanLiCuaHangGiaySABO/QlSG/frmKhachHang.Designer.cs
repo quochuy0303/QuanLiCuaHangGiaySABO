@@ -92,6 +92,7 @@
             this.txtsdt.Size = new System.Drawing.Size(239, 23);
             this.txtsdt.TabIndex = 1;
             this.txtsdt.TextChanged += new System.EventHandler(this.txtsdt_TextChanged);
+            this.txtsdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsdt_KeyPress);
             // 
             // txthotenkh
             // 

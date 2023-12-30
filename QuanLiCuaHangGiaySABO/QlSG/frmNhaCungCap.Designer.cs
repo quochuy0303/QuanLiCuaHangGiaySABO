@@ -36,6 +36,8 @@
             this.sbsua = new DevExpress.XtraEditors.SimpleButton();
             this.sbthem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtLoc = new System.Windows.Forms.TextBox();
+            this.txtTimKiemNCC = new System.Windows.Forms.TextBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtdiachi = new System.Windows.Forms.TextBox();
             this.txtemail = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTimKiemNCC = new System.Windows.Forms.TextBox();
-            this.txtLoc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -143,6 +143,21 @@
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Chức Năng";
             // 
+            // txtLoc
+            // 
+            this.txtLoc.Location = new System.Drawing.Point(389, 149);
+            this.txtLoc.Name = "txtLoc";
+            this.txtLoc.Size = new System.Drawing.Size(160, 23);
+            this.txtLoc.TabIndex = 1;
+            this.txtLoc.TextChanged += new System.EventHandler(this.txtLoc_TextChanged);
+            // 
+            // txtTimKiemNCC
+            // 
+            this.txtTimKiemNCC.Location = new System.Drawing.Point(389, 88);
+            this.txtTimKiemNCC.Name = "txtTimKiemNCC";
+            this.txtTimKiemNCC.Size = new System.Drawing.Size(160, 23);
+            this.txtTimKiemNCC.TabIndex = 1;
+            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.txtdiachi);
@@ -180,6 +195,7 @@
             this.txtsdt.Name = "txtsdt";
             this.txtsdt.Size = new System.Drawing.Size(109, 23);
             this.txtsdt.TabIndex = 1;
+            this.txtsdt.TextChanged += new System.EventHandler(this.txtsdt_TextChanged);
             // 
             // txthoten
             // 
@@ -227,21 +243,6 @@
             this.label1.Size = new System.Drawing.Size(142, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Nhà Cung Cấp";
-            // 
-            // txtTimKiemNCC
-            // 
-            this.txtTimKiemNCC.Location = new System.Drawing.Point(389, 88);
-            this.txtTimKiemNCC.Name = "txtTimKiemNCC";
-            this.txtTimKiemNCC.Size = new System.Drawing.Size(160, 23);
-            this.txtTimKiemNCC.TabIndex = 1;
-            // 
-            // txtLoc
-            // 
-            this.txtLoc.Location = new System.Drawing.Point(389, 149);
-            this.txtLoc.Name = "txtLoc";
-            this.txtLoc.Size = new System.Drawing.Size(160, 23);
-            this.txtLoc.TabIndex = 1;
-            this.txtLoc.TextChanged += new System.EventHandler(this.txtLoc_TextChanged);
             // 
             // frmNhaCungCap
             // 

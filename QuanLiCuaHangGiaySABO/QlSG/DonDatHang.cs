@@ -26,7 +26,14 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         }
         private void showdata()
         {
+            var rs = from nv in db.HoaDons
+                     select new
+                     {
+                         nv.NgayDatHang,
+                         nv.
+                     };
 
+            dgvHoaDonDat.DataSource = rs;
         }
     }
 }

@@ -65,9 +65,26 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         }      
 
         private void dgvNCC_CellClick(object sender, DataGridViewCellEventArgs e)
-        {          
+        {
+            if (e.RowIndex >= 0)
+            {
+                r = dgvNCC.Rows[e.RowIndex];
+                txthoten.Text = r.Cells["TenNhaCungCap"].Value.ToString();
+                txtdiachi.Text = r.Cells["DiaChiNhaCungCap"].Value.ToString();
+               
+            }
         }
-
+        private bool KiemTraSDTTrungLap(string sdt)
+        {
+            foreach (DataGridViewRow row in dgvNCC.Rows)
+            {
+                if (row.Cells["SoDienThoai"].Value != null && row.Cells["SoDienThoai"].Value.ToString() == sdt)
+                {
+                    return true; // SĐT đã tồn tại
+                }
+            }
+            return false; // SĐT không trùng lặp
+        }
         private void sbsua_Click(object sender, EventArgs e)
         {
             if (r == null)//Khong co dong nao duoc chon
@@ -182,6 +199,31 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                             };
 
             dgvNCC.DataSource = ketQuaLoc.ToList();
+        }
+
+        private void txtsdt_TextChanged(object sender, EventArgs e)
+        {
+            string text = txtsdt.Text;
+
+            // Kiểm tra xem mỗi ký tự có phải là số không
+            foreach (char c in text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải là số, loại bỏ nó
+                    txtsdt.Text = txtsdt.Text.Replace(c.ToString(), "");
+                    MessageBox.Show("Vui lòng nhập chỉ số điện thoại.", "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            // Kiểm tra nếu độ dài của số điện thoại lớn hơn 10, cắt đi phần dư
+            if (text.Length > 10)
+            {
+                txtsdt.Text = text.Substring(0, 10);
+                MessageBox.Show("Không được nhập quá 10 số điện thoại.", "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        
         }
     }
 }

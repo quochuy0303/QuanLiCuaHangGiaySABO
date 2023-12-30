@@ -217,5 +217,34 @@ namespace QuanLiCuaHangGiaySABO
 
             dgvNhanVien.DataSource = ketQuaLoc.ToList();
         }
+
+        private void frmNhanVien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsdt_TextChanged(object sender, EventArgs e)
+        {
+            string text = txtsdt.Text;
+
+            // Kiểm tra xem mỗi ký tự có phải là số không
+            foreach (char c in text)
+            {
+                if (!char.IsDigit(c))
+                {
+                    // Nếu có ký tự không phải là số, loại bỏ nó
+                    txtsdt.Text = txtsdt.Text.Replace(c.ToString(), "");
+                    MessageBox.Show("Vui lòng nhập chỉ số điện thoại.", "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
+            // Kiểm tra nếu độ dài của số điện thoại lớn hơn 10, cắt đi phần dư
+            if (text.Length > 10)
+            {
+                txtsdt.Text = text.Substring(0, 10);
+                MessageBox.Show("Không được nhập quá 10 số điện thoại.", "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
