@@ -11,22 +11,11 @@ using System.Windows.Forms;
 
 namespace QuanLiCuaHangGiaySABO.QlSG
 {
-    public partial class DonDatHang : DevExpress.XtraEditors.XtraForm
+    public partial class frmChiTietHDban : DevExpress.XtraEditors.XtraForm
     {
-        bangiayDataContext db;
-        public DonDatHang()
+        public frmChiTietHDban()
         {
             InitializeComponent();
-        }
-
-        private void DonDatHang_Load(object sender, EventArgs e)
-        {
-            db = new bangiayDataContext();
-            showdata();
-        }
-        private void showdata()
-        {
-
         }
     }
 }

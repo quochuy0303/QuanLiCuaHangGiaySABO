@@ -27,7 +27,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            this.KeyPress += frmLogin_KeyPress;
         }
 
         private void sb_sign_Click(object sender, EventArgs e)
@@ -61,6 +61,24 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại.");
             }
-        }      
+        }
+
+        private void sb_login_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void frmLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            
+            }
+
+        private void hpl_fogotpass_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
+        {
+            // Mở form quên mật khẩu hoặc thực hiện các hành động mong muốn
+            frmForgotPassword forgotPasswordForm = new frmForgotPassword();
+            forgotPasswordForm.ShowDialog();
+        }
     }
-}
+    }

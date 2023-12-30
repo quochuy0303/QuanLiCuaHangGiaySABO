@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.sb_sign = new DevExpress.XtraEditors.SimpleButton();
-            this.sb_fgpass = new DevExpress.XtraEditors.SimpleButton();
             this.te_password = new DevExpress.XtraEditors.TextEdit();
             this.te_username = new DevExpress.XtraEditors.TextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.sb_login = new DevExpress.XtraEditors.SimpleButton();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.hpl_fogotpass = new DevExpress.XtraEditors.HyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.te_password.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_username.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hpl_fogotpass.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -75,17 +75,6 @@
             this.sb_sign.TabIndex = 4;
             this.sb_sign.Text = "Đăng Kí";
             this.sb_sign.Click += new System.EventHandler(this.sb_sign_Click);
-            // 
-            // sb_fgpass
-            // 
-            this.sb_fgpass.Appearance.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sb_fgpass.Appearance.Options.UseFont = true;
-            this.sb_fgpass.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sb_fgpass.ImageOptions.Image")));
-            this.sb_fgpass.Location = new System.Drawing.Point(524, 449);
-            this.sb_fgpass.Name = "sb_fgpass";
-            this.sb_fgpass.Size = new System.Drawing.Size(191, 49);
-            this.sb_fgpass.TabIndex = 4;
-            this.sb_fgpass.Text = "Quên Mật Khẩu";
             // 
             // te_password
             // 
@@ -120,6 +109,7 @@
             this.sb_login.TabIndex = 4;
             this.sb_login.Text = "Đăng Nhập";
             this.sb_login.Click += new System.EventHandler(this.sb_login_Click);
+            this.sb_login.Enter += new System.EventHandler(this.sb_login_Enter);
             // 
             // pictureEdit1
             // 
@@ -143,6 +133,21 @@
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "LOGIN";
             // 
+            // hpl_fogotpass
+            // 
+            this.hpl_fogotpass.EditValue = "Quên mật khẩu ?";
+            this.hpl_fogotpass.Location = new System.Drawing.Point(554, 458);
+            this.hpl_fogotpass.Name = "hpl_fogotpass";
+            this.hpl_fogotpass.Properties.Appearance.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.hpl_fogotpass.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hpl_fogotpass.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.hpl_fogotpass.Properties.Appearance.Options.UseBackColor = true;
+            this.hpl_fogotpass.Properties.Appearance.Options.UseFont = true;
+            this.hpl_fogotpass.Properties.Appearance.Options.UseForeColor = true;
+            this.hpl_fogotpass.Size = new System.Drawing.Size(146, 24);
+            this.hpl_fogotpass.TabIndex = 7;
+            this.hpl_fogotpass.OpenLink += new DevExpress.XtraEditors.Controls.OpenLinkEventHandler(this.hpl_fogotpass_OpenLink);
+            // 
             // frmLogin
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -152,11 +157,11 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = global::QuanLiCuaHangGiaySABO.Properties.Resources.istockphoto_1434341714_612x612;
             this.ClientSize = new System.Drawing.Size(897, 529);
+            this.Controls.Add(this.hpl_fogotpass);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.sb_login);
             this.Controls.Add(this.sb_sign);
-            this.Controls.Add(this.sb_fgpass);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.te_password);
@@ -166,10 +171,12 @@
             this.Name = "frmLogin";
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmLogin_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.te_password.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_username.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hpl_fogotpass.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,10 +189,10 @@
         private DevExpress.XtraEditors.TextEdit te_password;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton sb_fgpass;
         private DevExpress.XtraEditors.SimpleButton sb_sign;
         private DevExpress.XtraEditors.SimpleButton sb_login;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.HyperLinkEdit hpl_fogotpass;
     }
 }

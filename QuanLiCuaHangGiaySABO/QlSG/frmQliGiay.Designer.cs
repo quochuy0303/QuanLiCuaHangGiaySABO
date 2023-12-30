@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQliGiay));
             this.dgvSP = new System.Windows.Forms.DataGridView();
             this.txtgia = new System.Windows.Forms.TextBox();
-            this.txtcodegiay = new System.Windows.Forms.TextBox();
+            this.txtmota = new System.Windows.Forms.TextBox();
             this.txtsoluong = new System.Windows.Forms.TextBox();
             this.txttengiay = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,14 +47,11 @@
             this.txttimkh = new System.Windows.Forms.TextBox();
             this.sbthem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbe_size = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_size.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSP
@@ -70,28 +67,29 @@
             this.dgvSP.RowTemplate.Height = 24;
             this.dgvSP.Size = new System.Drawing.Size(1371, 202);
             this.dgvSP.TabIndex = 8;
+            this.dgvSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSP_CellClick);
             // 
             // txtgia
             // 
             this.txtgia.Location = new System.Drawing.Point(170, 139);
             this.txtgia.Multiline = true;
             this.txtgia.Name = "txtgia";
-            this.txtgia.Size = new System.Drawing.Size(115, 25);
+            this.txtgia.Size = new System.Drawing.Size(132, 25);
             this.txtgia.TabIndex = 1;
             this.txtgia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtgia_KeyPress);
             // 
-            // txtcodegiay
+            // txtmota
             // 
-            this.txtcodegiay.Location = new System.Drawing.Point(173, 96);
-            this.txtcodegiay.Name = "txtcodegiay";
-            this.txtcodegiay.Size = new System.Drawing.Size(167, 23);
-            this.txtcodegiay.TabIndex = 1;
+            this.txtmota.Location = new System.Drawing.Point(173, 96);
+            this.txtmota.Name = "txtmota";
+            this.txtmota.Size = new System.Drawing.Size(288, 23);
+            this.txtmota.TabIndex = 1;
             // 
             // txtsoluong
             // 
             this.txtsoluong.Location = new System.Drawing.Point(173, 193);
             this.txtsoluong.Name = "txtsoluong";
-            this.txtsoluong.Size = new System.Drawing.Size(112, 23);
+            this.txtsoluong.Size = new System.Drawing.Size(108, 23);
             this.txtsoluong.TabIndex = 1;
             // 
             // txttengiay
@@ -117,9 +115,9 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(35, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 18);
+            this.label3.Size = new System.Drawing.Size(52, 18);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Code Giày";
+            this.label3.Text = "Mô Tả";
             // 
             // label2
             // 
@@ -163,6 +161,7 @@
             this.sbxoa.Size = new System.Drawing.Size(120, 33);
             this.sbxoa.TabIndex = 0;
             this.sbxoa.Text = "Xóa";
+            this.sbxoa.Click += new System.EventHandler(this.sbxoa_Click);
             // 
             // sbsua
             // 
@@ -174,6 +173,7 @@
             this.sbsua.Size = new System.Drawing.Size(120, 33);
             this.sbsua.TabIndex = 0;
             this.sbsua.Text = "Sửa";
+            this.sbsua.Click += new System.EventHandler(this.sbsua_Click);
             // 
             // label1
             // 
@@ -224,43 +224,23 @@
             this.sbthem.Size = new System.Drawing.Size(120, 33);
             this.sbthem.TabIndex = 0;
             this.sbthem.Text = "Thêm";
+            this.sbthem.Click += new System.EventHandler(this.sbthem_Click);
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.cbe_size);
             this.groupControl1.Controls.Add(this.txtgia);
-            this.groupControl1.Controls.Add(this.txtcodegiay);
+            this.groupControl1.Controls.Add(this.txtmota);
             this.groupControl1.Controls.Add(this.txtsoluong);
             this.groupControl1.Controls.Add(this.txttengiay);
             this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Location = new System.Drawing.Point(31, 6);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(593, 279);
             this.groupControl1.TabIndex = 6;
-            this.groupControl1.Text = "Thông Tin Khách Hàng";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 243);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 18);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Size Giày";
-            // 
-            // cbe_size
-            // 
-            this.cbe_size.Location = new System.Drawing.Point(173, 243);
-            this.cbe_size.Name = "cbe_size";
-            this.cbe_size.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbe_size.Size = new System.Drawing.Size(125, 22);
-            this.cbe_size.TabIndex = 2;
+            this.groupControl1.Text = " Thông Tin Sản Phẩm ";
             // 
             // frmQliGiay
             // 
@@ -280,7 +260,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbe_size.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,7 +268,7 @@
 
         private System.Windows.Forms.DataGridView dgvSP;
         private System.Windows.Forms.TextBox txtgia;
-        private System.Windows.Forms.TextBox txtcodegiay;
+        private System.Windows.Forms.TextBox txtmota;
         private System.Windows.Forms.TextBox txtsoluong;
         private System.Windows.Forms.TextBox txttengiay;
         private System.Windows.Forms.Label label4;
@@ -305,7 +284,5 @@
         private System.Windows.Forms.TextBox txttimkh;
         private DevExpress.XtraEditors.SimpleButton sbthem;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit cbe_size;
-        private System.Windows.Forms.Label label5;
     }
 }

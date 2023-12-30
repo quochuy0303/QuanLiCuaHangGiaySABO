@@ -90,6 +90,18 @@
     <Compile Include="QlSG\DonDatHang.Designer.cs">
       <DependentUpon>DonDatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="QlSG\frmForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSG\frmForgotPassword.Designer.cs">
+      <DependentUpon>frmForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QlSG\frmHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSG\frmHoaDonBan.Designer.cs">
+      <DependentUpon>frmHoaDonBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="QlSG\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +161,12 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QlSG\DonDatHang.resx">
       <DependentUpon>DonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QlSG\frmForgotPassword.resx">
+      <DependentUpon>frmForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QlSG\frmHoaDonBan.resx">
+      <DependentUpon>frmHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QlSG\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>

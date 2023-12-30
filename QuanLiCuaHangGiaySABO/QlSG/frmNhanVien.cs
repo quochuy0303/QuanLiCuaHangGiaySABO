@@ -39,9 +39,7 @@ namespace QuanLiCuaHangGiaySABO
                         nv.SoDienThoai,
                         nv.Email,
                         nv.DiaChi,
-                        nv.VaiTro
-                        
-
+                        nv.VaiTro                       
                      };
             dgvNhanVien.DataSource = rs;
         }
@@ -50,7 +48,7 @@ namespace QuanLiCuaHangGiaySABO
         {
             foreach (DataGridViewRow row in dgvNhanVien.Rows)
             {
-                if (row.Cells["PhoneNumber"].Value != null && row.Cells["PhoneNumber"].Value.ToString() == sdt)
+                if (row.Cells["SoDienThoai"].Value != null && row.Cells["SoDienThoai"].Value.ToString() == sdt)
                 {
                     return true; // SĐT đã tồn tại
                 }

@@ -42,5 +42,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             fluentDesignFormContainer1.Controls.Add(nhanVienForm);
             nhanVienForm.Show();
         }
+
+        private void accordionControlElement1_Click(object sender, EventArgs e)
+        {
+            frmQliGiay Form = new frmQliGiay();
+            Form.TopLevel = false;
+            Form.FormBorderStyle = FormBorderStyle.None;
+            Form.Dock = DockStyle.Fill;
+            fluentDesignFormContainer1.Controls.Clear();
+            fluentDesignFormContainer1.Controls.Add(Form);
+            Form.Show();
+        }
     }
 }
