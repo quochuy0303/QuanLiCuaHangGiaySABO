@@ -1440,6 +1440,8 @@ namespace QuanLiCuaHangGiaySABO
 		
 		private string _SoDienThoai;
 		
+		private string _Email;
+		
 		private EntitySet<LichSuDonDatHang> _LichSuDonDatHangs;
 		
     #region Extensibility Method Definitions
@@ -1454,6 +1456,8 @@ namespace QuanLiCuaHangGiaySABO
     partial void OnDiaChiKhachHangChanged();
     partial void OnSoDienThoaiChanging(string value);
     partial void OnSoDienThoaiChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
     #endregion
 		
 		public KhachHang()
@@ -1538,6 +1542,26 @@ namespace QuanLiCuaHangGiaySABO
 					this._SoDienThoai = value;
 					this.SendPropertyChanged("SoDienThoai");
 					this.OnSoDienThoaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(150)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
 				}
 			}
 		}
@@ -1960,6 +1984,8 @@ namespace QuanLiCuaHangGiaySABO
 		
 		private string _DiaChiNhaCungCap;
 		
+		private string _sdt;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1970,6 +1996,8 @@ namespace QuanLiCuaHangGiaySABO
     partial void OnTenNhaCungCapChanged();
     partial void OnDiaChiNhaCungCapChanging(string value);
     partial void OnDiaChiNhaCungCapChanged();
+    partial void OnsdtChanging(string value);
+    partial void OnsdtChanged();
     #endregion
 		
 		public NhaCungCap()
@@ -2033,6 +2061,26 @@ namespace QuanLiCuaHangGiaySABO
 					this._DiaChiNhaCungCap = value;
 					this.SendPropertyChanged("DiaChiNhaCungCap");
 					this.OnDiaChiNhaCungCapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sdt", DbType="NVarChar(150)")]
+		public string sdt
+		{
+			get
+			{
+				return this._sdt;
+			}
+			set
+			{
+				if ((this._sdt != value))
+				{
+					this.OnsdtChanging(value);
+					this.SendPropertyChanging();
+					this._sdt = value;
+					this.SendPropertyChanged("sdt");
+					this.OnsdtChanged();
 				}
 			}
 		}

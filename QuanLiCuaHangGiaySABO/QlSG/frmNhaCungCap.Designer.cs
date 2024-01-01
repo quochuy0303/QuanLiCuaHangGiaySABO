@@ -40,11 +40,9 @@
             this.txtTimKiemNCC = new System.Windows.Forms.TextBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtdiachi = new System.Windows.Forms.TextBox();
-            this.txtemail = new System.Windows.Forms.TextBox();
             this.txtsdt = new System.Windows.Forms.TextBox();
             this.txthoten = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
@@ -59,12 +57,13 @@
             this.dgvNCC.AllowUserToAddRows = false;
             this.dgvNCC.AllowUserToDeleteRows = false;
             this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNCC.Location = new System.Drawing.Point(37, 332);
+            this.dgvNCC.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvNCC.Location = new System.Drawing.Point(0, 278);
             this.dgvNCC.Name = "dgvNCC";
             this.dgvNCC.ReadOnly = true;
             this.dgvNCC.RowHeadersWidth = 51;
             this.dgvNCC.RowTemplate.Height = 24;
-            this.dgvNCC.Size = new System.Drawing.Size(1112, 202);
+            this.dgvNCC.Size = new System.Drawing.Size(1197, 268);
             this.dgvNCC.TabIndex = 4;
             this.dgvNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellClick);
             // 
@@ -73,7 +72,7 @@
             this.sbtimkiem.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbtimkiem.Appearance.Options.UseFont = true;
             this.sbtimkiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbtimkiem.ImageOptions.Image")));
-            this.sbtimkiem.Location = new System.Drawing.Point(263, 81);
+            this.sbtimkiem.Location = new System.Drawing.Point(242, 52);
             this.sbtimkiem.Name = "sbtimkiem";
             this.sbtimkiem.Size = new System.Drawing.Size(120, 33);
             this.sbtimkiem.TabIndex = 0;
@@ -85,7 +84,7 @@
             this.sbloc.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbloc.Appearance.Options.UseFont = true;
             this.sbloc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbloc.ImageOptions.Image")));
-            this.sbloc.Location = new System.Drawing.Point(263, 142);
+            this.sbloc.Location = new System.Drawing.Point(242, 113);
             this.sbloc.Name = "sbloc";
             this.sbloc.Size = new System.Drawing.Size(120, 33);
             this.sbloc.TabIndex = 0;
@@ -97,7 +96,7 @@
             this.sbxoa.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbxoa.Appearance.Options.UseFont = true;
             this.sbxoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbxoa.ImageOptions.Image")));
-            this.sbxoa.Location = new System.Drawing.Point(89, 142);
+            this.sbxoa.Location = new System.Drawing.Point(68, 113);
             this.sbxoa.Name = "sbxoa";
             this.sbxoa.Size = new System.Drawing.Size(120, 33);
             this.sbxoa.TabIndex = 0;
@@ -109,7 +108,7 @@
             this.sbsua.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbsua.Appearance.Options.UseFont = true;
             this.sbsua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbsua.ImageOptions.Image")));
-            this.sbsua.Location = new System.Drawing.Point(89, 202);
+            this.sbsua.Location = new System.Drawing.Point(68, 173);
             this.sbsua.Name = "sbsua";
             this.sbsua.Size = new System.Drawing.Size(120, 33);
             this.sbsua.TabIndex = 0;
@@ -121,7 +120,7 @@
             this.sbthem.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbthem.Appearance.Options.UseFont = true;
             this.sbthem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbthem.ImageOptions.Image")));
-            this.sbthem.Location = new System.Drawing.Point(89, 81);
+            this.sbthem.Location = new System.Drawing.Point(68, 52);
             this.sbthem.Name = "sbthem";
             this.sbthem.Size = new System.Drawing.Size(120, 33);
             this.sbthem.TabIndex = 0;
@@ -139,13 +138,13 @@
             this.groupControl2.Controls.Add(this.sbthem);
             this.groupControl2.Location = new System.Drawing.Point(571, 12);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(578, 292);
+            this.groupControl2.Size = new System.Drawing.Size(578, 235);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Chức Năng";
             // 
             // txtLoc
             // 
-            this.txtLoc.Location = new System.Drawing.Point(389, 149);
+            this.txtLoc.Location = new System.Drawing.Point(382, 120);
             this.txtLoc.Name = "txtLoc";
             this.txtLoc.Size = new System.Drawing.Size(160, 23);
             this.txtLoc.TabIndex = 1;
@@ -153,7 +152,7 @@
             // 
             // txtTimKiemNCC
             // 
-            this.txtTimKiemNCC.Location = new System.Drawing.Point(389, 88);
+            this.txtTimKiemNCC.Location = new System.Drawing.Point(382, 59);
             this.txtTimKiemNCC.Name = "txtTimKiemNCC";
             this.txtTimKiemNCC.Size = new System.Drawing.Size(160, 23);
             this.txtTimKiemNCC.TabIndex = 1;
@@ -161,37 +160,28 @@
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.txtdiachi);
-            this.groupControl1.Controls.Add(this.txtemail);
             this.groupControl1.Controls.Add(this.txtsdt);
             this.groupControl1.Controls.Add(this.txthoten);
             this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Location = new System.Drawing.Point(37, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(528, 292);
+            this.groupControl1.Size = new System.Drawing.Size(528, 235);
             this.groupControl1.TabIndex = 5;
             this.groupControl1.Text = "Thông Tin Nhà Cung Cấp";
             // 
             // txtdiachi
             // 
-            this.txtdiachi.Location = new System.Drawing.Point(196, 169);
+            this.txtdiachi.Location = new System.Drawing.Point(196, 164);
             this.txtdiachi.Multiline = true;
             this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(271, 25);
+            this.txtdiachi.Size = new System.Drawing.Size(310, 25);
             this.txtdiachi.TabIndex = 1;
-            // 
-            // txtemail
-            // 
-            this.txtemail.Location = new System.Drawing.Point(196, 116);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(271, 23);
-            this.txtemail.TabIndex = 1;
             // 
             // txtsdt
             // 
-            this.txtsdt.Location = new System.Drawing.Point(196, 226);
+            this.txtsdt.Location = new System.Drawing.Point(196, 109);
             this.txtsdt.Name = "txtsdt";
             this.txtsdt.Size = new System.Drawing.Size(109, 23);
             this.txtsdt.TabIndex = 1;
@@ -208,31 +198,22 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 170);
+            this.label4.Location = new System.Drawing.Point(64, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 18);
             this.label4.TabIndex = 0;
             this.label4.Text = "Địa Chỉ";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Email";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 231);
+            this.label2.Location = new System.Drawing.Point(96, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "SĐT";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -277,11 +258,9 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.TextBox txtdiachi;
-        private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtsdt;
         private System.Windows.Forms.TextBox txthoten;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLoc;

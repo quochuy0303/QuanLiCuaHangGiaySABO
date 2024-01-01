@@ -47,7 +47,13 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             db = new bangiayDataContext();
-            showdata();           
+            showdata();
+            dgvKH.Columns["TenKhachHang"].HeaderText = "Tên Khách Hàng";
+            dgvKH.Columns["SoDienThoai"].HeaderText = "SĐT";
+            dgvKH.Columns["Email"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvKH.Columns["DiaChiKhachHang"].HeaderText = "Địa Chỉ";
+            dgvKH.Columns["DiaChiKhachHang"].AutoSizeMode=DataGridViewAutoSizeColumnMode.Fill;
+
         }
         private bool KiemTraSDTTrungLap(string sdt)
         {
@@ -68,8 +74,9 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                      {
                          kh.TenKhachHang,                        
                          kh.SoDienThoai,
+                         kh.Email,
                          kh.DiaChiKhachHang
-
+                         
                      };
 
             dgvKH.DataSource = rs;
@@ -95,7 +102,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
             KhachHang nv = new KhachHang();
             nv.TenKhachHang = txthotenkh.Text;
-            nv.SoDienThoai = txtsdt.Text;          
+            nv.SoDienThoai = txtsdt.Text;
+            nv.Email = txtemail.Text;
             nv.DiaChiKhachHang = txtdiachi.Text;
            
             db.KhachHangs.InsertOnSubmit(nv);//thêm vào dgv
@@ -103,12 +111,21 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
             showdata();
             //reset lại các trường thuộc tính
-            txthotenkh.Text = txtsdt.Text  = txtdiachi.Text  = null;
+            txthotenkh.Text = txtsdt.Text  = txtdiachi.Text  = txtemail.Text = null;
             r = null;
         }
 
         private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
-        {          
+        {
+            if (e.RowIndex >= 0)
+            {
+                r = dgvKH.Rows[e.RowIndex];
+                txthotenkh.Text = r.Cells["TenKhachHang"].Value.ToString();
+                txtsdt.Text = r.Cells["SoDienThoai"].Value.ToString();
+                txtemail.Text = r.Cells["Email"].Value.ToString();
+                txtdiachi.Text = r.Cells["DiaChiKhachHang"].Value.ToString();
+
+            }
         }
 
         private void sbsua_Click(object sender, EventArgs e)
@@ -122,13 +139,14 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             var nv = db.KhachHangs.SingleOrDefault(x => x.TenKhachHang == r.Cells["TenKhachHang"].Value.ToString());
 
             nv.TenKhachHang = txthotenkh.Text;
-            nv.SoDienThoai = txtsdt.Text;          
+            nv.SoDienThoai = txtsdt.Text;
+            nv.Email = txtemail.Text;
             nv.DiaChiKhachHang = txtdiachi.Text;          
             db.SubmitChanges();
             MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK);
             showdata();
             //reset lại các trường thuộc tính
-            txthotenkh.Text = txtsdt.Text = txtdiachi.Text = null;
+            txthotenkh.Text = txtsdt.Text = txtdiachi.Text = txtemail.Text = null;
             r = null;
         }
 
@@ -152,7 +170,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
                     showdata();
                     //reset lại các trường thuộc tính
-                    txthotenkh.Text = txtsdt.Text = txtdiachi.Text = null;
+                    txthotenkh.Text = txtsdt.Text = txtdiachi.Text = txtemail.Text = null;
                     r = null;
                 }
                 catch
@@ -189,7 +207,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                                 select new
                                 {
                                     nv.TenKhachHang,
-                                    nv.SoDienThoai,                                  
+                                    nv.SoDienThoai,
+                                    nv.Email,
                                     nv.DiaChiKhachHang
 
                                 };
@@ -219,7 +238,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                             select new
                             {
                                 nv.TenKhachHang,
-                                nv.SoDienThoai,                               
+                                nv.SoDienThoai,
+                                nv.Email,
                                 nv.DiaChiKhachHang
 
 

@@ -30,7 +30,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                      select new
                      {
                          nv.NgayDatHang,
-                         nv.
+                         
                      };
 
             dgvHoaDonDat.DataSource = rs;

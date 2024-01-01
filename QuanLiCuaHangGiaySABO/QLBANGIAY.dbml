@@ -66,6 +66,7 @@
       <Column Name="TenKhachHang" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="DiaChiKhachHang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="SoDienThoai" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Association Name="KhachHang_LichSuDonDatHang" Member="LichSuDonDatHangs" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="LichSuDonDatHang" />
     </Type>
   </Table>
@@ -91,6 +92,7 @@
       <Column Name="MaNhaCungCap" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenNhaCungCap" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="DiaChiNhaCungCap" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="sdt" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">

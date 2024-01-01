@@ -25,6 +25,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             showdata();
             dgvNCC.Columns["TenNhaCungCap"].HeaderText = "Tên Nhà Cung Cấp";
             dgvNCC.Columns["DiaChiNhaCungCap"].HeaderText = "Địa Chỉ";
+            dgvNCC.Columns["sdt"].HeaderText = "SĐT";
             dgvNCC.Columns["DiaChiNhaCungCap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvNCC.Columns["TenNhaCungCap"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
@@ -34,7 +35,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             var rs = from nv in db.NhaCungCaps
                      select new
                      {
-                         nv.TenNhaCungCap,                                                
+                         nv.TenNhaCungCap,
+                         nv.sdt,
                          nv.DiaChiNhaCungCap                        
                      };
 
@@ -52,7 +54,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             }           
            
             NhaCungCap nv = new NhaCungCap();
-            nv.TenNhaCungCap = txthoten.Text;           
+            nv.TenNhaCungCap = txthoten.Text; 
+            nv.sdt = txtsdt.Text;
             nv.DiaChiNhaCungCap = txtdiachi.Text;
 
             db.NhaCungCaps.InsertOnSubmit(nv);//thêm vào dgv
@@ -60,7 +63,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
             showdata();
             //reset lại các trường thuộc tính
-            txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = null;
+            txthoten.Text = txtsdt.Text = txtdiachi.Text = null;
             r = null;
         }      
 
@@ -70,6 +73,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             {
                 r = dgvNCC.Rows[e.RowIndex];
                 txthoten.Text = r.Cells["TenNhaCungCap"].Value.ToString();
+                txtsdt.Text = r.Cells["sdt"].Value.ToString();
                 txtdiachi.Text = r.Cells["DiaChiNhaCungCap"].Value.ToString();
                
             }
@@ -95,13 +99,14 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             }
             var nv = db.NhaCungCaps.SingleOrDefault(x => x.TenNhaCungCap == r.Cells["TenNhaCungCap"].Value.ToString());
 
-            nv.TenNhaCungCap = txthoten.Text;           
+            nv.TenNhaCungCap = txthoten.Text;
+            nv.sdt = txtsdt.Text;
             nv.DiaChiNhaCungCap = txtdiachi.Text;
             db.SubmitChanges();
             MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK);
             showdata();
             //reset lại các trường thuộc tính
-            txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = null;
+            txthoten.Text = txtsdt.Text = txtdiachi.Text = null;
             r = null;
         }
 
@@ -125,7 +130,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
                     showdata();
                     //reset lại các trường thuộc tính
-                    txthoten.Text = txtsdt.Text = txtemail.Text = txtdiachi.Text = null;
+                    txthoten.Text = txtsdt.Text = txtdiachi.Text = null;
                     r = null;
                 }
                 catch
@@ -157,7 +162,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                                 select new
                                 {
                                     nv.TenNhaCungCap,
-                                    
+                                    nv.sdt,
                                     nv.DiaChiNhaCungCap
 
                                 };
@@ -192,7 +197,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                             select new
                             {
                                 nv.TenNhaCungCap,
-                                
+                                nv.sdt,
                                 nv.DiaChiNhaCungCap
 
 
@@ -224,6 +229,11 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 MessageBox.Show("Không được nhập quá 10 số điện thoại.", "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
