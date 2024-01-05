@@ -1,6 +1,6 @@
 ﻿namespace QuanLiCuaHangGiaySABO.QlSG
 {
-    partial class DonDatHang
+    partial class frmDonDatHang
     {
         /// <summary>
         /// Required designer variable.
@@ -28,114 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DonDatHang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDonDatHang));
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbe_tengiay = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.sb_themhd = new DevExpress.XtraEditors.SimpleButton();
             this.dgvHoaDonDat = new System.Windows.Forms.DataGridView();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.te_tong = new DevExpress.XtraEditors.TextEdit();
+            this.te_gia = new DevExpress.XtraEditors.TextEdit();
+            this.te_sl = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txtdiachi = new System.Windows.Forms.TextBox();
-            this.txtemail = new System.Windows.Forms.TextBox();
-            this.txtsdt = new System.Windows.Forms.TextBox();
-            this.txthotenkh = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dgvtruyenhoadon = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_tengiay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonDat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_tong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_gia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_sl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvtruyenhoadon)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.comboBoxEdit1);
+            this.groupControl2.Controls.Add(this.cbe_tengiay);
             this.groupControl2.Controls.Add(this.simpleButton4);
             this.groupControl2.Controls.Add(this.simpleButton3);
             this.groupControl2.Controls.Add(this.simpleButton2);
             this.groupControl2.Controls.Add(this.sb_themhd);
             this.groupControl2.Controls.Add(this.dgvHoaDonDat);
-            this.groupControl2.Controls.Add(this.textEdit4);
-            this.groupControl2.Controls.Add(this.textEdit3);
-            this.groupControl2.Controls.Add(this.textEdit2);
+            this.groupControl2.Controls.Add(this.te_tong);
+            this.groupControl2.Controls.Add(this.te_gia);
+            this.groupControl2.Controls.Add(this.te_sl);
             this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Controls.Add(this.labelControl3);
             this.groupControl2.Controls.Add(this.labelControl2);
             this.groupControl2.Controls.Add(this.labelControl1);
-            this.groupControl2.Location = new System.Drawing.Point(1, 193);
+            this.groupControl2.Location = new System.Drawing.Point(25, 8);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1160, 319);
+            this.groupControl2.Size = new System.Drawing.Size(616, 500);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Thông Tin Sản Phẩm";
             // 
-            // comboBoxEdit1
+            // cbe_tengiay
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(143, 63);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbe_tengiay.Location = new System.Drawing.Point(143, 63);
+            this.cbe_tengiay.Name = "cbe_tengiay";
+            this.cbe_tengiay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(247, 22);
-            this.comboBoxEdit1.TabIndex = 4;
+            this.cbe_tengiay.Size = new System.Drawing.Size(247, 22);
+            this.cbe_tengiay.TabIndex = 4;
             // 
             // simpleButton4
             // 
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(921, 105);
+            this.simpleButton4.Location = new System.Drawing.Point(425, 271);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(124, 41);
             this.simpleButton4.TabIndex = 3;
             this.simpleButton4.Text = "Đóng";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // simpleButton3
             // 
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(921, 49);
+            this.simpleButton3.Location = new System.Drawing.Point(425, 209);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(124, 36);
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "Hủy ";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton2
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(700, 105);
+            this.simpleButton2.Location = new System.Drawing.Point(425, 147);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(152, 41);
             this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "In Hóa Đơn";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // sb_themhd
             // 
             this.sb_themhd.Appearance.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sb_themhd.Appearance.Options.UseFont = true;
             this.sb_themhd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sb_themhd.ImageOptions.Image")));
-            this.sb_themhd.Location = new System.Drawing.Point(700, 49);
+            this.sb_themhd.Location = new System.Drawing.Point(425, 64);
             this.sb_themhd.Name = "sb_themhd";
             this.sb_themhd.Size = new System.Drawing.Size(152, 36);
             this.sb_themhd.TabIndex = 3;
             this.sb_themhd.Text = "Thêm";
+            this.sb_themhd.Click += new System.EventHandler(this.sb_themhd_Click);
             // 
             // dgvHoaDonDat
             // 
@@ -143,40 +141,43 @@
             this.dgvHoaDonDat.AllowUserToDeleteRows = false;
             this.dgvHoaDonDat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDonDat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvHoaDonDat.Location = new System.Drawing.Point(2, 167);
+            this.dgvHoaDonDat.Location = new System.Drawing.Point(2, 348);
             this.dgvHoaDonDat.Name = "dgvHoaDonDat";
             this.dgvHoaDonDat.ReadOnly = true;
             this.dgvHoaDonDat.RowHeadersWidth = 51;
             this.dgvHoaDonDat.RowTemplate.Height = 24;
-            this.dgvHoaDonDat.Size = new System.Drawing.Size(1156, 150);
+            this.dgvHoaDonDat.Size = new System.Drawing.Size(612, 150);
             this.dgvHoaDonDat.TabIndex = 2;
+            this.dgvHoaDonDat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonDat_CellClick);
             // 
-            // textEdit4
+            // te_tong
             // 
-            this.textEdit4.Location = new System.Drawing.Point(470, 115);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(125, 22);
-            this.textEdit4.TabIndex = 1;
+            this.te_tong.Enabled = false;
+            this.te_tong.Location = new System.Drawing.Point(140, 215);
+            this.te_tong.Name = "te_tong";
+            this.te_tong.Size = new System.Drawing.Size(125, 22);
+            this.te_tong.TabIndex = 1;
             // 
-            // textEdit3
+            // te_gia
             // 
-            this.textEdit3.Location = new System.Drawing.Point(470, 56);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(125, 22);
-            this.textEdit3.TabIndex = 1;
+            this.te_gia.Enabled = false;
+            this.te_gia.Location = new System.Drawing.Point(140, 156);
+            this.te_gia.Name = "te_gia";
+            this.te_gia.Size = new System.Drawing.Size(125, 22);
+            this.te_gia.TabIndex = 1;
             // 
-            // textEdit2
+            // te_sl
             // 
-            this.textEdit2.Location = new System.Drawing.Point(143, 112);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(75, 22);
-            this.textEdit2.TabIndex = 1;
+            this.te_sl.Location = new System.Drawing.Point(143, 112);
+            this.te_sl.Name = "te_sl";
+            this.te_sl.Size = new System.Drawing.Size(75, 22);
+            this.te_sl.TabIndex = 1;
             // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(372, 118);
+            this.labelControl4.Location = new System.Drawing.Point(42, 218);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(89, 19);
             this.labelControl4.TabIndex = 0;
@@ -186,7 +187,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(434, 59);
+            this.labelControl3.Location = new System.Drawing.Point(104, 159);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(27, 19);
             this.labelControl3.TabIndex = 0;
@@ -214,137 +215,68 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.txtdiachi);
-            this.groupControl1.Controls.Add(this.txtemail);
-            this.groupControl1.Controls.Add(this.txtsdt);
-            this.groupControl1.Controls.Add(this.txthotenkh);
-            this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Location = new System.Drawing.Point(1, 27);
+            this.groupControl1.Controls.Add(this.dgvtruyenhoadon);
+            this.groupControl1.Location = new System.Drawing.Point(645, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1158, 151);
-            this.groupControl1.TabIndex = 2;
-            this.groupControl1.Text = "Thông Tin Khách Hàng";
+            this.groupControl1.Size = new System.Drawing.Size(531, 498);
+            this.groupControl1.TabIndex = 1;
+            this.groupControl1.Text = "Thông Tin Hóa Đơn";
             // 
-            // txtdiachi
+            // dgvtruyenhoadon
             // 
-            this.txtdiachi.Location = new System.Drawing.Point(643, 57);
-            this.txtdiachi.Multiline = true;
-            this.txtdiachi.Name = "txtdiachi";
-            this.txtdiachi.Size = new System.Drawing.Size(271, 25);
-            this.txtdiachi.TabIndex = 1;
+            this.dgvtruyenhoadon.AllowUserToAddRows = false;
+            this.dgvtruyenhoadon.AllowUserToDeleteRows = false;
+            this.dgvtruyenhoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvtruyenhoadon.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvtruyenhoadon.Location = new System.Drawing.Point(2, 346);
+            this.dgvtruyenhoadon.Name = "dgvtruyenhoadon";
+            this.dgvtruyenhoadon.ReadOnly = true;
+            this.dgvtruyenhoadon.RowHeadersWidth = 51;
+            this.dgvtruyenhoadon.RowTemplate.Height = 24;
+            this.dgvtruyenhoadon.Size = new System.Drawing.Size(527, 150);
+            this.dgvtruyenhoadon.TabIndex = 0;
             // 
-            // txtemail
-            // 
-            this.txtemail.Location = new System.Drawing.Point(170, 116);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(271, 23);
-            this.txtemail.TabIndex = 1;
-            // 
-            // txtsdt
-            // 
-            this.txtsdt.Location = new System.Drawing.Point(646, 111);
-            this.txtsdt.Name = "txtsdt";
-            this.txtsdt.Size = new System.Drawing.Size(239, 23);
-            this.txtsdt.TabIndex = 1;
-            // 
-            // txthotenkh
-            // 
-            this.txthotenkh.Location = new System.Drawing.Point(170, 60);
-            this.txthotenkh.Name = "txthotenkh";
-            this.txthotenkh.Size = new System.Drawing.Size(235, 23);
-            this.txthotenkh.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(530, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 19);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Địa Chỉ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(35, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Email";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(552, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "SĐT";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(35, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Họ Tên";
-            // 
-            // DonDatHang
+            // frmDonDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1191, 589);
+            this.ClientSize = new System.Drawing.Size(1188, 603);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupControl2);
-            this.Name = "DonDatHang";
+            this.Name = "frmDonDatHang";
             this.Text = "DonDatHang";
-            this.Load += new System.EventHandler(this.DonDatHang_Load);
+            this.Load += new System.EventHandler(this.frmDonDatHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbe_tengiay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDonDat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_tong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_gia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_sl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvtruyenhoadon)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit te_gia;
+        private DevExpress.XtraEditors.TextEdit te_sl;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit te_tong;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private System.Windows.Forms.DataGridView dgvHoaDonDat;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton sb_themhd;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.ComboBoxEdit cbe_tengiay;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.TextBox txtdiachi;
-        private System.Windows.Forms.TextBox txtemail;
-        private System.Windows.Forms.TextBox txtsdt;
-        private System.Windows.Forms.TextBox txthotenkh;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvtruyenhoadon;
     }
 }

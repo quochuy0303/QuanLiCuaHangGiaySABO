@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using BCrypt.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +15,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
-        private bangiayDataContext db;
+        private bangiayDataContext db;      
+
         public frmLogin()
         {
             
@@ -27,7 +29,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            this.KeyPress += frmLogin_KeyPress;
+            this.KeyPreview = true;
         }
 
         private void sb_sign_Click(object sender, EventArgs e)
@@ -38,47 +40,56 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
         private void sb_login_Click(object sender, EventArgs e)
         {
-            string username = te_username.Text;
-            string password = te_password.Text;
-
-            // Kiểm tra đăng nhập bằng LINQ to SQL
-            var user = db.NhanViens.FirstOrDefault(u => u.TenDangNhap == username && u.MatKhau == password);
-
-            if (user != null)
+            // Sử dụng using để đảm bảo giải phóng tài nguyên
+            using (var db = new bangiayDataContext())
             {
-                MessageBox.Show("Đăng nhập thành công!");
-                // Mở form trang chủ hoặc thực hiện các hành động khác
-                // Tạo đối tượng form trang chủ
-                frmTrangChu homeForm = new frmTrangChu();
+                string username = te_username.Text;
+                string password = te_password.Text;
 
-                // Hiển thị form trang chủ
-                homeForm.Show();
+                if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+                {
+                    MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                // Đóng form đăng nhập (nếu cần)
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại.");
-            }
-        }
+                // Kiểm tra đăng nhập bằng LINQ to SQL
+                var user = db.NhanViens.FirstOrDefault(u => u.TenDangNhap == username);
 
-        private void sb_login_Enter(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void frmLogin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-            
-            }
+                if (user != null && BCrypt.Net.BCrypt.Verify(password, user.MatKhau))
+                {
+                    MessageBox.Show("Đăng nhập thành công!");
+                    frmTrangChu homeForm = new frmTrangChu(this);
+                    homeForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại.");
+                }
+            }       
+    }
+      
 
         private void hpl_fogotpass_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
         {
             // Mở form quên mật khẩu hoặc thực hiện các hành động mong muốn
             frmForgotPassword forgotPasswordForm = new frmForgotPassword();
             forgotPasswordForm.ShowDialog();
+        }
+
+        private void frmLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                sb_login_Click(sender, e);
+            }
+        }
+        // Thêm phương thức để hiển thị form đăng nhập khi cần quay lại
+        public void ShowLoginForm()
+        {
+            this.Show();
+            this.te_username.Text = string.Empty;
+            this.te_password.Text = string.Empty;
         }
     }
     }

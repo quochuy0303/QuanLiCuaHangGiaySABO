@@ -18,73 +18,130 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 {
     public partial class frmForgotPassword : DevExpress.XtraEditors.XtraForm
     {
-        bangiayDataContext db;
+        private bangiayDataContext db;
+        private Random random = new Random();      
+        private string verification_code;
+        private string userEmail;
         public frmForgotPassword()
         {
             InitializeComponent();
             db = new bangiayDataContext();
+            verification_code = MaXacNhan();
+        }
+        //random Mã xác nhận
+        private string MaXacNhan()
+        {
+            Random random = new Random();
+            int code = random.Next(000000, 999999);
+            return code.ToString();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        //ẩn mật khẩu
+        private async void HidePassword(TextBox textBox)
         {
-            // Lấy địa chỉ email từ TextBox
-            string emailAddress = textEdit1.Text;
+            textBox.UseSystemPasswordChar = false;
+            await Task.Delay(3000);
+            textBox.UseSystemPasswordChar = true;
+        }
 
-            // Kiểm tra xem địa chỉ email có tồn tại trong cơ sở dữ liệu hay không
-            using (var context = new bangiayDataContext())
+
+        private void sp_OTP_Click(object sender, EventArgs e)
+        {
+            userEmail = txtemail.Text;
+
+            // Kiểm tra xem email có tồn tại trong cơ sở dữ liệu hay không
+            var user = db.NhanViens.FirstOrDefault(u => u.Email == userEmail);
+
+            if (user != null)
             {
-                var user = context.NhanViens.FirstOrDefault(u => u.Email == emailAddress);
+                // Gửi OTP đến email của người dùng
+                SendEmail(userEmail, verification_code);
+                MessageBox.Show("Đã gửi OTP đến địa chỉ email của bạn.");
+            }
+            else
+            {
+                MessageBox.Show("Email không nằm trong hệ thống. Vui lòng kiểm tra lại!");
+            }
+        }
 
-                if (user != null)
+        private void sb_xacnhan_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra OTP nhập vào với mã xác nhận đã gửi
+            if (txtOTP.Text == verification_code)
+            {
+                // Xác nhận thành công
+
+                // Kiểm tra mật khẩu mới và xác nhận mật khẩu mới
+                if (txtnewpass.Text == txtcomfirm.Text)
                 {
-                    // Địa chỉ email tồn tại, tạo mật khẩu mới và cập nhật vào cơ sở dữ liệu
-                    string newPassword = GenerateRandomPassword(8); // Hàm tạo mật khẩu ngẫu nhiên
+                    // Mật khẩu và xác nhận mật khẩu trùng nhau
 
-                    // Cập nhật mật khẩu mới vào cơ sở dữ liệu
-                   // user.MatKhau = HashPassword(newPassword); // Hàm mã hóa mật khẩu trước khi lưu
+                    // Lấy thông tin người dùng từ cơ sở dữ liệu
+                    var user = db.NhanViens.FirstOrDefault(u => u.Email == userEmail);
 
-                    // Lưu thay đổi vào cơ sở dữ liệu
-                    context.SubmitChanges();
+                    if (user != null)
+                    {
+                        // Hash mật khẩu mới trước khi lưu vào cơ sở dữ liệu
+                        string hashedPassword = BCrypt.Net.BCrypt.HashPassword(txtnewpass.Text);
 
-                    // Gửi email chứa mật khẩu mới
-                    SendPasswordEmail(emailAddress, newPassword);
+                        // Cập nhật mật khẩu mới trong cơ sở dữ liệu
+                        user.MatKhau = hashedPassword;
 
-                    // Hiển thị thông báo hoặc thực hiện các bước khác
-                    MessageBox.Show("Mật khẩu mới đã được gửi đến địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến của bạn.");
+                        // Lưu thay đổi vào cơ sở dữ liệu
+                        db.SubmitChanges();
+
+                        MessageBox.Show("Đặt lại mật khẩu thành công!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể tìm thấy người dùng trong cơ sở dữ liệu.");
+                    }
                 }
                 else
                 {
-                    // Địa chỉ email không tồn tại trong cơ sở dữ liệu
-                    MessageBox.Show("Địa chỉ email không tồn tại trong hệ thống. Vui lòng kiểm tra lại.");
+                    // Mật khẩu và xác nhận mật khẩu không trùng nhau
+                    MessageBox.Show("Mật khẩu và xác nhận mật khẩu không trùng nhau. Vui lòng kiểm tra lại!");
                 }
             }
-
-            // Đóng form quên mật khẩu
-            this.Close();
-        }
-        private string GenerateRandomPassword(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            StringBuilder randomPassword = new StringBuilder();
-
-            Random random = new Random();
-            for (int i = 0; i < length; i++)
+            else
             {
-                int index = random.Next(chars.Length);
-                randomPassword.Append(chars[index]);
+                // Xác nhận thất bại
+                MessageBox.Show("Mã xác nhận không đúng. Vui lòng thử lại!");
             }
-
-            return randomPassword.ToString();
         }
 
-        // Hàm mã hóa mật khẩu (cần cài đặt logic mã hóa của riêng bạn)
-        private string HashPassword(string password)
+        // Hàm gửi email
+        private void SendEmail(string toEmail, string otpCode)
         {
-            // Cài đặt logic mã hóa mật khẩu của bạn
-            // Ví dụ đơn giản: Mã hóa mật khẩu bằng MD5
-            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            try
             {
-                byte[] inputBytes = Encoding.ASCII.GetBytes(password);
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
+                smtpClient.Port = 587;
+                // Thay thế "your_email_password_here" bằng mật khẩu ứng dụng bạn đã tạo
+                smtpClient.Credentials = new NetworkCredential("qhuy071003@gmail.com", "lugtxuvzlvsvohdl");
+                smtpClient.EnableSsl = true;
+
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress("qhuy071003@gmail.com");
+                mailMessage.To.Add(toEmail);
+                mailMessage.Subject = "Mã xác nhận OTP";
+                mailMessage.Body = $"Mã xác nhận của bạn là: {otpCode}";
+
+                smtpClient.Send(mailMessage);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Gửi email thất bại: {ex.Message}");
+            }
+        }
+        private string HashFunction(string input)
+        {
+            // Thực hiện hàm hash (ví dụ: MD5, SHA-256, SHA-512)
+            // Trong thực tế, bạn nên sử dụng thư viện bảo mật như BCrypt hoặc PBKDF2
+            // Đây chỉ là một ví dụ đơn giản để minh họa ý tưởng
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
                 byte[] hashBytes = md5.ComputeHash(inputBytes);
 
                 StringBuilder sb = new StringBuilder();
@@ -96,40 +153,5 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 return sb.ToString();
             }
         }
-
-        // Hàm gửi email chứa mật khẩu mới (cần cài đặt logic gửi email của riêng bạn)
-        private void SendPasswordEmail(string emailAddress, string newPassword)
-        {
-            // Cài đặt logic gửi email của bạn
-            // Thay thế các giá trị sau đây bằng thông tin của bạn
-            string smtpServer = "smtp.gmail.com";
-            int smtpPort = 587;
-            string smtpUsername = "qhuy071003@gmail.com";
-            string smtpPassword = "Vtqh032003@@";
-            string senderEmail = "qhuy071003@gmail.com";
-
-            try
-            {
-                System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
-                System.Net.Mail.SmtpClient SmtpServer = new System.Net.Mail.SmtpClient(smtpServer);
-
-                mail.From = new System.Net.Mail.MailAddress(senderEmail);
-                mail.To.Add(emailAddress);
-                mail.Subject = "Mật khẩu mới";
-                mail.Body = "Mật khẩu mới của bạn là: " + newPassword;
-
-                SmtpServer.Port = smtpPort;
-                SmtpServer.Credentials = new System.Net.NetworkCredential(smtpUsername, smtpPassword);
-                SmtpServer.EnableSsl = true;
-
-                SmtpServer.Send(mail);
-                XtraMessageBox.Show("Email đã được gửi chứa mật khẩu mới.");
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show("Đã xảy ra lỗi khi gửi email: " + ex.Message);
-            }
-        }
-
     }
 }

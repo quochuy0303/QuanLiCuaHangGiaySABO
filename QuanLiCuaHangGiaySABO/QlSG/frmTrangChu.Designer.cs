@@ -35,8 +35,7 @@
             this.adc_menu = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.adc_nhanvien = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.adc_NCC = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_hethong = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ace_ = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -73,9 +72,7 @@
             this.adc_menu.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.adc_nhanvien,
             this.adc_NCC,
-            this.accordionControlElement4,
-            this.accordionControlElement5});
-            this.adc_menu.Expanded = true;
+            this.accordionControlElement2});
             this.adc_menu.Name = "adc_menu";
             this.adc_menu.Text = "MENU";
             // 
@@ -95,17 +92,13 @@
             this.adc_NCC.Text = "Nhà Cung Cấp";
             this.adc_NCC.Click += new System.EventHandler(this.adc_NCC_Click);
             // 
-            // accordionControlElement4
+            // accordionControlElement2
             // 
-            this.accordionControlElement4.Name = "accordionControlElement4";
-            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement4.Text = "Khách Hang";
-            // 
-            // accordionControlElement5
-            // 
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement5.Text = "Element5";
+            this.accordionControlElement2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement2.ImageOptions.Image")));
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement2.Text = "Khách Hàng";
+            this.accordionControlElement2.Click += new System.EventHandler(this.accordionControlElement2_Click);
             // 
             // ace_hethong
             // 
@@ -118,6 +111,8 @@
             // 
             // accordionControlElement1
             // 
+            this.accordionControlElement1.ImageOptions.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.shoes_5201593_1280;
+            this.accordionControlElement1.ImageOptions.ImageLayoutMode = DevExpress.XtraBars.Navigation.ImageLayoutMode.Stretch;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement1.Text = "Sản Phẩm";
@@ -125,9 +120,11 @@
             // 
             // ace_
             // 
+            this.ace_.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ace_.ImageOptions.Image")));
             this.ace_.Name = "ace_";
             this.ace_.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ace_.Text = "Element2";
+            this.ace_.Text = "Đăng Xuất";
+            this.ace_.Click += new System.EventHandler(this.ace__Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -171,10 +168,9 @@
         private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement adc_nhanvien;
         private DevExpress.XtraBars.Navigation.AccordionControlElement adc_NCC;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_hethong;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ace_;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
     }
 }

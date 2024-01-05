@@ -109,7 +109,6 @@
             this.sb_login.TabIndex = 4;
             this.sb_login.Text = "Đăng Nhập";
             this.sb_login.Click += new System.EventHandler(this.sb_login_Click);
-            this.sb_login.Enter += new System.EventHandler(this.sb_login_Enter);
             // 
             // pictureEdit1
             // 
@@ -171,7 +170,7 @@
             this.Name = "frmLogin";
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.frmLogin_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmLogin_KeyPress);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.te_password.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_username.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

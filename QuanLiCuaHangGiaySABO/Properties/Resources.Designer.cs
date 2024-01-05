@@ -73,6 +73,16 @@ namespace QuanLiCuaHangGiaySABO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2b5570d23f45d90eefc3c5075e763840 {
+            get {
+                object obj = ResourceManager.GetObject("_2b5570d23f45d90eefc3c5075e763840", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _6146587 {
             get {
                 object obj = ResourceManager.GetObject("6146587", resourceCulture);
@@ -93,9 +103,61 @@ namespace QuanLiCuaHangGiaySABO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ck6483102 {
+            get {
+                object obj = ResourceManager.GetObject("ck6483102", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dep_quai_ngang_puma_cool_cat_black_371016_04_mau_den_62e0c41fedf58_27072022115039 {
+            get {
+                object obj = ResourceManager.GetObject("dep_quai_ngang_puma_cool_cat_black_371016_04_mau_den_62e0c41fedf58_27072022115039" +
+                        "", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap giay_cao_got_gucci_women_s_mid_heel_slingback_with_horsebit_mau_den_size_36_63ae96608f5fc_30122022144224 {
+            get {
+                object obj = ResourceManager.GetObject("giay_cao_got_gucci_women_s_mid_heel_slingback_with_horsebit_mau_den_size_36_63ae9" +
+                        "6608f5fc_30122022144224", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap giay_golf_Nike_Black_Air_Max_1G_3_1 {
+            get {
+                object obj = ResourceManager.GetObject("giay_golf_Nike_Black_Air_Max_1G_3_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap istockphoto_1434341714_612x612 {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-1434341714-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shoes_5201593_1280 {
+            get {
+                object obj = ResourceManager.GetObject("shoes-5201593_1280", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

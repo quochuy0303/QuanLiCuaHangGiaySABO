@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v22.2" />
     <Reference Include="DevExpress.Data.Desktop.v22.2" />
     <Reference Include="DevExpress.Data.v22.2" />
@@ -57,6 +60,9 @@
     <Reference Include="DevExpress.Printing.v22.2.Core" />
     <Reference Include="DevExpress.Drawing.v22.2" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -68,6 +74,16 @@
       <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -101,6 +117,12 @@
     </Compile>
     <Compile Include="QlSG\frmHoaDonBan.Designer.cs">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QlSG\frmInHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSG\frmInHoaDon.Designer.cs">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="QlSG\frmKhachHang.cs">
       <SubType>Form</SubType>
@@ -168,6 +190,9 @@
     <EmbeddedResource Include="QlSG\frmHoaDonBan.resx">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QlSG\frmInHoaDon.resx">
+      <DependentUpon>frmInHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QlSG\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +257,7 @@
     <None Include="Resources\295128.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\giay-dja-bong-co-thap-turf-predator-accuracy-3-trai-cam-gw4641-01-standard-hover.webp" />
     <None Include="Resources\stock-vector-shoes-shop-logo-template-design-1680762358.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +283,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2b5570d23f45d90eefc3c5075e763840.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dep-quai-ngang-puma-cool-cat-black-371016-04-mau-den-62e0c41fedf58-27072022115039.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giay-cao-got-gucci-women-s-mid-heel-slingback-with-horsebit-mau-den-size-36-63ae96608f5fc-30122022144224.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shoes-5201593_1280.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ck6483102.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giay-golf-Nike-Black-Air-Max-1G-3-1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
