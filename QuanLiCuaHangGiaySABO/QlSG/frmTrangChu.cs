@@ -83,5 +83,26 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 this.Close();
             }
         }
+
+        private void accordionControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement3_Click_1(object sender, EventArgs e)
+        {   // Tạo và hiển thị form Nhân Viên bên trong FluentDesignFormContainer
+            frmDonDatHang dondatahangForm = new frmDonDatHang();
+                dondatahangForm.TopLevel = false;
+            dondatahangForm.FormBorderStyle = FormBorderStyle.None;
+            dondatahangForm.Dock = DockStyle.Fill;
+            fluentDesignFormContainer1.Controls.Clear();
+            fluentDesignFormContainer1.Controls.Add(dondatahangForm);
+            dondatahangForm.Show();
+        }
     }
 }

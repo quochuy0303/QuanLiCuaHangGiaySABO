@@ -12,7 +12,7 @@ namespace QuanLiCuaHangGiaySABO.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -42,6 +42,17 @@ namespace QuanLiCuaHangGiaySABO.Properties {
         public string QLSHOPGIAYConnectionString {
             get {
                 return ((string)(this["QLSHOPGIAYConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MIJ87KT\\DINHCHUONG;Initial Catalog=QLSHOPGIAY;Integrated Secu" +
+            "rity=True")]
+        public string QLSHOPGIAYConnectionString1 {
+            get {
+                return ((string)(this["QLSHOPGIAYConnectionString1"]));
             }
         }
     }

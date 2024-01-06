@@ -13,7 +13,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 {
     public partial class frmDonDatHang : DevExpress.XtraEditors.XtraForm
     {
-        bangiayDataContext db;
+        private bangiayDataContext db;
+        private DataGridViewRow r;
         private bool daChonHang = false;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
@@ -35,6 +36,14 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         {
             db = new bangiayDataContext();
             showdata();
+            dgvHoaDonDat.Columns["TenSanPham"].HeaderText = "Tên Sản Phẩm";
+            
+            dgvHoaDonDat.Columns["NgayDatHang"].HeaderText = "Ngày Đặt Hàng";
+            dgvHoaDonDat.Columns["Gia"].HeaderText = "Gía";
+            dgvHoaDonDat.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+            dgvHoaDonDat.Columns["TenSanPham"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvHoaDonDat.Columns["Gia"].DefaultCellStyle.Format = "N0";
+            dgvHoaDonDat.Columns["ThanhTien"].DefaultCellStyle.Format = "N0";
             dgvtruyenhoadon.Columns.Add("TenSanPham", "Tên Sản Phẩm");
             dgvtruyenhoadon.Columns.Add("SoLuong", "Số Lượng");
             dgvtruyenhoadon.Columns.Add("Gia", "Giá");
@@ -150,22 +159,14 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         
         private void dgvHoaDonDat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvHoaDonDat.Rows.Count)
+            if (e.RowIndex >= 0)
             {
-                DataGridViewRow selectedRow = dgvHoaDonDat.Rows[e.RowIndex];
-                string tenSanPham = selectedRow.Cells["TenSanPham"].Value.ToString();
-                int soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
-                double gia = Convert.ToDouble(selectedRow.Cells["Gia"].Value);
-                double thanhTien = Convert.ToDouble(selectedRow.Cells["ThanhTien"].Value);
+                r = dgvHoaDonDat.Rows[e.RowIndex];
+                cbe_tengiay.Text = r.Cells["TenSanPham"].Value.ToString();
+                te_gia.Text = r.Cells["Gia"].Value.ToString();
+                te_sl.Text = r.Cells["SoLuong"].Value.ToString();
+                te_tong.Text = r.Cells["ThanhTien"].Value.ToString();
 
-                dgvtruyenhoadon.Rows.Add(tenSanPham, soLuong, gia, thanhTien);
-                TinhTongTien();
-                daChonHang = true;
-            }
-            else
-            {
-                daChonHang = false;
-                MessageBox.Show("Chưa chọn hàng nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -237,6 +238,27 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dgvHoaDonDat_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvHoaDonDat.Rows.Count)
+            {
+                DataGridViewRow selectedRow = dgvHoaDonDat.Rows[e.RowIndex];
+                string tenSanPham = selectedRow.Cells["TenSanPham"].Value.ToString();
+                int soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
+                double gia = Convert.ToDouble(selectedRow.Cells["Gia"].Value);
+                double thanhTien = Convert.ToDouble(selectedRow.Cells["ThanhTien"].Value);
+
+                dgvtruyenhoadon.Rows.Add(tenSanPham, soLuong, gia, thanhTien);
+                TinhTongTien();
+                daChonHang = true;
+            }
+            else
+            {
+                daChonHang = false;
+                MessageBox.Show("Chưa chọn hàng nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 
