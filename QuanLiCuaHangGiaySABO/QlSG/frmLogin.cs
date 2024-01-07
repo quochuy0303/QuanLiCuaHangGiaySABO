@@ -58,7 +58,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 if (user != null && BCrypt.Net.BCrypt.Verify(password, user.MatKhau))
                 {
                     MessageBox.Show("Đăng nhập thành công!");
-                    frmTrangChu homeForm = new frmTrangChu(this);
+                    Main homeForm = new Main(this);
                     homeForm.Show();
                     this.Hide();
                 }

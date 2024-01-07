@@ -118,12 +118,6 @@
     <Compile Include="QlSG\frmHoaDonBan.Designer.cs">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="QlSG\frmInHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QlSG\frmInHoaDon.Designer.cs">
-      <DependentUpon>frmInHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="QlSG\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,11 +168,11 @@
     <Compile Include="QlSG\frmSign.Designer.cs">
       <DependentUpon>frmSign.cs</DependentUpon>
     </Compile>
-    <Compile Include="QlSG\frmTrangChu.cs">
+    <Compile Include="QlSG\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QlSG\frmTrangChu.Designer.cs">
-      <DependentUpon>frmTrangChu.cs</DependentUpon>
+    <Compile Include="QlSG\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QlSG\DonDatHang.resx">
@@ -189,9 +183,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QlSG\frmHoaDonBan.resx">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QlSG\frmInHoaDon.resx">
-      <DependentUpon>frmInHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QlSG\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
@@ -227,8 +218,8 @@
     <EmbeddedResource Include="QlSG\frmSign.resx">
       <DependentUpon>frmSign.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QlSG\frmTrangChu.resx">
-      <DependentUpon>frmTrangChu.cs</DependentUpon>
+    <EmbeddedResource Include="QlSG\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="QLBANGIAY.dbml">
@@ -301,6 +292,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\giay-golf-Nike-Black-Air-Max-1G-3-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z5048856475711_84b7aae56ab85d78f09b5d14bc1be3a1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fa541a9097e54b068da1aaad1fab7ef6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guests.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supply-chain-management.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\running-shoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-fulfillment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planet-earth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-door.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
