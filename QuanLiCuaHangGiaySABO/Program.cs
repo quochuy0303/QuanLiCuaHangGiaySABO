@@ -19,7 +19,8 @@ namespace QuanLiCuaHangGiaySABO
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            frmLogin loginForm = new frmLogin(null); // Truyền null hoặc tham số tùy thuộc vào cách bạn sử dụng MainForm
+            Application.Run(loginForm);
         }
     }
 }

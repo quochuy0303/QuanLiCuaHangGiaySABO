@@ -13,6 +13,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 {
     public partial class frmKhachHang : DevExpress.XtraEditors.XtraForm
     {
+        private frmLogin loginForm;
         public frmKhachHang()
         {
             InitializeComponent();
@@ -256,6 +257,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 MessageBox.Show("SDT chỉ được nhập số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+        }
+
+        private void pictureEdit1_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng của Main và hiển thị nó
+            Main mainForm = new Main(loginForm);
+            mainForm.Show();
+
+            // Đóng form hiện tại
+            this.Close();
         }
     }
 }

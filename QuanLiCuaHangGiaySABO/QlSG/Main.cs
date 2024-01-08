@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,17 +12,31 @@ using System.Windows.Forms;
 
 namespace QuanLiCuaHangGiaySABO.QlSG
 {
-   // private frmLogin loginForm;
+   
     public partial class Main : DevExpress.XtraEditors.XtraForm
     {
         private Form activeForm = null;
         private frmLogin loginForm;
+        private string tenNhanVien;
+        private string quyen;
         public Main(frmLogin loginForm)
         {
-            InitializeComponent();           
-            loginForm = new frmLogin();
+            InitializeComponent();                      
             this.loginForm = loginForm;
             hideSubMenu();
+        }
+        public void SetThongTinNhanVien(string tenNhanVien, string quyen)
+        {
+            this.tenNhanVien = tenNhanVien;
+            this.quyen = quyen;
+            UpdateThongTinNhanVienLabel();
+        }
+
+        private void UpdateThongTinNhanVienLabel()
+        {
+            // Cập nhật các điều khiển trên MainForm với thông tin nhân viên
+            label1.Text = $"Tên nhân viên: {tenNhanVien}";
+            label2.Text = $"Quyền: {quyen}";
         }
         private void hideSubMenu()
         {
@@ -57,7 +72,13 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
+            frmTTLL nhanVienForm = new frmTTLL();
 
+            openChildForm(new frmTTLL());
+            //..
+            //your codes
+            //..
+            hideSubMenu();
         }
         private void openChildForm(Form childForm)
         {
@@ -152,5 +173,51 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             //..
             hideSubMenu();
         }
+
+        private void btnout_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //private void UpdateThongTinNhanVienLabel()
+        //{
+        //    // Cập nhật các điều khiển trên MainForm với thông tin nhân viên
+        //    label1.Text = $"{LanguageManager.GetString("TenNhanVien")}: {tenNhanVien}";
+        //    label2.Text = $"{LanguageManager.GetString("Quyen")}: {quyen}";
+        //    btnMedia.Text = LanguageManager.GetString("Media");
+        //    btnPlaylist.Text = LanguageManager.GetString("Playlist");
+        //    btnTools.Text = LanguageManager.GetString("Tools");
+        //    btnHelp.Text = LanguageManager.GetString("Help");
+        //    btnnhanvien.Text = LanguageManager.GetString("NhanVien");
+        //    btnkh.Text = LanguageManager.GetString("KhachHang");
+        //    btnNCC.Text = LanguageManager.GetString("NhaCungCap");
+        //    Kho.Text = LanguageManager.GetString("Kho");
+        //    BtnSP.Text = LanguageManager.GetString("QuanLiGiay");
+        //    btnDonHang.Text = LanguageManager.GetString("DonDatHang");
+        //    btnout.Text = LanguageManager.GetString("Exit");
+        //}
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            // Hiển thị form hoặc dialog để chọn ngôn ngữ
+            //LanguageSelectionForm languageForm = new LanguageSelectionForm();
+            //if (languageForm.ShowDialog() == DialogResult.OK)
+            //{
+            //    // Lấy ngôn ngữ được chọn
+            //    string selectedLanguage = languageForm.SelectedLanguage;
+
+            //    // Thay đổi ngôn ngữ trong ứng dụng
+            //    LanguageManager.Initialize(new CultureInfo(selectedLanguage));
+
+            //    // Cập nhật lại các điều khiển trên form với ngôn ngữ mới
+            //    UpdateLanguage();
+            //}
+        }
+        //private void UpdateLanguage()
+        //{
+        //    // Cập nhật lại các điều khiển trên MainForm với ngôn ngữ mới
+        //    UpdateThongTinNhanVienLabel();
+        //    //... cập nhật các điều khiển khác nếu cần
+        //}
     }
     }

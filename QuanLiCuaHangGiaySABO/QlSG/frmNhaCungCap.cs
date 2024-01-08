@@ -13,6 +13,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 {
     public partial class frmNhaCungCap : DevExpress.XtraEditors.XtraForm
     {
+        private frmLogin loginForm;
         public frmNhaCungCap()
         {
             InitializeComponent();
@@ -234,6 +235,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureEdit1_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng của Main và hiển thị nó
+            Main mainForm = new Main(loginForm);
+            mainForm.Show();
+
+            // Đóng form hiện tại
+            this.Close();
         }
     }
 }

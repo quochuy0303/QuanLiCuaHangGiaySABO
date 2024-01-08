@@ -103,6 +103,26 @@ namespace QuanLiCuaHangGiaySABO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _switch {
+            get {
+                object obj = ResourceManager.GetObject("switch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow {
+            get {
+                object obj = ResourceManager.GetObject("arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barista {
             get {
                 object obj = ResourceManager.GetObject("barista", resourceCulture);
@@ -164,6 +184,26 @@ namespace QuanLiCuaHangGiaySABO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fa541a9097e54b068da1aaad1fab7ef6_PhotoRoom_png_PhotoRoom {
+            get {
+                object obj = ResourceManager.GetObject("fa541a9097e54b068da1aaad1fab7ef6-PhotoRoom.png-PhotoRoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fa541a9097e54b068da1aaad1fab7ef6_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("fa541a9097e54b068da1aaad1fab7ef6-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap giay_cao_got_gucci_women_s_mid_heel_slingback_with_horsebit_mau_den_size_36_63ae96608f5fc_30122022144224 {
             get {
                 object obj = ResourceManager.GetObject("giay_cao_got_gucci_women_s_mid_heel_slingback_with_horsebit_mau_den_size_36_63ae9" +
@@ -188,6 +228,36 @@ namespace QuanLiCuaHangGiaySABO.Properties {
         internal static System.Drawing.Bitmap guests {
             get {
                 object obj = ResourceManager.GetObject("guests", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hinh_nen_giay_jordan_yody_vn_17 {
+            get {
+                object obj = ResourceManager.GetObject("hinh-nen-giay-jordan-yody-vn-17", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icongiay {
+            get {
+                object obj = ResourceManager.GetObject("icongiay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icongiay1 {
+            get {
+                object obj = ResourceManager.GetObject("icongiay1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -318,6 +388,16 @@ namespace QuanLiCuaHangGiaySABO.Properties {
         internal static System.Drawing.Bitmap supply_chain_management {
             get {
                 object obj = ResourceManager.GetObject("supply-chain-management", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user {
+            get {
+                object obj = ResourceManager.GetObject("user", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

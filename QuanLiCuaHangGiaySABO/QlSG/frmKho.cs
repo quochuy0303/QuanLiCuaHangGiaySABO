@@ -13,6 +13,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 {
     public partial class frmKho : DevExpress.XtraEditors.XtraForm
     {
+        private frmLogin loginForm;
         private bangiayDataContext db;
       // private DataGridViewRow r;
         public frmKho()
@@ -23,7 +24,21 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private void frmKho_Load(object sender, EventArgs e)
         {
             db = new bangiayDataContext();
+            showdata();
+        }
+        
+        private void showdata()
+        {
+            var rs = from kho in db.Khos
+                     join matHang in db.SanPhams on kho.MaSanPham equals matHang.MaSanPham
+                     select new
+                     {
+                         matHang.TenSanPham,
+                         kho.NgayNhap,
+                         kho.TrangThai                       
+                     };
 
+            dgvKho.DataSource = rs;
         }
 
         private void sbnhaphang_Click(object sender, EventArgs e)
@@ -35,6 +50,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
            // formNhapHang.NhapHangThanhCong += FormNhapHang_NhapHangThanhCong;
 
             formNhapHang.ShowDialog();
+        }
+
+        private void pictureEdit1_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng của Main và hiển thị nó
+            Main mainForm = new Main(loginForm);
+            mainForm.Show();
+
+            // Đóng form hiện tại
+            this.Close();
         }
     }
 }

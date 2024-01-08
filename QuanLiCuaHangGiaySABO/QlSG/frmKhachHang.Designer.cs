@@ -47,11 +47,13 @@
             this.sbsua = new DevExpress.XtraEditors.SimpleButton();
             this.sbthem = new DevExpress.XtraEditors.SimpleButton();
             this.dgvKH = new System.Windows.Forms.DataGridView();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -246,11 +248,23 @@
             this.dgvKH.TabIndex = 5;
             this.dgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKH_CellClick);
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = global::QuanLiCuaHangGiaySABO.Properties.Resources.arrow;
+            this.pictureEdit1.Location = new System.Drawing.Point(1264, 23);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(43, 42);
+            this.pictureEdit1.TabIndex = 8;
+            this.pictureEdit1.Click += new System.EventHandler(this.pictureEdit1_Click);
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1357, 522);
+            this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.dgvKH);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -264,6 +278,7 @@
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,5 +303,6 @@
         private System.Windows.Forms.DataGridView dgvKH;
         private System.Windows.Forms.TextBox txtlockh;
         private System.Windows.Forms.TextBox txttimkh;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

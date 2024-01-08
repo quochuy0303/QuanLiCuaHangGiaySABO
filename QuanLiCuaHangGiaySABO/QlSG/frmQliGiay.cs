@@ -16,6 +16,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
     {
         private bangiayDataContext db;
         private DataGridViewRow r;
+        private frmLogin loginForm;
         public frmQliGiay()
         {
             InitializeComponent();
@@ -173,6 +174,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                     MessageBox.Show("Không Thể Xóa Sản Phẩm này", "Thông báo", MessageBoxButtons.OK);
                 }
             }
+        }
+
+        private void pictureEdit1_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng của Main và hiển thị nó
+            Main mainForm = new Main(loginForm);
+            mainForm.Show();
+
+            // Đóng form hiện tại
+            this.Close();
         }
     }
 }

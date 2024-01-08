@@ -45,11 +45,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvNCC
@@ -63,7 +65,7 @@
             this.dgvNCC.ReadOnly = true;
             this.dgvNCC.RowHeadersWidth = 51;
             this.dgvNCC.RowTemplate.Height = 24;
-            this.dgvNCC.Size = new System.Drawing.Size(1197, 268);
+            this.dgvNCC.Size = new System.Drawing.Size(1262, 268);
             this.dgvNCC.TabIndex = 4;
             this.dgvNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellClick);
             // 
@@ -225,11 +227,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Nhà Cung Cấp";
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = global::QuanLiCuaHangGiaySABO.Properties.Resources.arrow;
+            this.pictureEdit1.Location = new System.Drawing.Point(1179, 12);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(43, 42);
+            this.pictureEdit1.TabIndex = 7;
+            this.pictureEdit1.Click += new System.EventHandler(this.pictureEdit1_Click);
+            // 
             // frmNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 546);
+            this.ClientSize = new System.Drawing.Size(1262, 546);
+            this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.dgvNCC);
             this.Controls.Add(this.groupControl2);
@@ -243,6 +257,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,5 +280,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtLoc;
         private System.Windows.Forms.TextBox txtTimKiemNCC;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

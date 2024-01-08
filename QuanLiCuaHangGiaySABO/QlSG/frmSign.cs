@@ -54,6 +54,14 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                     MessageBox.Show("Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                // Kiểm tra xem email đã tồn tại hay chưa
+                var existingEmail = context.NhanViens.FirstOrDefault(u => u.Email == email);
+
+                if (existingEmail != null)
+                {
+                    MessageBox.Show("Email đã tồn tại. Vui lòng sử dụng một email khác.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 // Tạo mới đối tượng Nhân viên
                 NhanVien newUser = new NhanVien
@@ -64,7 +72,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                     Email = email,
                     VaiTro = role,
                     TenDangNhap = username,
-                    MatKhau = password
+                    MatKhau = HashFunction(password)//mã hóa trong csdl khi nhập mật khẩu đăng kí.
                 };
 
                 // Thêm mới Nhân viên vào cơ sở dữ liệu
@@ -85,24 +93,28 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             comboBoxEdit1.Properties.Items.AddRange(new object[] {
         "Nhân Viên",
         "Admin"});
+            // Ẩn mật khẩu và xác nhận mật khẩu ban đầu
+            te_password.Properties.UseSystemPasswordChar = true;
+            textEdit1.Properties.UseSystemPasswordChar = true;
         }
 
-        private string HashPassword(string password)
+        private string HashFunction(string input)
         {
-            // Sử dụng thuật toán băm SHA-256
-            using (SHA256 sha256 = SHA256.Create())
+            // Thực hiện hàm hash (ví dụ: MD5, SHA-256, SHA-512)
+            // Trong thực tế, bạn nên sử dụng thư viện bảo mật như BCrypt hoặc PBKDF2
+            // Đây chỉ là một ví dụ đơn giản để minh họa ý tưởng
+            using (var md5 = System.Security.Cryptography.MD5.Create())
             {
-                // Mã hóa mật khẩu thành mảng byte
-                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
 
-                // Chuyển đổi mảng byte thành chuỗi hex
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < hashedBytes.Length; i++)
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < hashBytes.Length; i++)
                 {
-                    builder.Append(hashedBytes[i].ToString("x2"));
+                    sb.Append(hashBytes[i].ToString("X2"));
                 }
 
-                return builder.ToString();
+                return sb.ToString();
             }
         }
     }

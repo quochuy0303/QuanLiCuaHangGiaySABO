@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraSpellChecker.Parser;
+using QuanLiCuaHangGiaySABO.QlSG;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ namespace QuanLiCuaHangGiaySABO
 {
     public partial class frmNhanVien : DevExpress.XtraEditors.XtraForm
     {
+        private frmLogin loginForm;
         public frmNhanVien()
         {
             InitializeComponent();
@@ -246,5 +248,21 @@ namespace QuanLiCuaHangGiaySABO
                 MessageBox.Show("Không được nhập quá 10 số điện thoại.", "Lưu ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void pictureEdit1_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng của Main và hiển thị nó
+            Main mainForm = new Main(loginForm);
+            mainForm.Show();
+
+            // Đóng form hiện tại
+            this.Close();
+        }
+
+        //private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
+        //{
+
+        //}
+
     }
 }

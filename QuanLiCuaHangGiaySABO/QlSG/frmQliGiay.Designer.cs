@@ -47,11 +47,13 @@
             this.txttimkh = new System.Windows.Forms.TextBox();
             this.sbthem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSP
@@ -201,7 +203,7 @@
             this.groupControl2.Controls.Add(this.sbxoa);
             this.groupControl2.Controls.Add(this.sbsua);
             this.groupControl2.Controls.Add(this.sbthem);
-            this.groupControl2.Location = new System.Drawing.Point(643, 6);
+            this.groupControl2.Location = new System.Drawing.Point(660, 6);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(578, 279);
             this.groupControl2.TabIndex = 7;
@@ -242,11 +244,23 @@
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = " Thông Tin Sản Phẩm ";
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = global::QuanLiCuaHangGiaySABO.Properties.Resources.arrow;
+            this.pictureEdit1.Location = new System.Drawing.Point(1266, 32);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(43, 42);
+            this.pictureEdit1.TabIndex = 9;
+            this.pictureEdit1.Click += new System.EventHandler(this.pictureEdit1_Click);
+            // 
             // frmQliGiay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 543);
+            this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.dgvSP);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
@@ -260,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,5 +299,6 @@
         private System.Windows.Forms.TextBox txttimkh;
         private DevExpress.XtraEditors.SimpleButton sbthem;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

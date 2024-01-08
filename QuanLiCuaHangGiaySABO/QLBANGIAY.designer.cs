@@ -1622,6 +1622,10 @@ namespace QuanLiCuaHangGiaySABO
 		
 		private System.Nullable<int> _SoLuongTonKho;
 		
+		private System.Nullable<System.DateTime> _NgayNhap;
+		
+		private System.Nullable<bool> _TrangThai;
+		
 		private EntityRef<SanPham> _SanPham;
 		
     #region Extensibility Method Definitions
@@ -1632,6 +1636,10 @@ namespace QuanLiCuaHangGiaySABO
     partial void OnMaSanPhamChanged();
     partial void OnSoLuongTonKhoChanging(System.Nullable<int> value);
     partial void OnSoLuongTonKhoChanged();
+    partial void OnNgayNhapChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayNhapChanged();
+    partial void OnTrangThaiChanging(System.Nullable<bool> value);
+    partial void OnTrangThaiChanged();
     #endregion
 		
 		public Kho()
@@ -1680,6 +1688,46 @@ namespace QuanLiCuaHangGiaySABO
 					this._SoLuongTonKho = value;
 					this.SendPropertyChanged("SoLuongTonKho");
 					this.OnSoLuongTonKhoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayNhap", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayNhap
+		{
+			get
+			{
+				return this._NgayNhap;
+			}
+			set
+			{
+				if ((this._NgayNhap != value))
+				{
+					this.OnNgayNhapChanging(value);
+					this.SendPropertyChanging();
+					this._NgayNhap = value;
+					this.SendPropertyChanged("NgayNhap");
+					this.OnNgayNhapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThai", DbType="Bit")]
+		public System.Nullable<bool> TrangThai
+		{
+			get
+			{
+				return this._TrangThai;
+			}
+			set
+			{
+				if ((this._TrangThai != value))
+				{
+					this.OnTrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._TrangThai = value;
+					this.SendPropertyChanged("TrangThai");
+					this.OnTrangThaiChanged();
 				}
 			}
 		}

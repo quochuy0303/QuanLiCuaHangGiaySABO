@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraWaitForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
     {
         private bangiayDataContext db;
         private DataGridViewRow r;
+        private frmLogin loginForm;
         private bool daChonHang = false;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
@@ -214,6 +216,15 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             float yPos = 100;
             float xPos = 50;
 
+            // In thông tin liên hệ
+            e.Graphics.DrawString("Tên Cửa Hàng: Cửa Hàng Giày SABO", font, Brushes.Black, xPos, yPos);
+            yPos += 20;
+            e.Graphics.DrawString("Địa Chỉ: 180 Đường Linh Xuân, Thủ Đức, Thành Phố HCM", font, Brushes.Black, xPos, yPos);
+            yPos += 20;
+            e.Graphics.DrawString("Hotline: 0922223583", font, Brushes.Black, xPos, yPos);
+            yPos += 40;
+
+            // In chi tiết đơn đặt hàng
             foreach (DataGridViewRow row in dgvtruyenhoadon.Rows)
             {
                 string tenSanPham = row.Cells["TenSanPham"].Value.ToString();
@@ -226,13 +237,13 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 yPos += 20;
             }
 
-            e.Graphics.DrawString("Cửa Hàng Giày SABO", new Font("Arial", 16, FontStyle.Bold), Brushes.Black, xPos, 50);
-            e.Graphics.DrawLine(new Pen(Color.Black), xPos, yPos + 20, 600, yPos + 20);
+            e.Graphics.DrawLine(new Pen(Color.Black), xPos, yPos, 600, yPos);
+            yPos += 20;
 
             // Vẽ tổng tiền
             string tongTien = dgvtruyenhoadon.Rows[dgvtruyenhoadon.Rows.Count - 1].Cells["ThanhTien2"].Value.ToString();
             string tongTienLine = $"Tổng tiền: {tongTien}";
-            e.Graphics.DrawString(tongTienLine, font, Brushes.Black, xPos, yPos + 40);
+            e.Graphics.DrawString(tongTienLine, font, Brushes.Black, xPos, yPos);
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -259,6 +270,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 daChonHang = false;
                 MessageBox.Show("Chưa chọn hàng nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void pictureEdit1_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng của Main và hiển thị nó
+            Main mainForm = new Main(loginForm);
+            mainForm.Show();
+
+            // Đóng form hiện tại
+            this.Close();
         }
     }
 

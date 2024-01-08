@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using DevExpress.XtraWaitForm;
 
 namespace QuanLiCuaHangGiaySABO.QlSG
 {
@@ -17,7 +18,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
     {
         private bangiayDataContext db;      
 
-        public frmLogin()
+        public frmLogin(frmLogin mainForm)
         {
             
             InitializeComponent();
@@ -25,6 +26,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             db = new bangiayDataContext();
             // Gắn sự kiện click cho nút đăng nhập
             sb_login.Click += sb_login_Click;
+            ce_ShowPassword.CheckedChanged += ce_ShowPassword_CheckedChanged;
+            te_password.Properties.UseSystemPasswordChar = true;
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -57,8 +60,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
                 if (user != null && BCrypt.Net.BCrypt.Verify(password, user.MatKhau))
                 {
-                    MessageBox.Show("Đăng nhập thành công!");
+                    // Lấy thông tin nhân viên và quyền từ csdl
+                    string tenNhanVien = user.TenNhanVien;
+                    string quyen = user.VaiTro;
+
+                    // Tạo một thể hiện của MainForm
                     Main homeForm = new Main(this);
+
+                    // Gọi phương thức SetThongTinNhanVien từ thể hiện của MainForm để cập nhật thông tin nhân viên và quyền
+                    homeForm.SetThongTinNhanVien(tenNhanVien, quyen);
+                    MessageBox.Show("Đăng nhập thành công!");                    
                     homeForm.Show();
                     this.Hide();
                 }
@@ -90,6 +101,19 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             this.Show();
             this.te_username.Text = string.Empty;
             this.te_password.Text = string.Empty;
+        }
+
+        private void ce_ShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            // Nếu người dùng chọn hiển thị mật khẩu
+            if (ce_ShowPassword.Checked)
+            {
+                te_password.Properties.UseSystemPasswordChar = false; // Hiển thị mật khẩu
+            }
+            else
+            {
+                te_password.Properties.UseSystemPasswordChar = true; // Ẩn mật khẩu
+            }
         }
     }
     }

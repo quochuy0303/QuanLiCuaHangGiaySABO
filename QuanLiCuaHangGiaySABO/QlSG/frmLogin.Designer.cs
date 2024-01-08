@@ -35,14 +35,15 @@
             this.te_username = new DevExpress.XtraEditors.TextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.sb_login = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.hpl_fogotpass = new DevExpress.XtraEditors.HyperLinkEdit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ce_ShowPassword = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.te_password.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_username.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpl_fogotpass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ce_ShowPassword.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -110,16 +111,6 @@
             this.sb_login.Text = "Đăng Nhập";
             this.sb_login.Click += new System.EventHandler(this.sb_login_Click);
             // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.EditValue = global::QuanLiCuaHangGiaySABO.Properties.Resources._62769_icons_wallpaper_youtube_desktop_computer_login;
-            this.pictureEdit1.Location = new System.Drawing.Point(578, 50);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureEdit1.Size = new System.Drawing.Size(100, 96);
-            this.pictureEdit1.TabIndex = 5;
-            // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Bauhaus 93", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,18 +138,40 @@
             this.hpl_fogotpass.TabIndex = 7;
             this.hpl_fogotpass.OpenLink += new DevExpress.XtraEditors.Controls.OpenLinkEventHandler(this.hpl_fogotpass_OpenLink);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(178)))), ((int)(((byte)(63)))));
+            this.panel1.BackgroundImage = global::QuanLiCuaHangGiaySABO.Properties.Resources.user;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(569, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(118, 118);
+            this.panel1.TabIndex = 8;
+            // 
+            // ce_ShowPassword
+            // 
+            this.ce_ShowPassword.Location = new System.Drawing.Point(757, 327);
+            this.ce_ShowPassword.Name = "ce_ShowPassword";
+            this.ce_ShowPassword.Properties.Appearance.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold);
+            this.ce_ShowPassword.Properties.Appearance.Options.UseFont = true;
+            this.ce_ShowPassword.Properties.Caption = "Ẩn/Hiện";
+            this.ce_ShowPassword.Size = new System.Drawing.Size(107, 24);
+            this.ce_ShowPassword.TabIndex = 9;
+            this.ce_ShowPassword.CheckedChanged += new System.EventHandler(this.ce_ShowPassword_CheckedChanged);
+            // 
             // frmLogin
             // 
-            this.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = global::QuanLiCuaHangGiaySABO.Properties.Resources.istockphoto_1434341714_612x612;
             this.ClientSize = new System.Drawing.Size(897, 529);
+            this.Controls.Add(this.ce_ShowPassword);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.hpl_fogotpass);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.sb_login);
             this.Controls.Add(this.sb_sign);
             this.Controls.Add(this.labelControl2);
@@ -174,8 +187,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.te_password.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_username.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hpl_fogotpass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ce_ShowPassword.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,8 +203,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SimpleButton sb_sign;
         private DevExpress.XtraEditors.SimpleButton sb_login;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.HyperLinkEdit hpl_fogotpass;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.CheckEdit ce_ShowPassword;
     }
 }

@@ -168,6 +168,19 @@
     <Compile Include="QlSG\frmSign.Designer.cs">
       <DependentUpon>frmSign.cs</DependentUpon>
     </Compile>
+    <Compile Include="QlSG\frmTTLL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSG\frmTTLL.Designer.cs">
+      <DependentUpon>frmTTLL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QlSG\LanguageManager.cs" />
+    <Compile Include="QlSG\LanguageSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSG\LanguageSelectionForm.Designer.cs">
+      <DependentUpon>LanguageSelectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="QlSG\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,9 +231,17 @@
     <EmbeddedResource Include="QlSG\frmSign.resx">
       <DependentUpon>frmSign.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QlSG\frmTTLL.resx">
+      <DependentUpon>frmTTLL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QlSG\LanguageSelectionForm.resx">
+      <DependentUpon>LanguageSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QlSG\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.en.resx" />
+    <EmbeddedResource Include="Resources.vi.resx" />
     <None Include="App.config" />
     <None Include="QLBANGIAY.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -343,6 +364,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit-door.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-nen-giay-jordan-yody-vn-17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fa541a9097e54b068da1aaad1fab7ef6-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icongiay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icongiay1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fa541a9097e54b068da1aaad1fab7ef6-PhotoRoom.png-PhotoRoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
