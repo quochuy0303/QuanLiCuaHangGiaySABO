@@ -194,6 +194,7 @@
             // 
             this.dgvKho.AllowUserToAddRows = false;
             this.dgvKho.AllowUserToDeleteRows = false;
+            this.dgvKho.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvKho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKho.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvKho.Location = new System.Drawing.Point(0, 345);
@@ -231,6 +232,8 @@
             // 
             // frmKho
             // 
+            this.Appearance.BackColor = System.Drawing.Color.Turquoise;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1357, 547);

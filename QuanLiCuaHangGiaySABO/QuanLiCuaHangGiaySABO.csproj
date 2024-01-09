@@ -116,6 +116,12 @@
     <Compile Include="QlSG\DonDatHang.Designer.cs">
       <DependentUpon>DonDatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="QlSG\frmChiTietNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSG\frmChiTietNhap.Designer.cs">
+      <DependentUpon>frmChiTietNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="QlSG\frmForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QlSG\DonDatHang.resx">
       <DependentUpon>DonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QlSG\frmChiTietNhap.resx">
+      <DependentUpon>frmChiTietNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QlSG\frmForgotPassword.resx">
       <DependentUpon>frmForgotPassword.cs</DependentUpon>

@@ -1215,6 +1215,12 @@ namespace QuanLiCuaHangGiaySABO
 		
 		private System.Nullable<decimal> _TongCong;
 		
+		private System.Nullable<byte> _danhap;
+		
+		private System.Nullable<int> _MaNhaCungCap;
+		
+		private System.Nullable<int> _MaNhanVien;
+		
 		private EntitySet<ChiTietHoaDon> _ChiTietHoaDons;
 		
 		private EntityRef<DonDatHang> _DonDatHang;
@@ -1233,6 +1239,12 @@ namespace QuanLiCuaHangGiaySABO
     partial void OnNgayGiaoHangChanged();
     partial void OnTongCongChanging(System.Nullable<decimal> value);
     partial void OnTongCongChanged();
+    partial void OndanhapChanging(System.Nullable<byte> value);
+    partial void OndanhapChanged();
+    partial void OnMaNhaCungCapChanging(System.Nullable<int> value);
+    partial void OnMaNhaCungCapChanged();
+    partial void OnMaNhanVienChanging(System.Nullable<int> value);
+    partial void OnMaNhanVienChanged();
     #endregion
 		
 		public HoaDon()
@@ -1342,6 +1354,66 @@ namespace QuanLiCuaHangGiaySABO
 					this._TongCong = value;
 					this.SendPropertyChanged("TongCong");
 					this.OnTongCongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_danhap", DbType="TinyInt")]
+		public System.Nullable<byte> danhap
+		{
+			get
+			{
+				return this._danhap;
+			}
+			set
+			{
+				if ((this._danhap != value))
+				{
+					this.OndanhapChanging(value);
+					this.SendPropertyChanging();
+					this._danhap = value;
+					this.SendPropertyChanged("danhap");
+					this.OndanhapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhaCungCap", DbType="Int")]
+		public System.Nullable<int> MaNhaCungCap
+		{
+			get
+			{
+				return this._MaNhaCungCap;
+			}
+			set
+			{
+				if ((this._MaNhaCungCap != value))
+				{
+					this.OnMaNhaCungCapChanging(value);
+					this.SendPropertyChanging();
+					this._MaNhaCungCap = value;
+					this.SendPropertyChanged("MaNhaCungCap");
+					this.OnMaNhaCungCapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNhanVien", DbType="Int")]
+		public System.Nullable<int> MaNhanVien
+		{
+			get
+			{
+				return this._MaNhanVien;
+			}
+			set
+			{
+				if ((this._MaNhanVien != value))
+				{
+					this.OnMaNhanVienChanging(value);
+					this.SendPropertyChanging();
+					this._MaNhanVien = value;
+					this.SendPropertyChanged("MaNhanVien");
+					this.OnMaNhanVienChanged();
 				}
 			}
 		}
