@@ -103,6 +103,16 @@ namespace QuanLiCuaHangGiaySABO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _9036c61e3d71171053c0c203334d5628 {
+            get {
+                object obj = ResourceManager.GetObject("9036c61e3d71171053c0c203334d5628", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _switch {
             get {
                 object obj = ResourceManager.GetObject("switch", resourceCulture);
@@ -328,6 +338,26 @@ namespace QuanLiCuaHangGiaySABO.Properties {
         internal static System.Drawing.Bitmap planet_earth {
             get {
                 object obj = ResourceManager.GetObject("planet-earth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap poster_giay_dep_mat {
+            get {
+                object obj = ResourceManager.GetObject("poster-giay-dep-mat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profile {
+            get {
+                object obj = ResourceManager.GetObject("profile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

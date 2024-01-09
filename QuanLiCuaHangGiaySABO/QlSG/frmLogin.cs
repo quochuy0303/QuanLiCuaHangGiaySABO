@@ -63,20 +63,22 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                     // Lấy thông tin nhân viên và quyền từ csdl
                     string tenNhanVien = user.TenNhanVien;
                     string quyen = user.VaiTro;
-
+                    Image userImage = Properties.Resources.profile;
                     // Tạo một thể hiện của MainForm
-                    Main homeForm = new Main(this);
-
+                    Main homeForm = new Main(this);            
                     // Gọi phương thức SetThongTinNhanVien từ thể hiện của MainForm để cập nhật thông tin nhân viên và quyền
-                    homeForm.SetThongTinNhanVien(tenNhanVien, quyen);
+                    homeForm.SetThongTinNhanVien(tenNhanVien, quyen ,userImage);
                     MessageBox.Show("Đăng nhập thành công!");                    
                     homeForm.Show();
+                   
                     this.Hide();
+                   
                 }
                 else
                 {
                     MessageBox.Show("Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại.");
                 }
+                
             }       
     }
       

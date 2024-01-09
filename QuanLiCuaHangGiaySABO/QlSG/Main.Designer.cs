@@ -33,6 +33,9 @@
             this.panelPlaylistSubMenu = new System.Windows.Forms.Panel();
             this.panelMediaSubMenu = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
@@ -47,13 +50,12 @@
             this.btnnhanvien = new System.Windows.Forms.Button();
             this.btnMedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
             this.panelMediaSubMenu.SuspendLayout();
-            this.panelLogo.SuspendLayout();
+            this.panelChildForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -115,11 +117,46 @@
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.panelChildForm.BackgroundImage = global::QuanLiCuaHangGiaySABO.Properties.Resources.hinh_nen_giay_jordan_yody_vn_17;
             this.panelChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelChildForm.Controls.Add(this.pictureBoxUser);
+            this.panelChildForm.Controls.Add(this.label1);
+            this.panelChildForm.Controls.Add(this.label2);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1027, 540);
             this.panelChildForm.TabIndex = 5;
+            // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.BackColor = System.Drawing.Color.Red;
+            this.pictureBoxUser.Location = new System.Drawing.Point(15, 12);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(100, 92);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxUser.TabIndex = 1;
+            this.pictureBoxUser.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(121, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(121, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "label1";
             // 
             // btnout
             // 
@@ -403,33 +440,11 @@
             // 
             this.panelLogo.BackgroundImage = global::QuanLiCuaHangGiaySABO.Properties.Resources.fa541a9097e54b068da1aaad1fab7ef6_PhotoRoom_png_PhotoRoom;
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelLogo.Controls.Add(this.label2);
-            this.panelLogo.Controls.Add(this.label1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(229, 193);
             this.panelLogo.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(176, 137);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(176, 101);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
             // 
             // Main
             // 
@@ -444,8 +459,9 @@
             this.panelToolsSubMenu.ResumeLayout(false);
             this.panelPlaylistSubMenu.ResumeLayout(false);
             this.panelMediaSubMenu.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
-            this.panelLogo.PerformLayout();
+            this.panelChildForm.ResumeLayout(false);
+            this.panelChildForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,5 +489,6 @@
         private System.Windows.Forms.Button btnout;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBoxUser;
     }
 }

@@ -37,9 +37,30 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private void frmDonDatHang_Load(object sender, EventArgs e)
         {
             db = new bangiayDataContext();
+            try
+            {
+                // Lấy danh sách tên sản phẩm từ cơ sở dữ liệu
+                var tenSanPhamList = db.SanPhams.Select(sp => sp.TenSanPham).ToList();
+
+                // Đặt danh sách làm nguồn dữ liệu cho ComboBox
+                cbe_tengiay.Properties.Items.AddRange(tenSanPhamList);
+
+                if (cbe_tengiay.Properties.Items.Count > 0)
+                {
+                    // Chọn mặc định một giá trị nếu cần thiết
+                    cbe_tengiay.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu tên sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lấy dữ liệu tên sản phẩm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             showdata();
-            dgvHoaDonDat.Columns["TenSanPham"].HeaderText = "Tên Sản Phẩm";
-            
+            dgvHoaDonDat.Columns["TenSanPham"].HeaderText = "Tên Sản Phẩm";           
             dgvHoaDonDat.Columns["NgayDatHang"].HeaderText = "Ngày Đặt Hàng";
             dgvHoaDonDat.Columns["Gia"].HeaderText = "Gía";
             dgvHoaDonDat.Columns["ThanhTien"].HeaderText = "Thành Tiền";

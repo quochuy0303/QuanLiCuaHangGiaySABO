@@ -23,5 +23,11 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         {
             return resourceManager.GetString(key, currentCulture);
         }
+
+        public static string GetCurrentCultureName()
+        {
+            return currentCulture.Name;
+        }
     }
 }
+

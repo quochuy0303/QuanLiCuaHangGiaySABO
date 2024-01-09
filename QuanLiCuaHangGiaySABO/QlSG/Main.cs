@@ -25,18 +25,45 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             this.loginForm = loginForm;
             hideSubMenu();
         }
-        public void SetThongTinNhanVien(string tenNhanVien, string quyen)
+        public void SetThongTinNhanVien(string tenNhanVien, string quyen, Image userImage)
         {
             this.tenNhanVien = tenNhanVien;
             this.quyen = quyen;
+            pictureBoxUser.Image = userImage; // pictureBoxUser là PictureBox để hiển thị hình ảnh
             UpdateThongTinNhanVienLabel();
+            PhanQuyen();
+
+
         }
 
+         private void PhanQuyen ( ) 
+        {
+            if (quyen == "Admin")
+            {
+                btnnhanvien.Enabled = true;
+                btnkh.Enabled = true;
+                btnNCC.Enabled = true;
+                Kho.Enabled = true;
+                BtnSP.Enabled = true;
+                btnDonHang.Enabled = true;
+            }
+            else if (quyen == "Nhân Viên")
+            {
+                btnnhanvien.Enabled = false;
+                btnkh.Enabled = true;
+                btnNCC.Enabled = false;
+                Kho.Enabled = true;
+                BtnSP.Enabled = true;
+                btnDonHang.Enabled = true;
+            }
+        }
         private void UpdateThongTinNhanVienLabel()
         {
             // Cập nhật các điều khiển trên MainForm với thông tin nhân viên
             label1.Text = $"Tên nhân viên: {tenNhanVien}";
             label2.Text = $"Quyền: {quyen}";
+            
+
         }
         private void hideSubMenu()
         {
@@ -179,45 +206,53 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             Application.Exit();
         }
 
-        //private void UpdateThongTinNhanVienLabel()
-        //{
-        //    // Cập nhật các điều khiển trên MainForm với thông tin nhân viên
-        //    label1.Text = $"{LanguageManager.GetString("TenNhanVien")}: {tenNhanVien}";
-        //    label2.Text = $"{LanguageManager.GetString("Quyen")}: {quyen}";
-        //    btnMedia.Text = LanguageManager.GetString("Media");
-        //    btnPlaylist.Text = LanguageManager.GetString("Playlist");
-        //    btnTools.Text = LanguageManager.GetString("Tools");
-        //    btnHelp.Text = LanguageManager.GetString("Help");
-        //    btnnhanvien.Text = LanguageManager.GetString("NhanVien");
-        //    btnkh.Text = LanguageManager.GetString("KhachHang");
-        //    btnNCC.Text = LanguageManager.GetString("NhaCungCap");
-        //    Kho.Text = LanguageManager.GetString("Kho");
-        //    BtnSP.Text = LanguageManager.GetString("QuanLiGiay");
-        //    btnDonHang.Text = LanguageManager.GetString("DonDatHang");
-        //    btnout.Text = LanguageManager.GetString("Exit");
-        //}
+        private CultureInfo currentCulture;
+
+        private void UpdateControlLanguage(Control control)
+        {
+            if (control is Button)
+            {
+                var button = (Button)control;
+                button.Text = LanguageManager.GetString(button.Name + ".Text");
+            }
+
+            foreach (Control childControl in control.Controls)
+            {
+                UpdateControlLanguage(childControl);
+            }
+        }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            // Hiển thị form hoặc dialog để chọn ngôn ngữ
-            //LanguageSelectionForm languageForm = new LanguageSelectionForm();
-            //if (languageForm.ShowDialog() == DialogResult.OK)
-            //{
-            //    // Lấy ngôn ngữ được chọn
-            //    string selectedLanguage = languageForm.SelectedLanguage;
-
-            //    // Thay đổi ngôn ngữ trong ứng dụng
-            //    LanguageManager.Initialize(new CultureInfo(selectedLanguage));
-
-            //    // Cập nhật lại các điều khiển trên form với ngôn ngữ mới
-            //    UpdateLanguage();
-            //}
+            // Hiển thị form chọn ngôn ngữ
+            LanguageSelectionForm languageForm = new LanguageSelectionForm();
+            if (languageForm.ShowDialog() == DialogResult.OK)
+            {
+                // Cập nhật lại ngôn ngữ trong MainForm với ngôn ngữ mới
+                UpdateLanguage();
+            }
         }
-        //private void UpdateLanguage()
-        //{
-        //    // Cập nhật lại các điều khiển trên MainForm với ngôn ngữ mới
-        //    UpdateThongTinNhanVienLabel();
-        //    //... cập nhật các điều khiển khác nếu cần
-        //}
+        private void UpdateLanguage()
+        {
+            // Cập nhật lại các điều khiển trên MainForm với ngôn ngữ mới
+            UpdateThongTinNhanVienLabel();
+            //... cập nhật các điều khiển khác nếu cần
+            ApplyLanguage();
+        }
+        private void ApplyLanguage()
+        {
+            btnMedia.Text = LanguageManager.GetString("Media");
+            btnPlaylist.Text = LanguageManager.GetString("Playlist");
+            btnTools.Text = LanguageManager.GetString("Tools");
+            btnHelp.Text = LanguageManager.GetString("Help");
+            btnnhanvien.Text = LanguageManager.GetString("NhanVien");
+            btnkh.Text = LanguageManager.GetString("KhachHang");
+            btnNCC.Text = LanguageManager.GetString("NhaCungCap");
+            Kho.Text = LanguageManager.GetString("Kho");
+            BtnSP.Text = LanguageManager.GetString("QuanLiGiay");
+            btnDonHang.Text = LanguageManager.GetString("DonDatHang");
+            btnout.Text = LanguageManager.GetString("Exit");
+        }
+
     }
     }

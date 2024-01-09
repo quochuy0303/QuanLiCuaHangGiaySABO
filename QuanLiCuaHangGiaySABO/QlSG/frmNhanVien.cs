@@ -109,20 +109,22 @@ namespace QuanLiCuaHangGiaySABO
             if (r == null)//Khong co dong nao duoc chon
             {
                 MessageBox.Show("Vui Lòng chọn nhân viên cần cập nhật", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 return;
             }
-            var nv = db.NhanViens.SingleOrDefault(x => x.TenNhanVien == r.Cells["TenNhanVien"].Value.ToString());
 
-            nv.TenNhanVien = txthoten.Text;
-            nv.SoDienThoai = txtsdt.Text;          
-            nv.DiaChi = txtdiachi.Text;           
-            db.SubmitChanges();
-            MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK);
-            showdata();
-            //reset lại các trường thuộc tính
-            txthoten.Text = txtsdt.Text = txtdiachi.Text = null;
-            r = null;
+            var nv = db.NhanViens.SingleOrDefault(x => x.Email == r.Cells["Email"].Value.ToString());
+                    
+                nv.TenNhanVien = txthoten.Text;
+                nv.SoDienThoai = txtsdt.Text;              
+                nv.DiaChi = txtdiachi.Text;
+                db.SubmitChanges();
+                MessageBox.Show("Cập Nhật thành công", "Thông báo", MessageBoxButtons.OK);
+                showdata();
+                //reset lại các trường thuộc tính
+                txthoten.Text = txtsdt.Text = txtdiachi.Text = null;
+                r = null;
+            
+            
         }
 
         private void sbxoa_Click(object sender, EventArgs e)
