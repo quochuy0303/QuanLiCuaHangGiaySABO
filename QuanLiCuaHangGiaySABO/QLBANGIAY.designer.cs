@@ -1221,6 +1221,10 @@ namespace QuanLiCuaHangGiaySABO
 		
 		private System.Nullable<int> _MaNhanVien;
 		
+		private System.Nullable<int> _tienthanhtoan;
+		
+		private string _nhanviennhap;
+		
 		private EntitySet<ChiTietHoaDon> _ChiTietHoaDons;
 		
 		private EntityRef<DonDatHang> _DonDatHang;
@@ -1245,6 +1249,10 @@ namespace QuanLiCuaHangGiaySABO
     partial void OnMaNhaCungCapChanged();
     partial void OnMaNhanVienChanging(System.Nullable<int> value);
     partial void OnMaNhanVienChanged();
+    partial void OntienthanhtoanChanging(System.Nullable<int> value);
+    partial void OntienthanhtoanChanged();
+    partial void OnnhanviennhapChanging(string value);
+    partial void OnnhanviennhapChanged();
     #endregion
 		
 		public HoaDon()
@@ -1414,6 +1422,46 @@ namespace QuanLiCuaHangGiaySABO
 					this._MaNhanVien = value;
 					this.SendPropertyChanged("MaNhanVien");
 					this.OnMaNhanVienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tienthanhtoan", DbType="Int")]
+		public System.Nullable<int> tienthanhtoan
+		{
+			get
+			{
+				return this._tienthanhtoan;
+			}
+			set
+			{
+				if ((this._tienthanhtoan != value))
+				{
+					this.OntienthanhtoanChanging(value);
+					this.SendPropertyChanging();
+					this._tienthanhtoan = value;
+					this.SendPropertyChanged("tienthanhtoan");
+					this.OntienthanhtoanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nhanviennhap", DbType="NVarChar(50)")]
+		public string nhanviennhap
+		{
+			get
+			{
+				return this._nhanviennhap;
+			}
+			set
+			{
+				if ((this._nhanviennhap != value))
+				{
+					this.OnnhanviennhapChanging(value);
+					this.SendPropertyChanging();
+					this._nhanviennhap = value;
+					this.SendPropertyChanged("nhanviennhap");
+					this.OnnhanviennhapChanged();
 				}
 			}
 		}

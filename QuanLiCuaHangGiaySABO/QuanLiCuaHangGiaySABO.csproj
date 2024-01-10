@@ -424,6 +424,36 @@
   <ItemGroup>
     <None Include="Resources\poster-giay-dep-mat.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-red-sneakers-illustration-px-image_2922041.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-anh-background-mau-sac-that-dep_034909644.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-men-s-textured-men-s-shoes-banner-poster-background-picture-image_1128686.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\H209.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

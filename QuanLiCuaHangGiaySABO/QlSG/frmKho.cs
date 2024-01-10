@@ -35,10 +35,11 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                      {
                          matHang.TenSanPham,
                          kho.NgayNhap,
+                         matHang.SoLuong,
                          kho.TrangThai                       
                      };
 
-            dgvKho.DataSource = rs;
+            dgvKho.DataSource = rs.ToList();
         }
 
         private void sbnhaphang_Click(object sender, EventArgs e)
@@ -47,7 +48,10 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             frmNhapHang formNhapHang = new frmNhapHang();
 
             // Đăng ký sự kiện để nhận thông tin sau khi nhập hàng
-           // formNhapHang.NhapHangThanhCong += FormNhapHang_NhapHangThanhCong;
+            formNhapHang.NhapHangThanhCong += (s, args) => {
+                // Cập nhật DataGridView sau khi nhập hàng thành công
+                showdata();
+            };
 
             formNhapHang.ShowDialog();
         }

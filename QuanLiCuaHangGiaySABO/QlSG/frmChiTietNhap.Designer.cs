@@ -55,6 +55,7 @@
             this.btnxacnhan.TabIndex = 40;
             this.btnxacnhan.Text = "Xác Nhận";
             this.btnxacnhan.UseVisualStyleBackColor = true;
+            this.btnxacnhan.Click += new System.EventHandler(this.btnxacnhan_Click);
             // 
             // rbtnhapkho
             // 
@@ -66,6 +67,8 @@
             this.rbtnhapkho.TabIndex = 38;
             this.rbtnhapkho.Text = "Nhập kho";
             this.rbtnhapkho.UseVisualStyleBackColor = true;
+            this.rbtnhapkho.CheckedChanged += new System.EventHandler(this.rbtnhapkho_CheckedChanged);
+            this.rbtnhapkho.Click += new System.EventHandler(this.rbtnhapkho_Click);
             // 
             // rbtyeucau
             // 
@@ -89,6 +92,7 @@
             this.btnxoa.TabIndex = 37;
             this.btnxoa.Text = "Xóa";
             this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnThem
             // 
@@ -99,6 +103,7 @@
             this.btnThem.TabIndex = 36;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtSL
             // 
@@ -194,6 +199,7 @@
             this.dgvchitiethoadon.RowTemplate.Height = 24;
             this.dgvchitiethoadon.Size = new System.Drawing.Size(901, 408);
             this.dgvchitiethoadon.TabIndex = 26;
+            this.dgvchitiethoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvchitiethoadon_CellClick);
             // 
             // frmChiTietNhap
             // 
@@ -219,6 +225,7 @@
             this.Controls.Add(this.dgvchitiethoadon);
             this.Name = "frmChiTietNhap";
             this.Text = "frmChiTietNhap";
+            this.Load += new System.EventHandler(this.frmChiTietNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvchitiethoadon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

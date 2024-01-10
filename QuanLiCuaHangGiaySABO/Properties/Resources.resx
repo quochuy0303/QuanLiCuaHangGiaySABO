@@ -118,14 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="9036c61e3d71171053c0c203334d5628" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9036c61e3d71171053c0c203334d5628.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="poster-giay-dep-mat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\poster-giay-dep-mat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="guests" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\guests.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="running-shoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\running-shoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="z5048856475711_84b7aae56ab85d78f09b5d14bc1be3a1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z5048856475711_84b7aae56ab85d78f09b5d14bc1be3a1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +148,14 @@
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="padlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\padlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="planet-earth" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\planet-earth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngtree-red-sneakers-illustration-px-image_2922041" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-red-sneakers-illustration-px-image_2922041.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,6 +172,15 @@
   <data name="icongiay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icongiay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="user (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tải xuống" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tải xuống.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,6 +193,9 @@
   <data name="6146587" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6146587.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="H209" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\H209.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shoes-5201593_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shoes-5201593_1280.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -183,6 +204,9 @@
   </data>
   <data name="giay_cao_got_gucci_women_s_mid_heel_slingback_with_horsebit_mau_den_size_36_63ae96608f5fc_30122022144224" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\giay-cao-got-gucci-women-s-mid-heel-slingback-with-horsebit-mau-den-size-36-63ae96608f5fc-30122022144224.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hinh-anh-background-mau-sac-that-dep_034909644" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hinh-anh-background-mau-sac-that-dep_034909644.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fa541a9097e54b068da1aaad1fab7ef6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fa541a9097e54b068da1aaad1fab7ef6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,14 +223,20 @@
   <data name="icongiay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icongiay1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="z5048856475711_84b7aae56ab85d78f09b5d14bc1be3a1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\z5048856475711_84b7aae56ab85d78f09b5d14bc1be3a1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="9036c61e3d71171053c0c203334d5628" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9036c61e3d71171053c0c203334d5628.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ck6483102" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ck6483102.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pngtree-men-s-textured-men-s-shoes-banner-poster-background-picture-image_1128686" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-men-s-textured-men-s-shoes-banner-poster-background-picture-image_1128686.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="warehouse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warehouse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stock-vector-shoes-shop-logo-template-design-1680762358" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stock-vector-shoes-shop-logo-template-design-1680762358.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,7 +265,7 @@
   <data name="hinh-nen-giay-jordan-yody-vn-17" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hinh-nen-giay-jordan-yody-vn-17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="poster-giay-dep-mat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\poster-giay-dep-mat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

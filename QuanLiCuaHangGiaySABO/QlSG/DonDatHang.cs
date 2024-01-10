@@ -233,6 +233,26 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            // Cập nhật số lượng sản phẩm sau khi in hóa đơn
+            foreach (DataGridViewRow row in dgvtruyenhoadon.Rows)
+            {
+                int maSanPham = GetMaSanPhamFromTenSanPham(row.Cells["TenSanPham"].Value.ToString());
+                int soLuong = Convert.ToInt32(row.Cells["SoLuong"].Value);
+
+                // Lấy thông tin sản phẩm từ bảng SanPhams
+                var sanPham = db.SanPhams.SingleOrDefault(sp => sp.MaSanPham == maSanPham);
+
+                if (sanPham != null)
+                {
+                    // Cập nhật số lượng sản phẩm
+                    sanPham.SoLuong -= soLuong;
+                }
+            }
+
+            // Lưu thay đổi vào cơ sở dữ liệu
+            db.SubmitChanges();
+
+            // In thông tin liên hệ và chi tiết đơn đặt hàng
             Font font = new Font("Arial", 12, FontStyle.Regular);
             float yPos = 100;
             float xPos = 50;
@@ -265,6 +285,14 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             string tongTien = dgvtruyenhoadon.Rows[dgvtruyenhoadon.Rows.Count - 1].Cells["ThanhTien2"].Value.ToString();
             string tongTienLine = $"Tổng tiền: {tongTien}";
             e.Graphics.DrawString(tongTienLine, font, Brushes.Black, xPos, yPos);
+        }
+
+        // Lấy mã sản phẩm vì mã sp của từng sản phẩm là độc nhất
+        private int GetMaSanPhamFromTenSanPham(string tenSanPham)
+        {
+            // Hàm này để lấy mã sản phẩm từ tên sản phẩm
+            var sanPham = db.SanPhams.SingleOrDefault(sp => sp.TenSanPham == tenSanPham);
+            return (sanPham != null) ? sanPham.MaSanPham : -1;
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)

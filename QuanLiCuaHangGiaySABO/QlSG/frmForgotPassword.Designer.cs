@@ -48,13 +48,15 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
             this.labelControl2.Location = new System.Drawing.Point(68, 434);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(368, 38);
+            this.labelControl2.Size = new System.Drawing.Size(318, 76);
             this.labelControl2.TabIndex = 10;
-            this.labelControl2.Text = "Ghi Chú:\r\nMật khẩu mới sẽ được gửi vào email của bạn \r\n";
+            this.labelControl2.Text = "Ghi Chú:\r\nMã OTP sẽ được gửi vào email của bạn\r\n\r\n\r\n";
             // 
             // txtemail
             // 

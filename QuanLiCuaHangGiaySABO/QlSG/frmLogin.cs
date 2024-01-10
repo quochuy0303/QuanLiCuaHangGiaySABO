@@ -28,6 +28,12 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             sb_login.Click += sb_login_Click;
             ce_ShowPassword.CheckedChanged += ce_ShowPassword_CheckedChanged;
             te_password.Properties.UseSystemPasswordChar = true;
+            te_username.TabIndex = 1;
+            te_password.TabIndex = 2;
+            ce_ShowPassword.TabIndex = 3;
+            sb_login.TabIndex = 4;
+            sb_sign.TabIndex = 5;
+            hpl_fogotpass.TabIndex = 6;
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -116,6 +122,11 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             {
                 te_password.Properties.UseSystemPasswordChar = true; // Ẩn mật khẩu
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
     }

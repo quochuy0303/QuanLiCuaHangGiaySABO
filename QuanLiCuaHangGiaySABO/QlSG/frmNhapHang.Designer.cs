@@ -109,11 +109,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(218, 18);
+            this.label2.Location = new System.Drawing.Point(250, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(451, 29);
+            this.label2.Size = new System.Drawing.Size(422, 27);
             this.label2.TabIndex = 25;
             this.label2.Text = "Quản Lý Danh Sách Phiếu Nhập Hàng";
             // 
@@ -123,27 +123,29 @@
             this.dgvNhapHang.AllowUserToDeleteRows = false;
             this.dgvNhapHang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvNhapHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhapHang.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dgvNhapHang.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvNhapHang.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dgvNhapHang.Location = new System.Drawing.Point(736, 0);
+            this.dgvNhapHang.Location = new System.Drawing.Point(0, 355);
             this.dgvNhapHang.Name = "dgvNhapHang";
             this.dgvNhapHang.ReadOnly = true;
             this.dgvNhapHang.RowHeadersWidth = 51;
             this.dgvNhapHang.RowTemplate.Height = 24;
-            this.dgvNhapHang.Size = new System.Drawing.Size(622, 610);
+            this.dgvNhapHang.Size = new System.Drawing.Size(1358, 255);
             this.dgvNhapHang.TabIndex = 21;
+            this.dgvNhapHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhapHang_CellDoubleClick);
             // 
             // groupControl1
             // 
             this.groupControl1.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.Controls.Add(this.sbthem);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.cbbNhaCungcap);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.cbbNhanVienNhap);
             this.groupControl1.Controls.Add(this.mtbNgayNhap);
             this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Location = new System.Drawing.Point(42, 77);
+            this.groupControl1.Location = new System.Drawing.Point(223, 94);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(511, 225);
             this.groupControl1.TabIndex = 26;
@@ -153,12 +155,13 @@
             // 
             this.sbthem.Appearance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbthem.Appearance.Options.UseFont = true;
-            this.sbthem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.sbthem.Location = new System.Drawing.Point(606, 117);
+            this.sbthem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbthem.ImageOptions.Image")));
+            this.sbthem.Location = new System.Drawing.Point(377, 54);
             this.sbthem.Name = "sbthem";
             this.sbthem.Size = new System.Drawing.Size(101, 29);
             this.sbthem.TabIndex = 27;
             this.sbthem.Text = "Thêm";
+            this.sbthem.Click += new System.EventHandler(this.sbthem_Click);
             // 
             // frmNhapHang
             // 
@@ -167,7 +170,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1358, 610);
-            this.Controls.Add(this.sbthem);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvNhapHang);

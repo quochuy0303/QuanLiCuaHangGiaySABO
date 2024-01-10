@@ -59,6 +59,8 @@
       <Column Name="danhap" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
       <Column Name="MaNhaCungCap" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaNhanVien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tienthanhtoan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nhanviennhap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="HoaDon_ChiTietHoaDon" Member="ChiTietHoaDons" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="ChiTietHoaDon" />
       <Association Name="DonDatHang_HoaDon" Member="DonDatHang" ThisKey="MaDonDatHang" OtherKey="MaDonDatHang" Type="DonDatHang" IsForeignKey="true" />
     </Type>

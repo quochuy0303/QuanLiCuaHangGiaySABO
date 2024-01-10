@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.panelToolsSubMenu = new System.Windows.Forms.Panel();
-            this.panelPlaylistSubMenu = new System.Windows.Forms.Panel();
-            this.panelMediaSubMenu = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
+            this.panelToolsSubMenu = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.btnTools = new System.Windows.Forms.Button();
+            this.panelPlaylistSubMenu = new System.Windows.Forms.Panel();
             this.btnDonHang = new System.Windows.Forms.Button();
             this.BtnSP = new System.Windows.Forms.Button();
             this.btnPlaylist = new System.Windows.Forms.Button();
+            this.panelMediaSubMenu = new System.Windows.Forms.Panel();
             this.Kho = new System.Windows.Forms.Button();
             this.btnNCC = new System.Windows.Forms.Button();
             this.btnkh = new System.Windows.Forms.Button();
             this.btnnhanvien = new System.Windows.Forms.Button();
             this.btnMedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
@@ -77,86 +77,6 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 540);
             this.panelSideMenu.TabIndex = 3;
-            // 
-            // panelToolsSubMenu
-            // 
-            this.panelToolsSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelToolsSubMenu.Controls.Add(this.button13);
-            this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 589);
-            this.panelToolsSubMenu.Name = "panelToolsSubMenu";
-            this.panelToolsSubMenu.Size = new System.Drawing.Size(229, 48);
-            this.panelToolsSubMenu.TabIndex = 7;
-            // 
-            // panelPlaylistSubMenu
-            // 
-            this.panelPlaylistSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelPlaylistSubMenu.Controls.Add(this.btnDonHang);
-            this.panelPlaylistSubMenu.Controls.Add(this.BtnSP);
-            this.panelPlaylistSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 458);
-            this.panelPlaylistSubMenu.Name = "panelPlaylistSubMenu";
-            this.panelPlaylistSubMenu.Size = new System.Drawing.Size(229, 86);
-            this.panelPlaylistSubMenu.TabIndex = 4;
-            // 
-            // panelMediaSubMenu
-            // 
-            this.panelMediaSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelMediaSubMenu.Controls.Add(this.Kho);
-            this.panelMediaSubMenu.Controls.Add(this.btnNCC);
-            this.panelMediaSubMenu.Controls.Add(this.btnkh);
-            this.panelMediaSubMenu.Controls.Add(this.btnnhanvien);
-            this.panelMediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 248);
-            this.panelMediaSubMenu.Name = "panelMediaSubMenu";
-            this.panelMediaSubMenu.Size = new System.Drawing.Size(229, 165);
-            this.panelMediaSubMenu.TabIndex = 2;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.panelChildForm.BackgroundImage = global::QuanLiCuaHangGiaySABO.Properties.Resources.hinh_nen_giay_jordan_yody_vn_17;
-            this.panelChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelChildForm.Controls.Add(this.pictureBoxUser);
-            this.panelChildForm.Controls.Add(this.label1);
-            this.panelChildForm.Controls.Add(this.label2);
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1027, 540);
-            this.panelChildForm.TabIndex = 5;
-            // 
-            // pictureBoxUser
-            // 
-            this.pictureBoxUser.BackColor = System.Drawing.Color.Red;
-            this.pictureBoxUser.Location = new System.Drawing.Point(15, 12);
-            this.pictureBoxUser.Name = "pictureBoxUser";
-            this.pictureBoxUser.Size = new System.Drawing.Size(100, 92);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxUser.TabIndex = 1;
-            this.pictureBoxUser.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(121, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
-            this.label2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(121, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label1";
             // 
             // btnout
             // 
@@ -227,6 +147,16 @@
             this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
+            // panelToolsSubMenu
+            // 
+            this.panelToolsSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelToolsSubMenu.Controls.Add(this.button13);
+            this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 589);
+            this.panelToolsSubMenu.Name = "panelToolsSubMenu";
+            this.panelToolsSubMenu.Size = new System.Drawing.Size(229, 48);
+            this.panelToolsSubMenu.TabIndex = 7;
+            // 
             // button13
             // 
             this.button13.Dock = System.Windows.Forms.DockStyle.Top;
@@ -269,6 +199,17 @@
             this.btnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTools.UseVisualStyleBackColor = false;
             this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
+            // 
+            // panelPlaylistSubMenu
+            // 
+            this.panelPlaylistSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelPlaylistSubMenu.Controls.Add(this.btnDonHang);
+            this.panelPlaylistSubMenu.Controls.Add(this.BtnSP);
+            this.panelPlaylistSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 458);
+            this.panelPlaylistSubMenu.Name = "panelPlaylistSubMenu";
+            this.panelPlaylistSubMenu.Size = new System.Drawing.Size(229, 86);
+            this.panelPlaylistSubMenu.TabIndex = 4;
             // 
             // btnDonHang
             // 
@@ -332,6 +273,19 @@
             this.btnPlaylist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPlaylist.UseVisualStyleBackColor = false;
             this.btnPlaylist.Click += new System.EventHandler(this.btnPlaylist_Click);
+            // 
+            // panelMediaSubMenu
+            // 
+            this.panelMediaSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.panelMediaSubMenu.Controls.Add(this.Kho);
+            this.panelMediaSubMenu.Controls.Add(this.btnNCC);
+            this.panelMediaSubMenu.Controls.Add(this.btnkh);
+            this.panelMediaSubMenu.Controls.Add(this.btnnhanvien);
+            this.panelMediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 248);
+            this.panelMediaSubMenu.Name = "panelMediaSubMenu";
+            this.panelMediaSubMenu.Size = new System.Drawing.Size(229, 165);
+            this.panelMediaSubMenu.TabIndex = 2;
             // 
             // Kho
             // 
@@ -445,6 +399,54 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(229, 193);
             this.panelLogo.TabIndex = 0;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
+            this.panelChildForm.BackgroundImage = global::QuanLiCuaHangGiaySABO.Properties.Resources.hinh_nen_giay_jordan_yody_vn_17;
+            this.panelChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelChildForm.Controls.Add(this.label1);
+            this.panelChildForm.Controls.Add(this.pictureBoxUser);
+            this.panelChildForm.Controls.Add(this.label2);
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1027, 540);
+            this.panelChildForm.TabIndex = 5;
+            // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.BackColor = System.Drawing.Color.Red;
+            this.pictureBoxUser.Location = new System.Drawing.Point(25, 12);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(100, 92);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxUser.TabIndex = 1;
+            this.pictureBoxUser.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(131, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(131, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "label1";
             // 
             // Main
             // 
