@@ -19,6 +19,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private frmLogin loginForm;
         private string tenNhanVien;
         private string quyen;
+        private int maHoaDon;
         public Main(frmLogin loginForm)
         {
             InitializeComponent();                      
@@ -206,7 +207,6 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             Application.Exit();
         }
 
-        private CultureInfo currentCulture;
 
         private void UpdateControlLanguage(Control control)
         {
@@ -254,5 +254,13 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             btnout.Text = LanguageManager.GetString("Exit");
         }
 
+        private void btnbaocao_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng của form Nhân Viên
+            frmbaocao nhanVienForm = new frmbaocao();
+
+            nhanVienForm.ShowDialog();
+            
+        }
     }
     }

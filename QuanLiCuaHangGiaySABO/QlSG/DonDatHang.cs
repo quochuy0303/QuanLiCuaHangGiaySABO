@@ -27,7 +27,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             // Cấu hình PrintDocument
             printDocument1 = new System.Drawing.Printing.PrintDocument();
             printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(printDocument1_PrintPage);
-
+           
             // Khởi tạo và cấu hình PrintDialog
             printDialog1 = new System.Windows.Forms.PrintDialog();
             printDialog1.Document = printDocument1;

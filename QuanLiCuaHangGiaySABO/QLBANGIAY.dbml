@@ -61,6 +61,7 @@
       <Column Name="MaNhanVien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tienthanhtoan" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="nhanviennhap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ngaynhaphang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="HoaDon_ChiTietHoaDon" Member="ChiTietHoaDons" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="ChiTietHoaDon" />
       <Association Name="DonDatHang_HoaDon" Member="DonDatHang" ThisKey="MaDonDatHang" OtherKey="MaDonDatHang" Type="DonDatHang" IsForeignKey="true" />
     </Type>

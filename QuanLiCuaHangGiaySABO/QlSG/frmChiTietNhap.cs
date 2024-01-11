@@ -51,21 +51,22 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
         private void showdata()
         {
-
-            var rs = (from c in db.ChiTietHoaDons.Where(x => x.MaHoaDon == maHD)// chỉ lấy các chi tiết hóa đơn nhập tương ứng với mã hóa đơn được truyền ra
-                      join h in db.SanPhams
-                      on c.MaSanPham equals h.MaSanPham
+            var rs = (from c in db.ChiTietHoaDons
+                      join h in db.SanPhams on c.MaSanPham equals h.MaSanPham
+                      join hd in db.HoaDons on c.MaHoaDon equals hd.MaHoaDon
+                      where c.MaHoaDon == maHD
                       select new
                       {
                           idmathang = h.MaSanPham,
                           mathang = h.TenSanPham,
                           sl = c.SoLuong,
                           dg = c.Gia,
-                          thanhtien = c.SoLuong * c.Gia
-                      });
-            dgvchitiethoadon.DataSource = rs;
-            lbltongtien.Text = string.Format("Tổng Tiền:{0:N0}", rs.Sum(x => x.thanhtien));
+                          thanhtien = c.SoLuong * c.Gia,
+                          hd.ngaynhaphang // Assuming "NgayNhap" is the column in HoaDon table representing the entry date
+                      }) ;
 
+            dgvchitiethoadon.DataSource = rs.ToList();
+            lbltongtien.Text = string.Format("Tổng Tiền:{0:N0}", rs.Sum(x => x.thanhtien));
         }
 
         private void btnThem_Click(object sender, EventArgs e)

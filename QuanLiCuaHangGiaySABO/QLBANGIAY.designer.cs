@@ -1225,6 +1225,8 @@ namespace QuanLiCuaHangGiaySABO
 		
 		private string _nhanviennhap;
 		
+		private System.Nullable<System.DateTime> _ngaynhaphang;
+		
 		private EntitySet<ChiTietHoaDon> _ChiTietHoaDons;
 		
 		private EntityRef<DonDatHang> _DonDatHang;
@@ -1253,6 +1255,8 @@ namespace QuanLiCuaHangGiaySABO
     partial void OntienthanhtoanChanged();
     partial void OnnhanviennhapChanging(string value);
     partial void OnnhanviennhapChanged();
+    partial void OnngaynhaphangChanging(System.Nullable<System.DateTime> value);
+    partial void OnngaynhaphangChanged();
     #endregion
 		
 		public HoaDon()
@@ -1462,6 +1466,26 @@ namespace QuanLiCuaHangGiaySABO
 					this._nhanviennhap = value;
 					this.SendPropertyChanged("nhanviennhap");
 					this.OnnhanviennhapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaynhaphang", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ngaynhaphang
+		{
+			get
+			{
+				return this._ngaynhaphang;
+			}
+			set
+			{
+				if ((this._ngaynhaphang != value))
+				{
+					this.OnngaynhaphangChanging(value);
+					this.SendPropertyChanging();
+					this._ngaynhaphang = value;
+					this.SendPropertyChanged("ngaynhaphang");
+					this.OnngaynhaphangChanged();
 				}
 			}
 		}

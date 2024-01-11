@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.btnbaocao = new System.Windows.Forms.Button();
             this.btnout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
@@ -47,8 +48,8 @@
             this.btnMedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelSideMenu.Controls.Add(this.btnbaocao);
             this.panelSideMenu.Controls.Add(this.btnout);
             this.panelSideMenu.Controls.Add(this.btnExit);
             this.panelSideMenu.Controls.Add(this.btnHelp);
@@ -78,6 +80,28 @@
             this.panelSideMenu.Size = new System.Drawing.Size(250, 540);
             this.panelSideMenu.TabIndex = 3;
             // 
+            // btnbaocao
+            // 
+            this.btnbaocao.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnbaocao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnbaocao.FlatAppearance.BorderSize = 0;
+            this.btnbaocao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnbaocao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnbaocao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbaocao.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbaocao.ForeColor = System.Drawing.Color.White;
+            this.btnbaocao.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.report;
+            this.btnbaocao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbaocao.Location = new System.Drawing.Point(0, 721);
+            this.btnbaocao.Name = "btnbaocao";
+            this.btnbaocao.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnbaocao.Size = new System.Drawing.Size(229, 48);
+            this.btnbaocao.TabIndex = 12;
+            this.btnbaocao.Text = "   Thống Kê Báo Cáo";
+            this.btnbaocao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnbaocao.UseVisualStyleBackColor = false;
+            this.btnbaocao.Click += new System.EventHandler(this.btnbaocao_Click);
+            // 
             // btnout
             // 
             this.btnout.BackColor = System.Drawing.Color.SlateBlue;
@@ -90,7 +114,7 @@
             this.btnout.ForeColor = System.Drawing.Color.White;
             this.btnout.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources._switch;
             this.btnout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnout.Location = new System.Drawing.Point(0, 682);
+            this.btnout.Location = new System.Drawing.Point(0, 676);
             this.btnout.Name = "btnout";
             this.btnout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnout.Size = new System.Drawing.Size(229, 45);
@@ -113,7 +137,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.exit_door;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 727);
+            this.btnExit.Location = new System.Drawing.Point(0, 769);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(229, 45);
@@ -136,7 +160,7 @@
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.contact;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 637);
+            this.btnHelp.Location = new System.Drawing.Point(0, 631);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnHelp.Size = new System.Drawing.Size(229, 45);
@@ -152,7 +176,7 @@
             this.panelToolsSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
             this.panelToolsSubMenu.Controls.Add(this.button13);
             this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 589);
+            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 583);
             this.panelToolsSubMenu.Name = "panelToolsSubMenu";
             this.panelToolsSubMenu.Size = new System.Drawing.Size(229, 48);
             this.panelToolsSubMenu.TabIndex = 7;
@@ -189,7 +213,7 @@
             this.btnTools.ForeColor = System.Drawing.Color.White;
             this.btnTools.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.settings;
             this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.Location = new System.Drawing.Point(0, 544);
+            this.btnTools.Location = new System.Drawing.Point(0, 538);
             this.btnTools.Name = "btnTools";
             this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnTools.Size = new System.Drawing.Size(229, 45);
@@ -206,7 +230,7 @@
             this.panelPlaylistSubMenu.Controls.Add(this.btnDonHang);
             this.panelPlaylistSubMenu.Controls.Add(this.BtnSP);
             this.panelPlaylistSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 458);
+            this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 452);
             this.panelPlaylistSubMenu.Name = "panelPlaylistSubMenu";
             this.panelPlaylistSubMenu.Size = new System.Drawing.Size(229, 86);
             this.panelPlaylistSubMenu.TabIndex = 4;
@@ -263,7 +287,7 @@
             this.btnPlaylist.ForeColor = System.Drawing.Color.White;
             this.btnPlaylist.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.menu;
             this.btnPlaylist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaylist.Location = new System.Drawing.Point(0, 413);
+            this.btnPlaylist.Location = new System.Drawing.Point(0, 407);
             this.btnPlaylist.Name = "btnPlaylist";
             this.btnPlaylist.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnPlaylist.Size = new System.Drawing.Size(229, 45);
@@ -282,7 +306,7 @@
             this.panelMediaSubMenu.Controls.Add(this.btnkh);
             this.panelMediaSubMenu.Controls.Add(this.btnnhanvien);
             this.panelMediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 248);
+            this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 242);
             this.panelMediaSubMenu.Name = "panelMediaSubMenu";
             this.panelMediaSubMenu.Size = new System.Drawing.Size(229, 165);
             this.panelMediaSubMenu.TabIndex = 2;
@@ -298,10 +322,10 @@
             this.Kho.ForeColor = System.Drawing.Color.PaleGoldenrod;
             this.Kho.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.warehouse;
             this.Kho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Kho.Location = new System.Drawing.Point(0, 120);
+            this.Kho.Location = new System.Drawing.Point(0, 128);
             this.Kho.Name = "Kho";
             this.Kho.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.Kho.Size = new System.Drawing.Size(229, 40);
+            this.Kho.Size = new System.Drawing.Size(229, 34);
             this.Kho.TabIndex = 3;
             this.Kho.Text = "Kho";
             this.Kho.UseVisualStyleBackColor = true;
@@ -318,10 +342,10 @@
             this.btnNCC.ForeColor = System.Drawing.Color.PaleGoldenrod;
             this.btnNCC.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.supply_chain_management;
             this.btnNCC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNCC.Location = new System.Drawing.Point(0, 80);
+            this.btnNCC.Location = new System.Drawing.Point(0, 82);
             this.btnNCC.Name = "btnNCC";
             this.btnNCC.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnNCC.Size = new System.Drawing.Size(229, 40);
+            this.btnNCC.Size = new System.Drawing.Size(229, 46);
             this.btnNCC.TabIndex = 2;
             this.btnNCC.Text = "      Nhà Cung Cấp";
             this.btnNCC.UseVisualStyleBackColor = true;
@@ -341,7 +365,7 @@
             this.btnkh.Location = new System.Drawing.Point(0, 40);
             this.btnkh.Name = "btnkh";
             this.btnkh.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnkh.Size = new System.Drawing.Size(229, 40);
+            this.btnkh.Size = new System.Drawing.Size(229, 42);
             this.btnkh.TabIndex = 1;
             this.btnkh.Text = "Khách Hàng";
             this.btnkh.UseVisualStyleBackColor = true;
@@ -382,7 +406,7 @@
             this.btnMedia.Location = new System.Drawing.Point(0, 193);
             this.btnMedia.Name = "btnMedia";
             this.btnMedia.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnMedia.Size = new System.Drawing.Size(229, 55);
+            this.btnMedia.Size = new System.Drawing.Size(229, 49);
             this.btnMedia.TabIndex = 1;
             this.btnMedia.Text = "   Hệ Thống";
             this.btnMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -414,16 +438,6 @@
             this.panelChildForm.Size = new System.Drawing.Size(1027, 540);
             this.panelChildForm.TabIndex = 5;
             // 
-            // pictureBoxUser
-            // 
-            this.pictureBoxUser.BackColor = System.Drawing.Color.Red;
-            this.pictureBoxUser.Location = new System.Drawing.Point(25, 12);
-            this.pictureBoxUser.Name = "pictureBoxUser";
-            this.pictureBoxUser.Size = new System.Drawing.Size(100, 92);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxUser.TabIndex = 1;
-            this.pictureBoxUser.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -435,6 +449,16 @@
             this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
+            // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.BackColor = System.Drawing.Color.Red;
+            this.pictureBoxUser.Location = new System.Drawing.Point(25, 12);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(100, 92);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxUser.TabIndex = 1;
+            this.pictureBoxUser.TabStop = false;
             // 
             // label2
             // 
@@ -492,5 +516,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBoxUser;
+        private System.Windows.Forms.Button btnbaocao;
     }
 }
