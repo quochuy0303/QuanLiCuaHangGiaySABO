@@ -16,8 +16,10 @@
       <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Gia" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="SizeGiayID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="HoaDon_ChiTietHoaDon" Member="HoaDon" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="HoaDon" IsForeignKey="true" />
       <Association Name="SanPham_ChiTietHoaDon" Member="SanPham" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="SanPham" IsForeignKey="true" />
+      <Association Name="SizeGiay_ChiTietHoaDon" Member="SizeGiay" ThisKey="SizeGiayID" OtherKey="SizeID" Type="SizeGiay" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DangNhap" Member="DangNhaps">
@@ -27,13 +29,6 @@
       <Column Name="TenDangNhap" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MatKhau" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Association Name="NhanVien_DangNhap" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DanhMucSanPham" Member="DanhMucSanPhams">
-    <Type Name="DanhMucSanPham">
-      <Column Name="MaDanhMuc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenDanhMuc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Association Name="DanhMucSanPham_SanPham" Member="SanPhams" ThisKey="MaDanhMuc" OtherKey="MaDanhMuc" Type="SanPham" />
     </Type>
   </Table>
   <Table Name="dbo.DonDatHang" Member="DonDatHangs">
@@ -127,10 +122,19 @@
       <Column Name="HinhAnh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaDanhMuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SizeGiayID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="SanPham_ChiTietDonDatHang" Member="ChiTietDonDatHangs" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ChiTietDonDatHang" />
       <Association Name="SanPham_ChiTietHoaDon" Member="ChiTietHoaDons" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ChiTietHoaDon" />
       <Association Name="SanPham_Kho" Member="Kho" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="Kho" Cardinality="One" />
-      <Association Name="DanhMucSanPham_SanPham" Member="DanhMucSanPham" ThisKey="MaDanhMuc" OtherKey="MaDanhMuc" Type="DanhMucSanPham" IsForeignKey="true" />
+      <Association Name="SizeGiay_SanPham" Member="SizeGiay" ThisKey="SizeGiayID" OtherKey="SizeID" Type="SizeGiay" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SizeGiay" Member="SizeGiays">
+    <Type Name="SizeGiay">
+      <Column Name="SizeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenSize" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="SizeGiay_ChiTietHoaDon" Member="ChiTietHoaDons" ThisKey="SizeID" OtherKey="SizeGiayID" Type="ChiTietHoaDon" />
+      <Association Name="SizeGiay_SanPham" Member="SanPhams" ThisKey="SizeID" OtherKey="SizeGiayID" Type="SanPham" />
     </Type>
   </Table>
 </Database>

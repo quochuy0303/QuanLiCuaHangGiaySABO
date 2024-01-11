@@ -5,16 +5,27 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLiCuaHangGiaySABO", "QuanLiCuaHangGiaySABO\QuanLiCuaHangGiaySABO.csproj", "{7527BDF6-69D8-44C8-8EE4-CF21C2FCA6BC}"
 EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "ShoesShopSABO", "ShoesShopSABO\ShoesShopSABO.aiproj", "{547815FB-2980-481A-AE87-12840AACE813}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		DefaultBuild|Any CPU = DefaultBuild|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7527BDF6-69D8-44C8-8EE4-CF21C2FCA6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7527BDF6-69D8-44C8-8EE4-CF21C2FCA6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7527BDF6-69D8-44C8-8EE4-CF21C2FCA6BC}.DefaultBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{7527BDF6-69D8-44C8-8EE4-CF21C2FCA6BC}.DefaultBuild|Any CPU.Build.0 = Debug|Any CPU
 		{7527BDF6-69D8-44C8-8EE4-CF21C2FCA6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7527BDF6-69D8-44C8-8EE4-CF21C2FCA6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{547815FB-2980-481A-AE87-12840AACE813}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{547815FB-2980-481A-AE87-12840AACE813}.Debug|Any CPU.Build.0 = DefaultBuild
+		{547815FB-2980-481A-AE87-12840AACE813}.DefaultBuild|Any CPU.ActiveCfg = DefaultBuild
+		{547815FB-2980-481A-AE87-12840AACE813}.DefaultBuild|Any CPU.Build.0 = DefaultBuild
+		{547815FB-2980-481A-AE87-12840AACE813}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{547815FB-2980-481A-AE87-12840AACE813}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

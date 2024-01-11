@@ -103,20 +103,21 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             // Thực hiện hàm hash (ví dụ: MD5, SHA-256, SHA-512)
             // Trong thực tế, bạn nên sử dụng thư viện bảo mật như BCrypt hoặc PBKDF2
             // Đây chỉ là một ví dụ đơn giản để minh họa ý tưởng
-            using (var md5 = System.Security.Cryptography.MD5.Create())
-            {
-                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-                byte[] hashBytes = md5.ComputeHash(inputBytes);
+            //using (var md5 = System.Security.Cryptography.MD5.Create())
+            //{
+            //    byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+            //    byte[] hashBytes = md5.ComputeHash(inputBytes);
 
-                StringBuilder sb = new StringBuilder();
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    sb.Append(hashBytes[i].ToString("X2"));
-                }
+            //    StringBuilder sb = new StringBuilder();
+            //    for (int i = 0; i < hashBytes.Length; i++)
+            //    {
+            //        sb.Append(hashBytes[i].ToString("X2"));
+            //    }
 
-                return sb.ToString();
+            //    return sb.ToString();
+                return BCrypt.Net.BCrypt.HashPassword(input);
             }
         }
     }
 
-    }
+    

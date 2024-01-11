@@ -16,7 +16,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
-        private bangiayDataContext db;      
+        private bangiayDataContext db;
+        private string userEmail;
 
         public frmLogin(frmLogin mainForm)
         {
