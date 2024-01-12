@@ -47,6 +47,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 Kho.Enabled = true;
                 BtnSP.Enabled = true;
                 btnDonHang.Enabled = true;
+                btnbaocao.Enabled = true;
             }
             else if (quyen == "Nhân Viên")
             {
@@ -56,12 +57,12 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 Kho.Enabled = true;
                 BtnSP.Enabled = true;
                 btnDonHang.Enabled = true;
+                btnbaocao.Enabled = false;
             }
         }
         private void UpdateThongTinNhanVienLabel()
         {
-            // Cập nhật các điều khiển trên MainForm với thông tin nhân viên
-            label1.Text = $"Tên nhân viên: {tenNhanVien}";
+            // Cập nhật các điều khiển trên MainForm với thông tin nhân viên          
             label2.Text = $"Quyền: {quyen}";
             
 
@@ -83,20 +84,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 subMenu.Visible = false;
         }
 
-        private void btnMedia_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelMediaSubMenu);
-        }
-
-        private void btnPlaylist_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelPlaylistSubMenu);
-        }
-
-        private void btnTools_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelToolsSubMenu);
-        }
+       
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
@@ -241,9 +229,9 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         }
         private void ApplyLanguage()
         {
-            btnMedia.Text = LanguageManager.GetString("Media");
-            btnPlaylist.Text = LanguageManager.GetString("Playlist");
-            btnTools.Text = LanguageManager.GetString("Tools");
+            btnHeThong.Text = LanguageManager.GetString("Media");
+            btnMenu.Text = LanguageManager.GetString("Playlist");
+            btnSetting.Text = LanguageManager.GetString("Tools");
             btnHelp.Text = LanguageManager.GetString("Help");
             btnnhanvien.Text = LanguageManager.GetString("NhanVien");
             btnkh.Text = LanguageManager.GetString("KhachHang");
@@ -261,6 +249,21 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
             nhanVienForm.ShowDialog();
             
+        }
+
+        private void btnHeThong_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelMediaSubMenu);
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelPlaylistSubMenu);
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelToolsSubMenu);
         }
     }
     }

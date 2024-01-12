@@ -78,7 +78,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             {
                 // Lấy danh sách các hóa đơn đã nhập trong khoảng thời gian đã chọn
                 var hoaDonDaNhap = from hoaDon in db.HoaDons
-                                   where hoaDon.danhap == 1 && hoaDon.NgayDatHang >= ngayBatDau && hoaDon.NgayDatHang <= ngayKetThuc
+                                   where hoaDon.danhap == 1 && hoaDon.ngaynhaphang >= ngayBatDau && hoaDon.ngaynhaphang <= ngayKetThuc
                                    select new
                                    {
                                        hoaDon.MaHoaDon,
@@ -89,7 +89,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 if (dgvchiphi.Columns.Count == 0)
                 {
                     dgvchiphi.Columns.Add("MaHoaDon", "Mã Hóa Đơn");
-                    dgvchiphi.Columns.Add("NgayNhap", "Ngày Nhập"); // Add the column for NgayNhap
+                    dgvchiphi.Columns.Add("ngaynhaphang", "Ngày Nhập"); // Add the column for NgayNhap
                     dgvchiphi.Columns.Add("TenSanPham", "Tên Sản Phẩm");
                     dgvchiphi.Columns.Add("SoLuong", "Số Lượng");
                     dgvchiphi.Columns.Add("Gia", "Giá");

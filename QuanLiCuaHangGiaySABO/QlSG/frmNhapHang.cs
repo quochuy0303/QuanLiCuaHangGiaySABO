@@ -62,12 +62,12 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                             id = hoaDon.MaHoaDon,
                             nhanviennhap = nhanVien.TenNhanVien,
                             NgayNhap = hoaDon.NgayDatHang,
-                            TenNCC = nhaCungCap.TenNhaCungCap,                           
+                            TenNCC = nhaCungCap.TenNhaCungCap,
                             danhap = hoaDon.danhap,
                             trangthai = hoaDon.danhap == 1 ? "Đã nhập" : "Yêu cầu",
                             tongtien = db.ChiTietHoaDons.Where(x => x.MaHoaDon == hoaDon.MaHoaDon).Sum(y => y.SoLuong * y.Gia),
                             dathanhtoan = hoaDon.tienthanhtoan
-                     };
+                        };
 
             dgvNhapHang.DataSource = query.ToList();
         }

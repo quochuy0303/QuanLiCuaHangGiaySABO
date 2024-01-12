@@ -16,7 +16,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
     {
         private bangiayDataContext db;
         private DataGridViewRow r;
-        private frmLogin loginForm;
+        private frmLogin loginForm;    
         public frmQliGiay()
         {
             InitializeComponent();

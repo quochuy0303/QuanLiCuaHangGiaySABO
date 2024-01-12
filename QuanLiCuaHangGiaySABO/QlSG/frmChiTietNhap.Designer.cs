@@ -67,8 +67,6 @@
             this.rbtnhapkho.TabIndex = 38;
             this.rbtnhapkho.Text = "Nhập kho";
             this.rbtnhapkho.UseVisualStyleBackColor = true;
-            this.rbtnhapkho.CheckedChanged += new System.EventHandler(this.rbtnhapkho_CheckedChanged);
-            this.rbtnhapkho.Click += new System.EventHandler(this.rbtnhapkho_Click);
             // 
             // rbtyeucau
             // 
@@ -82,6 +80,7 @@
             this.rbtyeucau.TabStop = true;
             this.rbtyeucau.Text = "Yêu Cầu";
             this.rbtyeucau.UseVisualStyleBackColor = true;
+            this.rbtyeucau.CheckedChanged += new System.EventHandler(this.rbtyeucau_CheckedChanged);
             // 
             // btnxoa
             // 
@@ -118,6 +117,7 @@
             this.txttienthanhtoan.Name = "txttienthanhtoan";
             this.txttienthanhtoan.Size = new System.Drawing.Size(129, 23);
             this.txttienthanhtoan.TabIndex = 34;
+            this.txttienthanhtoan.TextChanged += new System.EventHandler(this.txttienthanhtoan_TextChanged);
             // 
             // txtdongia
             // 

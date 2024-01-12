@@ -129,5 +129,16 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         {
             Application.Exit();
         }
+
+        private void te_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu độ dài của chuỗi đã đạt tới 8 và phím được nhấn không phải là phím Backspace
+            if (te_password.Text.Length >= 8 && e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show("Mật Khẩu chỉ được nhập 8 kí tự ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                // Ngăn chặn việc thêm ký tự mới vào ô password
+                e.Handled = true;
+            }
+        }
     }
     }

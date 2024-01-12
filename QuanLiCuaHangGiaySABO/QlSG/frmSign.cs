@@ -21,7 +21,14 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             InitializeComponent();
             db = new bangiayDataContext();
         }
+        //hàm kiểm sdt trùng lặp
+        private bool KiemTraSDTTrungLap(string SDT)
+        {
+            var existingUser = db.NhanViens.FirstOrDefault(u => u.SoDienThoai == SDT);
 
+            return existingUser != null;
+        }
+        //sự kiện sdt keypress chỉ nhập số     
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             // Lấy thông tin từ các controls trên form
@@ -29,18 +36,30 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             string password = te_password.Text;
             string confirmPassword = textEdit1.Text;
             string email = textEdit2.Text;
-            string role = comboBoxEdit1.Text;
+            string quyen = comboBoxEdit1.Text;         
+            string hoten = te_hoten.Text;
+            string sdt = te_sdt.Text;
+            string diachi = te_diachi.Text;
 
             // Kiểm tra các thông tin có hợp lệ không
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(role))
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(confirmPassword) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(quyen)||
+                string.IsNullOrWhiteSpace(hoten) || string.IsNullOrWhiteSpace(sdt) ||  string.IsNullOrWhiteSpace(diachi))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            // kiểm tra sự trùng khớp khi nhập mật khẩu và xác nhận mật khẩu
             if (password != confirmPassword)
             {
                 MessageBox.Show("Mật khẩu và xác nhận mật khẩu không khớp.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            //kiểm tra số điện thoại có tồn tại trong csdl không
+            string SDT = te_sdt.Text;
+            if (KiemTraSDTTrungLap(SDT))
+            {
+                MessageBox.Show("Số điện thoại đã tồn tại trong danh sách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -66,11 +85,11 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 // Tạo mới đối tượng Nhân viên
                 NhanVien newUser = new NhanVien
                 {
-                    TenNhanVien = "Chương",
-                    DiaChi = "Bình Thạnh",
-                    SoDienThoai = "0388255376",
+                    TenNhanVien = hoten,
+                    DiaChi = diachi,
+                    SoDienThoai = sdt,
                     Email = email,
-                    VaiTro = role,
+                    VaiTro = quyen,
                     TenDangNhap = username,
                     MatKhau = HashFunction(password)//mã hóa trong csdl khi nhập mật khẩu đăng kí.
                 };
@@ -87,7 +106,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         {
 
         }
-
+        // đổ dữ liệu quyền nhân viên và admin lên sự kiện load form 
         private void frmSign_Load(object sender, EventArgs e)
         {
             comboBoxEdit1.Properties.Items.AddRange(new object[] {
@@ -98,26 +117,51 @@ namespace QuanLiCuaHangGiaySABO.QlSG
             textEdit1.Properties.UseSystemPasswordChar = true;
         }
 
+        // mã hóa và giải mã mật khẩu khi ấn nút đăng kí để có thể đăng nhập thành công
         private string HashFunction(string input)
-        {
-            // Thực hiện hàm hash (ví dụ: MD5, SHA-256, SHA-512)
-            // Trong thực tế, bạn nên sử dụng thư viện bảo mật như BCrypt hoặc PBKDF2
-            // Đây chỉ là một ví dụ đơn giản để minh họa ý tưởng
-            //using (var md5 = System.Security.Cryptography.MD5.Create())
-            //{
-            //    byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-            //    byte[] hashBytes = md5.ComputeHash(inputBytes);
-
-            //    StringBuilder sb = new StringBuilder();
-            //    for (int i = 0; i < hashBytes.Length; i++)
-            //    {
-            //        sb.Append(hashBytes[i].ToString("X2"));
-            //    }
-
-            //    return sb.ToString();
+        {          
                 return BCrypt.Net.BCrypt.HashPassword(input);
             }
+
+        private void te_sdt_TextChanged(object sender, EventArgs e)
+        {
+            string sdt = te_sdt.Text;
+            if (!sdt.All(char.IsDigit))
+            {
+                MessageBox.Show("Số điện thoại chỉ được nhập số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                te_sdt.Text = string.Empty; // Xóa nội dung nhập
+                return;
+            }
+
+            // Đảm bảo độ dài chính xác là 10 số
+            if (sdt.Length > 10)
+            {
+                MessageBox.Show("Số điện thoại chỉ được nhập 10 số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                te_sdt.Text = sdt.Substring(0, 10); // Cắt bớt nếu vượt quá 10 số
+                te_sdt.SelectionStart = te_sdt.Text.Length; // Đặt con trỏ cuối chuỗi
+            }
         }
+
+        private void te_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (te_password.Text.Length >= 8 && e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show("Mật Khẩu chỉ được nhập 8 kí tự ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                // Ngăn chặn việc thêm ký tự mới vào ô password
+                e.Handled = true;
+            }
+        }
+
+        private void textEdit1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (textEdit1.Text.Length >= 8 && e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show("Xác Nhận Mật Khẩu chỉ được nhập 8 kí tự ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Ngăn chặn việc thêm ký tự mới vào ô xác nhận mật khẩu
+                e.Handled = true;
+            }
+        }
+    }
     }
 
     

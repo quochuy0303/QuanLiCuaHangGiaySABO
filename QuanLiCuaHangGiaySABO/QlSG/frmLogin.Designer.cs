@@ -126,6 +126,7 @@
             this.te_password.Name = "te_password";
             this.te_password.Size = new System.Drawing.Size(197, 22);
             this.te_password.TabIndex = 2;
+            this.te_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.te_password_KeyPress);
             // 
             // te_username
             // 

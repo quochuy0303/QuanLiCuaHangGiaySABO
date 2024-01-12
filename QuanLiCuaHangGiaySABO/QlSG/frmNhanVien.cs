@@ -56,40 +56,7 @@ namespace QuanLiCuaHangGiaySABO
                 }
             }
             return false; // SĐT không trùng lặp
-        }
-
-        private void sbthem_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txthoten.Text) ||
-            
-           string.IsNullOrWhiteSpace(txtsdt.Text) ||
-           string.IsNullOrWhiteSpace(txtdiachi.Text)) 
-                    
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string sdt = txtsdt.Text;
-            if (KiemTraSDTTrungLap(sdt))
-            {
-                MessageBox.Show("Số điện thoại đã tồn tại trong danh sách.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            NhanVien nv = new NhanVien();
-            nv.TenNhanVien = txthoten.Text;
-            nv.SoDienThoai = txtsdt.Text;           
-            nv.DiaChi = txtdiachi.Text;
-            
-            
-            db.NhanViens.InsertOnSubmit(nv);//thêm vào dgv
-            db.SubmitChanges();//lưu vào csdl
-            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
-            showdata();
-            //reset lại các trường thuộc tính
-            txthoten.Text = txtsdt.Text  = txtdiachi.Text  =  null;
-            r = null;
-        }
+        }  
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {

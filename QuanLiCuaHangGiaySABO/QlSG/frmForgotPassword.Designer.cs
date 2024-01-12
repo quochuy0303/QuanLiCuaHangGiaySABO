@@ -122,6 +122,7 @@
             this.txtnewpass.Properties.Appearance.Options.UseFont = true;
             this.txtnewpass.Size = new System.Drawing.Size(159, 26);
             this.txtnewpass.TabIndex = 9;
+            this.txtnewpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnewpass_KeyPress);
             // 
             // txtcomfirm
             // 
@@ -132,6 +133,7 @@
             this.txtcomfirm.Properties.Appearance.Options.UseFont = true;
             this.txtcomfirm.Size = new System.Drawing.Size(159, 26);
             this.txtcomfirm.TabIndex = 8;
+            this.txtcomfirm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcomfirm_KeyPress);
             // 
             // sp_OTP
             // 

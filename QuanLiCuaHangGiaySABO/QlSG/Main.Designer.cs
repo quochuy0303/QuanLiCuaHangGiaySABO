@@ -35,20 +35,19 @@
             this.btnHelp = new System.Windows.Forms.Button();
             this.panelToolsSubMenu = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
-            this.btnTools = new System.Windows.Forms.Button();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.panelPlaylistSubMenu = new System.Windows.Forms.Panel();
             this.btnDonHang = new System.Windows.Forms.Button();
             this.BtnSP = new System.Windows.Forms.Button();
-            this.btnPlaylist = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
             this.panelMediaSubMenu = new System.Windows.Forms.Panel();
             this.Kho = new System.Windows.Forms.Button();
             this.btnNCC = new System.Windows.Forms.Button();
             this.btnkh = new System.Windows.Forms.Button();
             this.btnnhanvien = new System.Windows.Forms.Button();
-            this.btnMedia = new System.Windows.Forms.Button();
+            this.btnHeThong = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
@@ -68,11 +67,11 @@
             this.panelSideMenu.Controls.Add(this.btnExit);
             this.panelSideMenu.Controls.Add(this.btnHelp);
             this.panelSideMenu.Controls.Add(this.panelToolsSubMenu);
-            this.panelSideMenu.Controls.Add(this.btnTools);
+            this.panelSideMenu.Controls.Add(this.btnSetting);
             this.panelSideMenu.Controls.Add(this.panelPlaylistSubMenu);
-            this.panelSideMenu.Controls.Add(this.btnPlaylist);
+            this.panelSideMenu.Controls.Add(this.btnMenu);
             this.panelSideMenu.Controls.Add(this.panelMediaSubMenu);
-            this.panelSideMenu.Controls.Add(this.btnMedia);
+            this.panelSideMenu.Controls.Add(this.btnHeThong);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
@@ -201,28 +200,28 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // btnTools
+            // btnSetting
             // 
-            this.btnTools.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnTools.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTools.FlatAppearance.BorderSize = 0;
-            this.btnTools.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTools.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTools.ForeColor = System.Drawing.Color.White;
-            this.btnTools.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.settings;
-            this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.Location = new System.Drawing.Point(0, 538);
-            this.btnTools.Name = "btnTools";
-            this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnTools.Size = new System.Drawing.Size(229, 45);
-            this.btnTools.TabIndex = 6;
-            this.btnTools.Text = "   Cài Đặt";
-            this.btnTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTools.UseVisualStyleBackColor = false;
-            this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
+            this.btnSetting.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnSetting.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.ForeColor = System.Drawing.Color.White;
+            this.btnSetting.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.settings;
+            this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetting.Location = new System.Drawing.Point(0, 538);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnSetting.Size = new System.Drawing.Size(229, 45);
+            this.btnSetting.TabIndex = 6;
+            this.btnSetting.Text = "   Cài Đặt";
+            this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSetting.UseVisualStyleBackColor = false;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // panelPlaylistSubMenu
             // 
@@ -275,28 +274,28 @@
             this.BtnSP.UseVisualStyleBackColor = true;
             this.BtnSP.Click += new System.EventHandler(this.BtnSP_Click);
             // 
-            // btnPlaylist
+            // btnMenu
             // 
-            this.btnPlaylist.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnPlaylist.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlaylist.FlatAppearance.BorderSize = 0;
-            this.btnPlaylist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnPlaylist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlaylist.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlaylist.ForeColor = System.Drawing.Color.White;
-            this.btnPlaylist.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.menu;
-            this.btnPlaylist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaylist.Location = new System.Drawing.Point(0, 407);
-            this.btnPlaylist.Name = "btnPlaylist";
-            this.btnPlaylist.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnPlaylist.Size = new System.Drawing.Size(229, 45);
-            this.btnPlaylist.TabIndex = 3;
-            this.btnPlaylist.Text = "   Menu";
-            this.btnPlaylist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlaylist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPlaylist.UseVisualStyleBackColor = false;
-            this.btnPlaylist.Click += new System.EventHandler(this.btnPlaylist_Click);
+            this.btnMenu.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.menu;
+            this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenu.Location = new System.Drawing.Point(0, 407);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnMenu.Size = new System.Drawing.Size(229, 45);
+            this.btnMenu.TabIndex = 3;
+            this.btnMenu.Text = "   Menu";
+            this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // panelMediaSubMenu
             // 
@@ -391,28 +390,28 @@
             this.btnnhanvien.UseVisualStyleBackColor = true;
             this.btnnhanvien.Click += new System.EventHandler(this.btnnhanvien_Click);
             // 
-            // btnMedia
+            // btnHeThong
             // 
-            this.btnMedia.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnMedia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMedia.FlatAppearance.BorderSize = 0;
-            this.btnMedia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMedia.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedia.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMedia.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.setting;
-            this.btnMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedia.Location = new System.Drawing.Point(0, 193);
-            this.btnMedia.Name = "btnMedia";
-            this.btnMedia.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnMedia.Size = new System.Drawing.Size(229, 49);
-            this.btnMedia.TabIndex = 1;
-            this.btnMedia.Text = "   Hệ Thống";
-            this.btnMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMedia.UseVisualStyleBackColor = false;
-            this.btnMedia.Click += new System.EventHandler(this.btnMedia_Click);
+            this.btnHeThong.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnHeThong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHeThong.FlatAppearance.BorderSize = 0;
+            this.btnHeThong.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnHeThong.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHeThong.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHeThong.ForeColor = System.Drawing.Color.Transparent;
+            this.btnHeThong.Image = global::QuanLiCuaHangGiaySABO.Properties.Resources.setting;
+            this.btnHeThong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHeThong.Location = new System.Drawing.Point(0, 193);
+            this.btnHeThong.Name = "btnHeThong";
+            this.btnHeThong.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnHeThong.Size = new System.Drawing.Size(229, 49);
+            this.btnHeThong.TabIndex = 1;
+            this.btnHeThong.Text = "   Hệ Thống";
+            this.btnHeThong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHeThong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHeThong.UseVisualStyleBackColor = false;
+            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
             // 
             // panelLogo
             // 
@@ -429,7 +428,6 @@
             this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.panelChildForm.BackgroundImage = global::QuanLiCuaHangGiaySABO.Properties.Resources.hinh_nen_giay_jordan_yody_vn_17;
             this.panelChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelChildForm.Controls.Add(this.label1);
             this.panelChildForm.Controls.Add(this.pictureBoxUser);
             this.panelChildForm.Controls.Add(this.label2);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -437,18 +435,6 @@
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(1027, 540);
             this.panelChildForm.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(224)))));
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
             // 
             // pictureBoxUser
             // 
@@ -494,7 +480,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnMedia;
+        private System.Windows.Forms.Button btnHeThong;
         private System.Windows.Forms.Button Kho;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button btnNCC;
@@ -505,16 +491,15 @@
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Panel panelToolsSubMenu;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button btnTools;
+        private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Panel panelPlaylistSubMenu;
         private System.Windows.Forms.Button btnDonHang;
         private System.Windows.Forms.Button BtnSP;
-        private System.Windows.Forms.Button btnPlaylist;
+        private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Panel panelMediaSubMenu;
         private System.Windows.Forms.Button btnnhanvien;
         private System.Windows.Forms.Button btnout;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.Button btnbaocao;
     }

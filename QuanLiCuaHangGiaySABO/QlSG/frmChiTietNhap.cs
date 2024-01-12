@@ -27,6 +27,10 @@ namespace QuanLiCuaHangGiaySABO.QlSG
         private void frmChiTietNhap_Load(object sender, EventArgs e)
         {
             db = new bangiayDataContext();
+
+            rbtyeucau.CheckedChanged += rbtyeucau_CheckedChanged;
+            txttienthanhtoan.Enabled = !rbtyeucau.Checked;
+            //truy vấn vào hóa đơn chỉ lấy những hóa đơn có trạng thái đã nhập là 1
             var hd = db.HoaDons.SingleOrDefault(x => x.MaHoaDon == maHD);
             if (hd.danhap == 1)
             {
@@ -76,20 +80,35 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 MessageBox.Show("Vui lòng chọn mặt hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var ct = new ChiTietHoaDon();
-            ct.MaHoaDon = maHD;// mã hóa đơn đc truyền qua khi gọi form
+            // Kiểm tra đơn giá
+            if (!uint.TryParse(txtdongia.Text, out uint donGia))
+            {
+                MessageBox.Show("Đơn giá không hợp lệ. Vui lòng nhập số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            var item = db.ChiTietHoaDons.FirstOrDefault(x => x.MaHoaDon == maHD && x.MaSanPham ==
-            int.Parse(cbbmathang.SelectedValue.ToString()));
+            // Kiểm tra số lượng
+            if (!uint.TryParse(txtSL.Text, out uint soLuong))
+            {
+                MessageBox.Show("Số lượng không hợp lệ. Vui lòng nhập số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var ct = new ChiTietHoaDon();
+            ct.MaHoaDon = maHD;
+
+            var item = db.ChiTietHoaDons.FirstOrDefault(x => x.MaHoaDon == maHD && x.MaSanPham == int.Parse(cbbmathang.SelectedValue.ToString()));
 
             if (item == null)
             {
-
-
                 ct.MaSanPham = int.Parse(cbbmathang.SelectedValue.ToString());
                 ct.Gia = int.Parse(txtdongia.Text);
                 ct.SoLuong = int.Parse(txtSL.Text);
                 db.ChiTietHoaDons.InsertOnSubmit(ct);
+
+                // Cập nhật ngày nhập hàng ngay tại đây
+                var hd = db.HoaDons.SingleOrDefault(x => x.MaHoaDon == maHD);
+                hd.ngaynhaphang = DateTime.Now;
                 db.SubmitChanges();
             }
             else
@@ -127,25 +146,8 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 showdata();
             }
         }
-
-        private void rbtnhapkho_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbtnhapkho_Click(object sender, EventArgs e)
-        {
-            if (rbtyeucau.Checked)
-            {
-                txttienthanhtoan.Enabled = false;//Nếu yêu ở chế độ yêu cầu thì chưa thanh toán 
-                txttienthanhtoan.Text = "0";//
-
-            }
-            else
-            {
-                txttienthanhtoan.Enabled = true;//ngược lại thì cần nhập số tiền đã thanh toán cho nhà cung cấp
-            }
-        }
+    
+    
         public event EventHandler NhapHangThanhCong;
 
         private void btnxacnhan_Click(object sender, EventArgs e)
@@ -155,6 +157,9 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 MessageBox.Show("Vui lòng nhập mặt hàng hóa đơn nhập trước khi tiếp tục", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            // Kiểm tra nếu người dùng đã nhập tiền thanh toán
+            int tienThanhToan = 0;           
+
             // Lưu thông tin đã nhập vào cơ sở dữ liệu
             var hd = db.HoaDons.SingleOrDefault(x => x.MaHoaDon == maHD);
 
@@ -174,9 +179,12 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 }
             }
 
-            // Cập nhật thông tin hóa đơn và sản phẩm
+            // Cập nhật thông tin hóa đơn
             hd.tienthanhtoan = int.Parse(txttienthanhtoan.Text);
             hd.danhap = rbtyeucau.Checked ? (byte)0 : (byte)1;
+
+            // Thêm hoặc cập nhật ngày nhập vào hóa đơn
+            hd.ngaynhaphang = DateTime.Now;
 
             // Lưu thay đổi vào cơ sở dữ liệu
             db.SubmitChanges();
@@ -184,6 +192,32 @@ namespace QuanLiCuaHangGiaySABO.QlSG
 
             // Đóng form khi hoàn thành
             this.Dispose();
+        }
+
+
+        private void rbtyeucau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtyeucau.Checked)
+            {
+                txttienthanhtoan.Enabled = false;//Nếu yêu ở chế độ yêu cầu thì chưa thanh toán                
+
+            }
+            else
+            {
+                txttienthanhtoan.Enabled = true;//ngược lại thì cần nhập số tiền đã thanh toán cho nhà cung cấp
+            }
+        }
+
+        private void txttienthanhtoan_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txttienthanhtoan.Text))
+            {
+                if (!int.TryParse(txttienthanhtoan.Text, out _))
+                {
+                    MessageBox.Show("Vui lòng nhập số.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txttienthanhtoan.Text = ""; // Bạn có thể thay thế bằng giá trị mặc định khác nếu muốn
+                }
+            }
         }
     }
 }

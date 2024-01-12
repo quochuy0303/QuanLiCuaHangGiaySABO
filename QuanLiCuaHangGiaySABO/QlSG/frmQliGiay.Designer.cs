@@ -45,9 +45,9 @@
             this.txtlockh = new System.Windows.Forms.TextBox();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.txttimkh = new System.Windows.Forms.TextBox();
-            this.sbthem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.sbthem = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -216,18 +216,6 @@
             this.txttimkh.Size = new System.Drawing.Size(144, 23);
             this.txttimkh.TabIndex = 2;
             // 
-            // sbthem
-            // 
-            this.sbthem.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sbthem.Appearance.Options.UseFont = true;
-            this.sbthem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbthem.ImageOptions.Image")));
-            this.sbthem.Location = new System.Drawing.Point(89, 81);
-            this.sbthem.Name = "sbthem";
-            this.sbthem.Size = new System.Drawing.Size(120, 33);
-            this.sbthem.TabIndex = 0;
-            this.sbthem.Text = "Thêm";
-            this.sbthem.Click += new System.EventHandler(this.sbthem_Click);
-            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.txtgia);
@@ -254,6 +242,18 @@
             this.pictureEdit1.Size = new System.Drawing.Size(43, 42);
             this.pictureEdit1.TabIndex = 9;
             this.pictureEdit1.Click += new System.EventHandler(this.pictureEdit1_Click);
+            // 
+            // sbthem
+            // 
+            this.sbthem.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sbthem.Appearance.Options.UseFont = true;
+            this.sbthem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbthem.ImageOptions.Image")));
+            this.sbthem.Location = new System.Drawing.Point(89, 81);
+            this.sbthem.Name = "sbthem";
+            this.sbthem.Size = new System.Drawing.Size(120, 33);
+            this.sbthem.TabIndex = 0;
+            this.sbthem.Text = "Thêm";
+            this.sbthem.Click += new System.EventHandler(this.sbthem_Click);
             // 
             // frmQliGiay
             // 
@@ -297,8 +297,8 @@
         private System.Windows.Forms.TextBox txtlockh;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.TextBox txttimkh;
-        private DevExpress.XtraEditors.SimpleButton sbthem;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.SimpleButton sbthem;
     }
 }

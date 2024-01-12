@@ -48,7 +48,6 @@
             this.sbxoa = new DevExpress.XtraEditors.SimpleButton();
             this.sbsua = new DevExpress.XtraEditors.SimpleButton();
             this.txttimkiem = new System.Windows.Forms.TextBox();
-            this.sbthem = new DevExpress.XtraEditors.SimpleButton();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -167,14 +166,12 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.pictureEdit1);
             this.groupControl2.Controls.Add(this.sbtimkiem);
             this.groupControl2.Controls.Add(this.sbloc);
             this.groupControl2.Controls.Add(this.txtloc);
             this.groupControl2.Controls.Add(this.sbxoa);
             this.groupControl2.Controls.Add(this.sbsua);
             this.groupControl2.Controls.Add(this.txttimkiem);
-            this.groupControl2.Controls.Add(this.sbthem);
             this.groupControl2.Location = new System.Drawing.Point(12, 299);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(534, 259);
@@ -184,8 +181,10 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = global::QuanLiCuaHangGiaySABO.Properties.Resources.arrow;
-            this.pictureEdit1.Location = new System.Drawing.Point(235, 157);
+            this.pictureEdit1.Location = new System.Drawing.Point(572, 14);
             this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Black;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(43, 42);
@@ -228,7 +227,7 @@
             this.sbxoa.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbxoa.Appearance.Options.UseFont = true;
             this.sbxoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbxoa.ImageOptions.Image")));
-            this.sbxoa.Location = new System.Drawing.Point(37, 106);
+            this.sbxoa.Location = new System.Drawing.Point(26, 103);
             this.sbxoa.Name = "sbxoa";
             this.sbxoa.Size = new System.Drawing.Size(120, 33);
             this.sbxoa.TabIndex = 0;
@@ -240,7 +239,7 @@
             this.sbsua.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sbsua.Appearance.Options.UseFont = true;
             this.sbsua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbsua.ImageOptions.Image")));
-            this.sbsua.Location = new System.Drawing.Point(37, 166);
+            this.sbsua.Location = new System.Drawing.Point(26, 45);
             this.sbsua.Name = "sbsua";
             this.sbsua.Size = new System.Drawing.Size(120, 33);
             this.sbsua.TabIndex = 0;
@@ -253,18 +252,6 @@
             this.txttimkiem.Name = "txttimkiem";
             this.txttimkiem.Size = new System.Drawing.Size(172, 23);
             this.txttimkiem.TabIndex = 1;
-            // 
-            // sbthem
-            // 
-            this.sbthem.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sbthem.Appearance.Options.UseFont = true;
-            this.sbthem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbthem.ImageOptions.Image")));
-            this.sbthem.Location = new System.Drawing.Point(37, 45);
-            this.sbthem.Name = "sbthem";
-            this.sbthem.Size = new System.Drawing.Size(120, 33);
-            this.sbthem.TabIndex = 0;
-            this.sbthem.Text = "Thêm";
-            this.sbthem.Click += new System.EventHandler(this.sbthem_Click);
             // 
             // dgvNhanVien
             // 
@@ -290,10 +277,12 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImageStore = global::QuanLiCuaHangGiaySABO.Properties.Resources.poster_giay_dep_mat;
             this.ClientSize = new System.Drawing.Size(1494, 574);
+            this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmNhanVien.IconOptions.LargeImage")));
             this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Name = "frmNhanVien";
@@ -329,7 +318,6 @@
         private DevExpress.XtraEditors.SimpleButton sbloc;
         private DevExpress.XtraEditors.SimpleButton sbxoa;
         private DevExpress.XtraEditors.SimpleButton sbsua;
-        private DevExpress.XtraEditors.SimpleButton sbthem;
         private System.Windows.Forms.TextBox txtloc;
         private System.Windows.Forms.TextBox txttimkiem;
         private System.Windows.Forms.TextBox txtemail;

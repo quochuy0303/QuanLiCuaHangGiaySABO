@@ -153,5 +153,25 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                 return sb.ToString();
             }
         }
+
+        private void txtnewpass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtnewpass.Text.Length >= 8 && e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show("Mật Khẩu chỉ được nhập 8 kí tự ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                // Ngăn chặn việc thêm ký tự mới vào ô password
+                e.Handled = true;
+            }
+        }
+
+        private void txtcomfirm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (txtcomfirm.Text.Length >= 8 && e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show("Xác Nhận Mật Khẩu chỉ được nhập 8 kí tự ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Ngăn chặn việc thêm ký tự mới vào ô xác nhận mật khẩu
+                e.Handled = true;
+            }
+        }
     }
 }

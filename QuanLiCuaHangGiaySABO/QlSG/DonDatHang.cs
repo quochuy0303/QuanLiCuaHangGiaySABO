@@ -318,7 +318,7 @@ namespace QuanLiCuaHangGiaySABO.QlSG
                     // Cập nhật giá trị của cột Size sau khi thêm
                     if (r != null)
                     {
-                        r.Cells["Size"].Value = size.TenSize;
+                        r.Cells["TenSize"].Value = size.TenSize;
                     }
 
                     // Hiển thị thông báo thành công hoặc thực hiện các hành động khác
